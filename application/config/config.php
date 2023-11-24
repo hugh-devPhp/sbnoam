@@ -7,7 +7,7 @@ $config['modules_locations'] = array(
 
 
 global $BASE_URL;
-$config['base_url'] = 'http://ain4ce/';
+$config['base_url'] = 'https://port-3000-php-blue-yak-huguesody88384.preview.codeanywhere.com/sbnoam/';
 
 
 /*
