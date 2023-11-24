@@ -13,16 +13,16 @@
 	<!-- Place favicon.ico in the root directory -->
 
 	<!-- CSS here -->
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/magnific-popup.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/themify-icons.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/nice-select.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/flaticon.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/gijgo.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/animate.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/slicknav.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/magnific-popup.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/themify-icons.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/nice-select.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/flaticon.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/gijgo.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/animate.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/slicknav.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/style.css">
 	<!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
