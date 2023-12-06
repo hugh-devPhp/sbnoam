@@ -1,125 +1,162 @@
 <!-- footer_start  -->
-<footer class="footer">
-    <div class="footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-md-6 col-lg-4 ">
-                    <div class="footer_widget">
-                        <div class="footer_logo">
-                            <a href="#">
-                                <img src="img/footer_logo.png" alt="">
-                            </a>
+<footer class="sigma-footer">
+    <div class="sigma-footer-top">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-8">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!--====== Back to top ======-->
+                            <div class="sigma-backto-top">
+                                <a href="#" class="back-to-top" id="backToTop">
+                                    <i class="fal fa-chevron-up"></i>
+                                    Back to Top
+                                </a>
+                            </div>
                         </div>
-                        <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore.
-                        </p>
-                        <div class="socail_links">
-                            <ul>
+                        <div class="col-lg-6">
+                            <div class="h-100 d-flex align-items-center justify-content-end">
+                                <select>
+                                    <option>English</option>
+                                    <option>Español</option>
+                                </select>
+                                <select>
+                                    <option>USD</option>
+                                    <option>GBP</option>
+                                    <option>INR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--====== Footer content ======-->
+                    <div class="sigma-footer-box">
+                        <div class="sigma-footer-box-top">
+                            <div class="ft-logo">
+                                <a href="index-2.html">
+                                    <img src="<?php echo base_url() ?>assets/corporate/img/logo.png" alt="Logo">
+                                </a>
+                            </div>
+                            <ul class="ft-social-media">
                                 <li>
                                     <a href="#">
-                                        <i class="ti-facebook"></i>
+                                        <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-twitter-alt"></i>
+                                        <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-dribbble"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-instagram"></i>
+                                        <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-6 col-lg-2">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Services
-                        </h3>
-                        <ul class="links">
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Sponsor</a></li>
-                            <li><a href="#">Fundraise</a></li>
-                            <li><a href="#">Volunteer</a></li>
-                            <li><a href="#">Partner</a></li>
-                            <li><a href="#">Jobs</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Contacts
-                        </h3>
-                        <div class="contacts">
-                            <p>+2(305) 587-3407 <br>
-                                info@loveuscharity.com <br>
-                                Flat 20, Reynolds Neck, North
-                                Helenaville, FV77 8WS
-                            </p>
+                        <div class="sigma-footer-nav">
+                            <ul class="ft-nav">
+                                <li class="menu-item">
+                                    <a href="index-2.html">
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="blog-grid.html">
+                                        News
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="gallery.html">
+                                        Gallery
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="contact.html">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Top News
-                        </h3>
-                        <ul class="news_links">
-                            <li>
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img src="img/news/news_1.png" alt="">
-                                    </a>
+                <div class="col-lg-4">
+                    <div class="contact-maps" id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sigma-footer-bottom">
+        <div class="container-fluid">
+            <div class="sigma-footer-bottom-inner">
+                <div class="row no-gutters align-items-end">
+                    <div class="col-lg-6">
+                        <div class="sigma-footer-contact">
+                            <ul>
+                                <li>
+                                    <i class="flaticon-phone"></i>
+                                    <a href="tel:"><span>Phone Number</span> +987 876 765 76 577</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-message"></i>
+                                    <a href="mailto:"><span>Email Address</span> info@webmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="sigma-footer-search">
+                            <form>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button><i class="fal fa-search"></i></button>
+                                    </div>
+                                    <input type="text" name="#" class="form-control" placeholder="Search...">
                                 </div>
-                                <div class="info">
-                                    <a href="#">
-                                        <h4>School for African
-                                            Childrens</h4>
-                                    </a>
-                                    <span>Jun 12, 2019</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img src="img/news/news_2.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <a href="#">
-                                        <h4>School for African
-                                            Childrens</h4>
-                                    </a>
-                                    <span>Jun 12, 2019</span>
-                                </div>
-                            </li>
-                        </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="sigma-footer-contact style-2">
+                            <ul>
+                                <li>
+                                    <i class="flaticon-location-pin"></i>
+                                    <a href="#"><span>Office Address</span> 14/A, Miranda City, NYC</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="copy-right_text">
-        <div class="container">
-            <div class="row">
-                <div class="bordered_1px "></div>
-                <div class="col-xl-12">
-                    <p class="copy_right text-center">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </p>
+    <!-- Copyright -->
+    <div class="sigma-copyright">
+        <div class="container-fluid">
+            <div class="sigma-copyright-inner">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5 order-2 order-md-1">
+                        <p class="sigma-copyright-text">Copyright By@<a href="#">Milarossa</a> - 2022</p>
+                    </div>
+                    <div class="col-lg-6 col-md-7 order-1 order-md-2">
+                        <div class="sigma-copyright-menu">
+                            <ul>
+                                <li>
+                                    <a href="#">Terms of use</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Environmental Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

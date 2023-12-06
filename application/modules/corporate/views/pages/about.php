@@ -3,350 +3,437 @@ $this->load->view('layouts/css');
 ?>
 
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-    <?php
-    $this->load->view('layouts/nav');
-    ?>
 
-    <!-- bradcam_area_start  -->
-    <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>About US</h3>
-                    </div>
-                </div>
-            </div>
+<!--====== PRELOader ======-->
+<?php
+$this->load->view('layouts/preloader');
+?>
+<!--====== HEADER START ======-->
+<?php
+$this->load->view('layouts/header');
+?>
+<!--====== HEADER PART END ======-->
+<!--====== OFF CANVAS START ======-->
+<?php
+$this->load->view('layouts/offcanvas');
+?>
+<!--====== OFF CANVAS END ======-->
+<!--====== BREADCRUMB PART START ======-->
+<section class="breadcrumb-area" style="background-image: url(assets/img/bg/04.jpg);">
+    <div class="container">
+        <div class="breadcrumb-text">
+            <span>DESIGNER JEWELRY</span>
+            <h2 class="page-title">About Us</h2>
+            <ul class="breadcrumb-nav">
+                <li><a href="#">Home</a></li>
+                <li class="active">About</li>
+            </ul>
         </div>
     </div>
-    <!-- bradcam_area_end  -->
-
-    <!-- reson_area_start  -->
-    <div class="reson_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
+</section>
+<!--====== BREADCRUMB PART END ======-->
+<!--====== ABOUT PART START ======-->
+<section class="about-section pt-115 pb-115">
+    <div class="container">
+        <div class="video-wrap video-wrap-two video-about mb-60" style="background-image: url(assets/img/text-block/04.jpg);">
+            <a href="https://www.youtube.com/watch?v=KH1pcNUTa6U" class="popup-video"><i class="fas fa-play"></i></a>
+        </div>
+        <div class="section-title about-title text-center">
+            <span class="title-tag">since <span>1994</span></span>
+            <h2>Hello. Our store has been present for over 30 years . We give assurance to all customers.</h2>
+        </div>
+        <ul class="about-features">
+            <li class="wow fadeInUp" data-wow-delay=".3s">
+                <a href="#">
+                    <i class="flaticon-ring"></i>
+                    <i class="hover-icon flaticon-ring"></i>
+                    <span class="title">Diamond Ring</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".4s">
+                <a href="#">
+                    <i class="flaticon-bracelet"></i>
+                    <i class="hover-icon flaticon-bracelet"></i>
+                    <span class="title">Bracelets</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".5s">
+                <a href="#">
+                    <i class="flaticon-necklace"></i>
+                    <i class="hover-icon flaticon-necklace"></i>
+                    <span class="title">Necklaces</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".6s">
+                <a href="#">
+                    <i class="flaticon-bracelet-2"></i>
+                    <i class="hover-icon flaticon-bracelet-2"></i>
+                    <span class="title">Pendants</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".7s">
+                <a href="#">
+                    <i class="flaticon-earrings"></i>
+                    <i class="hover-icon flaticon-earrings"></i>
+                    <span class="title">Earrings</span>
+                </a>
+            </li>
+        </ul>
+        <div class="about-text-box">
+            <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Reason of Helping</span></h3>
+                    <div class="about-img">
+                        <img src="assets/img/text-block/05.jpg" alt="images">
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Collecting Fund</h4>
-                            <p>Lorem ipsum, or lipsum as it is
-                                sometimes known, is dummy
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Collecting Fund</h4>
-                            <p>Lorem ipsum, or lipsum as it is
-                                sometimes known, is dummy
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Collecting Fund</h4>
-                            <p>Lorem ipsum, or lipsum as it is
-                                sometimes known, is dummy
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- reson_area_end  -->
-
-    <!-- latest_activites_area_start  -->
-    <div class="latest_activites_area">
-        <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">
-            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">
-                <i class="flaticon-ui"></i>
-            </a>
-        </div>
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-lg-7">
-                    <div class="activites_info">
-                        <div class="section_title">
-                            <h3> <span>Watch Our Latest </span><br>
-                                Activities</h3>
-                        </div>
-                        <p class="para_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-                            eiusmod tempor incididunt ut labore dolore magna aliqua.
-                            enim minim veniam, quis nostrud exercitation.</p class="para_1">
-                        <p class="para_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-                            eiusmod tempor incididunt ut labore dolore magna aliqua.
-                            enim minim veniam, quis nostrud exercitation. tempor
-                            incididunt ut labore dolore magna aliqua. enim minim
-                            veniam, quis nostrud exercitation.</p>
-                        <a href="#" data-scroll-nav="1" class="boxed-btn4">Donate Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- latest_activites_area_end  -->
-
-    <!-- counter_area_start  -->
-    <div class="counter_area pt-120">
-        <div class="container">
-            <div class="counter_bg overlay">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-heart-beat"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-in-love"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-hug"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- counter_area_end  -->
-
-    <!-- our_volunteer_area_start  -->
-    <div class="our_volunteer_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Our Volunteer</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_volenteer">
-                        <div class="volenteer_thumb">
-                            <img src="img/volenteer/1.png" alt="">
-                        </div>
-                        <div class="voolenteer_info d-flex align-items-end">
-                            <div class="social_links">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="info_inner">
-                                <h4>Sakil khan</h4>
-                                <p>Donner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_volenteer">
-                        <div class="volenteer_thumb">
-                            <img src="img/volenteer/2.png" alt="">
-                        </div>
-                        <div class="voolenteer_info d-flex align-items-end">
-                            <div class="social_links">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="info_inner">
-                                <h4>Emran Ahmed</h4>
-                                <p>Volunteer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_volenteer">
-                        <div class="volenteer_thumb">
-                            <img src="img/volenteer/3.png" alt="">
-                        </div>
-                        <div class="voolenteer_info d-flex align-items-end">
-                            <div class="social_links">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="info_inner">
-                                <h4>Sabbir Ahmed</h4>
-                                <p>Volunteer</p>
-                            </div>
-                        </div>
+                    <div class="about-text">
+                        <span>Get 50 % Off</span>
+                        <h3>Get All Gold Jewelry At 50 Percent, Grab It Now </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem por
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip.
+                        </p>
+                        <h3>Get All Gold Jewelry At 50 Percent, Grab It Now </h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- our_volunteer_area_end  -->
+</section>
+<!--====== ABOUT PART END ======-->
+<!--====== CORE FEATURES START ======-->
+<section class="core-feature-section bg-black pt-115 pb-115">
+    <div class="container">
+        <div class="section-title white-color text-center mb-50">
+            <div class="section-title-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="45" height="45" x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" class="">
+                  <path d="M369.853,250.251l-100-241C267.53,3.65,262.062,0,255.999,0s-11.531,3.65-13.854,9.251l-100,241    c-1.527,3.681-1.527,7.817,0,11.498l100,241c2.323,5.601,7.791,9.251,13.854,9.251s11.531-3.65,13.854-9.251l100-241    C371.381,258.068,371.381,253.932,369.853,250.251z M255.999,457.861L172.239,256l83.76-201.861L339.759,256L255.999,457.861z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-1" d="M139.606,118.393l-63-63c-5.858-5.857-15.356-5.857-21.213,0c-5.858,5.858-5.858,15.356,0,21.213l63,63    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394C145.465,133.748,145.465,124.25,139.606,118.393z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-2" d="M456.607,55.393c-5.858-5.857-15.356-5.857-21.213,0l-63,63c-5.858,5.858-5.858,15.356,0,21.213    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394l63-63C462.465,70.748,462.465,61.25,456.607,55.393z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-3" d="M139.606,372.393c-5.858-5.857-15.356-5.857-21.213,0l-63,63c-5.858,5.858-5.858,15.356,0,21.213    C58.322,459.535,62.16,461,65.999,461s7.678-1.465,10.607-4.394l63-63C145.465,387.748,145.465,378.25,139.606,372.393z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-4" d="M456.607,435.393l-63-63c-5.858-5.857-15.356-5.857-21.213,0c-5.858,5.858-5.858,15.356,0,21.213l63,63    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394C462.465,450.748,462.465,441.25,456.607,435.393z" fill="#ffffff"/>
+                </svg>
+            </div>
+            <span class="title-tag"> avail our offer  </span>
+            <h2>Our Best Feature </h2>
+        </div>
+        <!-- Featre Loop -->
+        <div class="row features-loop">
+            <div class="col-lg-4 col-sm-6 order-1">
+                <div class="feature-box dark-box wow fadeInLeft" data-wow-delay=".3s">
+                    <span class="count">01</span>
 
-
-    <div data-scroll-index='1' class="make_donation_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Make a Donation</span></h3>
+                    <h3><a href="#">Get On Offer Price</a></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna..
+                    </p>
+                    <div class="icon">
+                        <i class="flaticon-rating"></i>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <form action="#" class="donation_form">
-                        <div class="row align-items-center">
-                            <div class="col-md-4">
-                                <div class="single_amount">
-                                    <div class="input_field">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">$</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="single_amount">
-                                    <div class="fixed_donat d-flex align-items-center justify-content-between">
-                                        <div class="select_prise">
-                                            <h4>Select Amount:</h4>
-                                        </div>
-                                        <div class="single_doonate">
-                                            <input type="radio" id="blns_1" name="radio-group" checked>
-                                            <label for="blns_1">10</label>
-                                        </div>
-                                        <div class="single_doonate">
-                                            <input type="radio" id="blns_2" name="radio-group" checked>
-                                            <label for="blns_2">30</label>
-                                        </div>
-                                        <div class="single_doonate">
-                                            <input type="radio" id="Other" name="radio-group" checked>
-                                            <label for="Other">Other</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="donate_now_btn text-center">
-                        <a href="#" class="boxed-btn4">Donate Now</a>
+            <div class="col-lg-4 col-sm-6 order-2">
+                <div class="feature-box dark-box wow fadeInDown" data-wow-delay=".4s">
+                    <span class="count">02</span>
+
+                    <h3><a href="#">Quiet Hours Offer</a></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna..
+                    </p>
+                    <div class="icon">
+                        <i class="flaticon-clock"></i>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 order-3 order-sm-4 order-lg-3">
+                <div class="feature-box dark-box wow fadeInRight" data-wow-delay=".5s">
+                    <span class="count">03</span>
 
+                    <h3><a href="#">Assured Quality</a></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna..
+                    </p>
+                    <div class="icon">
+                        <i class="flaticon-location-pin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 order-4 order-sm-3 order-lg-4">
+                <div class="feature-box dark-box wow fadeInLeft" data-wow-delay=".6s">
+                    <span class="count">04</span>
+
+                    <h3><a href="#">Free Cancellation</a></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna..
+                    </p>
+                    <div class="icon">
+                        <i class="flaticon-clock-1"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 order-5">
+                <div class="feature-box dark-box wow fadeInUp" data-wow-delay=".7s">
+                    <span class="count">05</span>
+
+                    <h3><a href="#">Payment Options</a></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna..
+                    </p>
+                    <div class="icon">
+                        <i class="flaticon-credit-card"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 order-6">
+                <div class="feature-box dark-box wow fadeInRight" data-wow-delay=".8s">
+                    <span class="count">06</span>
+
+                    <h3><a href="#">Online Special Offers</a></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna..
+                    </p>
+                    <div class="icon">
+                        <i class="flaticon-discount"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</section>
+<!--====== CORE FEATURES END ======-->
+<!--====== COUNTER UP START ======-->
+<section class="counter-section pt-115">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="section-title mb-80">
+            <span class="title-tag">COUNTER</span>
+            <h2>Feedback At Glance</h2>
+        </div>
+        <!-- Counter -->
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-6">
+                <div class="counter-box counter-box-two">
+                    <div class="icon">
+                        <i class="flaticon-user-1"></i>
+                    </div>
+                    <h4><span class="counter">8000</span></h4>
+                    <span class="title">Happy Users</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">
+                <div class="counter-box counter-box-two">
+                    <div class="icon">
+                        <i class="flaticon-like"></i>
+                    </div>
+                    <h4><span class="counter">10</span>M</h4>
+                    <span class="title">Reviews & Appriciate</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-6">
+                <div class="counter-box counter-box-two">
+                    <div class="icon">
+                        <i class="flaticon-suitcase"></i>
+                    </div>
+                    <h4><span class="counter">100</span></h4>
+                    <span class="title">Country Coverage</span>
+                </div>
+            </div>
+        </div>
+        <!-- Gallery -->
+        <div class="row">
+            <div class="col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="image mt-30">
+                    <img src="assets/img/gallery/09.jpg" alt="image">
+                </div>
+            </div>
+            <div class="col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                <div class="image mt-30">
+                    <img src="assets/img/gallery/10.jpg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== COUNTER UP END ======-->
+<!--====== LATEST NEWS START ======-->
+<section class="latest-news pt-115 pb-115">
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="45" height="45" x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" class="">
+                  <path d="M369.853,250.251l-100-241C267.53,3.65,262.062,0,255.999,0s-11.531,3.65-13.854,9.251l-100,241    c-1.527,3.681-1.527,7.817,0,11.498l100,241c2.323,5.601,7.791,9.251,13.854,9.251s11.531-3.65,13.854-9.251l100-241    C371.381,258.068,371.381,253.932,369.853,250.251z M255.999,457.861L172.239,256l83.76-201.861L339.759,256L255.999,457.861z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-1" d="M139.606,118.393l-63-63c-5.858-5.857-15.356-5.857-21.213,0c-5.858,5.858-5.858,15.356,0,21.213l63,63    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394C145.465,133.748,145.465,124.25,139.606,118.393z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-2" d="M456.607,55.393c-5.858-5.857-15.356-5.857-21.213,0l-63,63c-5.858,5.858-5.858,15.356,0,21.213    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394l63-63C462.465,70.748,462.465,61.25,456.607,55.393z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-3" d="M139.606,372.393c-5.858-5.857-15.356-5.857-21.213,0l-63,63c-5.858,5.858-5.858,15.356,0,21.213    C58.322,459.535,62.16,461,65.999,461s7.678-1.465,10.607-4.394l63-63C145.465,387.748,145.465,378.25,139.606,372.393z" fill="#ffffff"/>
+                    <path class="diamond-spark spark-4" d="M456.607,435.393l-63-63c-5.858-5.857-15.356-5.857-21.213,0c-5.858,5.858-5.858,15.356,0,21.213l63,63    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394C462.465,450.748,462.465,441.25,456.607,435.393z" fill="#ffffff"/>
+                </svg>
+            </div>
+            <span class="title-tag">Blog</span>
+            <h2>News Feeds</h2>
+        </div>
+        <!-- Latest post loop -->
+        <div class="row justify-content-center mt-50">
+            <div class="col-lg-4 col-sm-6">
+                <div class="latest-post-box mt-30">
+                    <div class="post-img" style="background-image: url(assets/img/latest-post/01.jpg);"></div>
+                    <div class="post-desc">
+                        <ul class="post-meta">
+                            <li>
+                                <a href="#"><i class="fal fa-calendar-alt"></i>28th Aug 2022</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fal fa-user"></i>By Admin</a>
+                            </li>
+                        </ul>
+                        <h4><a href="blog-details.html">Ruby on Rose Accessories and Blue Gemstones.</a></h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="latest-post-box mt-30">
+                    <div class="post-img" style="background-image: url(assets/img/latest-post/03.jpg);"></div>
+                    <div class="post-desc">
+                        <ul class="post-meta">
+                            <li>
+                                <a href="#"><i class="fal fa-calendar-alt"></i>28th Aug 2022</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fal fa-user"></i>By Admin</a>
+                            </li>
+                        </ul>
+                        <h4><a href="blog-details.html">Matching Jewellery Sets with your Outwear.</a></h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="latest-post-box mt-30">
+                    <div class="post-img" style="background-image: url(assets/img/latest-post/02.jpg);"></div>
+                    <div class="post-desc">
+                        <ul class="post-meta">
+                            <li>
+                                <a href="#"><i class="fal fa-calendar-alt"></i>28th Aug 2022</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fal fa-user"></i>By Admin</a>
+                            </li>
+                        </ul>
+                        <h4><a href="blog-details.html">New Retro Collection of Pendants and Ring sets.</a></h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== LATEST NEWS END ======-->
+<!--====== INSTAGRAM FEED PART START ======-->
+<div class="instagram-feed-section">
+    <div class="container-fluid p-0">
+        <div class="instagram-slider">
+            <div class="image">
+                <a href="assets/img/instagram/01.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/01.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/02.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/02.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/03.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/03.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/04.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/04.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/05.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/05.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/06.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/06.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/01.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/01.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/02.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/02.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/03.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/03.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/04.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/04.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/05.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/05.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="assets/img/instagram/06.jpg" class="insta-popup">
+                    <img src="assets/img/instagram/06.jpg" alt="instagram-feed">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====== INSTAGRAM FEED PART END ======-->
+<!--====== Back to Top ======-->
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fal fa-angle-double-up"></i>
+</a>
+<!--====== FOOTER PART START ======-->
+<?php
+$this->load->view('layouts/footer');
+?>
+<!--====== FOOTER PART END ======-->
 
-    <?php
-    $this->load->view('layouts/footer');
-    ?>
+<!--====== Modal Popup Start ======-->
+<!-- The Modal -->
+<?php
+$this->load->view('layouts/newletter-modal');
+?>
+<!--====== Modal Popup End ======-->
 
-    <!-- link that opens popup -->
-    <?php
-    $this->load->view('layouts/js');
-    ?>
+<!--====== jquery js ======-->
+<?php
+$this->load->view('layouts/js');
+?>
 </body>
 
 </html>

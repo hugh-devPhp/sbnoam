@@ -8,21 +8,31 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- <link rel="manifest" href="site.webmanifest"> -->
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-	<!-- Place favicon.ico in the root directory -->
-
-	<!-- CSS here -->
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/magnific-popup.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/themify-icons.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/nice-select.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/flaticon.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/gijgo.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/animate.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/slicknav.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/style.css">
-	<!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/corporate/img/favicon.ico" type="img/png" />
+    <!--====== Animate Css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/animate.min.css">
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/bootstrap.min.css" />
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/font-awesome.min.css" />
+    <!--====== Flaticon css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/flaticon.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/fonts/flaticon/flaticon-2.css" />
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/magnific-popup.css" />
+    <!--====== Owl Carousel css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/slick.css" />
+    <!--====== Nice Select ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/nice-select.css" />
+    <!--====== Mapbox ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/leaflet.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/mapbox-gl.min.css" />
+    <!--====== Bootstrap Datepicker ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/bootstrap-datepicker.css" />
+    <!--====== Ion Rangeslider ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/ion.rangeSlider.min.css" />
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/default.css" />
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/corporate/css/style.css" />
 </head>
