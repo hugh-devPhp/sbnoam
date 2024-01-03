@@ -6,28 +6,26 @@ class Admin_mod extends CI_Model
         parent::__construct();
     }
 
+    public function add_collection($data_bd)
+    {
+        $query = $this->db->insert('collections', $data_bd);
+        return $query;
+    }
 
-    public function get_demand()
+
+    public function get_collection()
     {
         $this->db->order_by('date', 'DESC');
-        $query = $this->db->get('demand');
+        $query = $this->db->get('collection');
 
         return $query->result_array();
     }
 
-    public function get_demand_val()
+    public function get_collection_val()
     {
         $this->db->order_by('date', 'DESC');
         $this->db->where('state', true);
-        $query = $this->db->get('demand');
-
-        return $query->result_array();
-    }
-    public function get_demand_wait()
-    {
-        $this->db->order_by('date', 'DESC');
-        $this->db->where('state', false);
-        $query = $this->db->get('demand');
+        $query = $this->db->get('collection');
 
         return $query->result_array();
     }
@@ -37,21 +35,21 @@ class Admin_mod extends CI_Model
         return $query;
     }
 
-    public function valid_mod($table, $id_demand)
+    public function enable_mod($table, $where)
     {
         $data = array(
             'state' => true
         );
-        $this->db->where('id_demand', $id_demand);
+        $this->db->where('id', $where);
         return $this->db->update($table, $data);
     }
 
-    public function invalid_mod($table, $id_demand)
+    public function disable_mod($table, $where)
     {
         $data = array(
             'state' => false
         );
-        $this->db->where('id_demand', $id_demand);
+        $this->db->where('id', $where);
         return $this->db->update($table, $data);
     }
 
@@ -109,7 +107,7 @@ class Admin_mod extends CI_Model
         return $query;
     }
 
-    public function valid_award_cat_mod($table, $cat_id)
+    public function valid_collection_mod($table, $cat_id)
     {
         $data = array(
             'state' => true
@@ -118,12 +116,12 @@ class Admin_mod extends CI_Model
         return $this->db->update($table, $data);
     }
 
-    public function invalid_award_cat_mod($table, $id_demand)
+    public function invalid_collection_mod($table, $id_collection)
     {
         $data = array(
             'state' => false
         );
-        $this->db->where('cat_id', $id_demand);
+        $this->db->where('collection_id', $id_collection);
         return $this->db->update($table, $data);
     }
 

@@ -20,8 +20,8 @@ class Admin extends MX_Controller
         $user_data = $this->db->get('user');
         $data['user_nb'] = $user_data->num_rows();
 
-        $demand_data = $this->db->get('demand');
-        $data['demand'] = $demand_data->num_rows();
+        $collection_data = $this->db->get('collection');
+        $data['collection'] = $collection_data->num_rows();
 
         $this->db->where('state', true);
         $demand_val = $this->db->get('demand');
@@ -34,10 +34,10 @@ class Admin extends MX_Controller
         $this->load->view('admin_index', $data);
     }
 
-    public function demand()
+    public function collection()
     {
-        $data['demands'] = $this->Admin_mod->get_demand();
-        $this->load->view('pages/demandes', $data);
+        $data['collections'] = $this->Admin_mod->get_collection();
+        $this->load->view('pages/collections', $data);
     }
 
     public function demand_val()
@@ -52,24 +52,24 @@ class Admin extends MX_Controller
         $this->load->view('pages/demande_en_attente', $data);
     }
 
-    public function valid()
+    public function enable_col()
     {
-        $id_demand = $this->input->post('id_demand');
-        $result = $this->Admin_mod->valid_mod('demand', $id_demand);
+        $id_collection = $this->input->post('id_collection');
+        $result = $this->Admin_mod->enable_mod('collection', $id_collection);
         echo json_encode($result);
     }
 
-    public function invalid()
+    public function disable_col()
     {
-        $id_demand = $this->input->post('id_demand');
-        $result = $this->Admin_mod->invalid_mod('demand', $id_demand);
+        $id_collection = $this->input->post('id_collection');
+        $result = $this->Admin_mod->disable_mod('collection', $id_collection);
         echo json_encode($result);
     }
 
-    public function delete_demand()
+    public function delete_collection()
     {
-        $id_demand = $this->input->post('id_demand');
-        $data_delete = $this->Admin_mod->delete_mod('demand', array('id_demand' => $id_demand));
+        $id_collection = $this->input->post('id_collection');
+        $data_delete = $this->Admin_mod->delete_mod('collection', array('id_collection' => $id_collection));
 
         if ($data_delete == true) {
             echo json_encode(true);

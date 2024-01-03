@@ -13,7 +13,7 @@
             <a href="javascript:" class="side-menu" id="actu_menu">
                 <div class="side-menu__icon"><i data-lucide="shopping-bag"></i></div>
                 <div class="side-menu__title">
-                    Actualités
+                    Blog
                     <div class="side-menu__sub-icon "><i data-lucide="chevron-down"></i></div>
                 </div>
             </a>
@@ -73,7 +73,7 @@
             <a href="javascript:" class="side-menu" id="pages_menu">
                 <div class="side-menu__icon"><i data-lucide="layout"></i></div>
                 <div class="side-menu__title">
-                    Demandes
+                    Stores
                     <div class="side-menu__sub-icon "><i data-lucide="chevron-down"></i></div>
                 </div>
             </a>
@@ -81,19 +81,19 @@
                 <li>
                     <a href="<?php echo base_url() ?>demandes" class="side-menu" id="slide_menu">
                         <div class="side-menu__icon"><i data-lucide="inbox"></i></div>
-                        <div class="side-menu__title"> Toutes les demandes</div>
+                        <div class="side-menu__title"> Catégories</div>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() ?>demandes_val" class="side-menu" id="about_menu">
                         <div class="side-menu__icon"><i data-lucide="hard-drive"></i></div>
-                        <div class="side-menu__title"> Demandes Validées</div>
+                        <div class="side-menu__title"> Ajoutez article</div>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() ?>demandes_en_attente" class="side-menu" id="module_menu">
                         <div class="side-menu__icon"><i data-lucide="credit-card"></i></div>
-                        <div class="side-menu__title"> Demandes en attentes</div>
+                        <div class="side-menu__title"> Liste des articles</div>
                     </a>
                 </li>
             </ul>
@@ -103,7 +103,7 @@
             <a href="javascript:" class="side-menu" id="award_menu">
                 <div class="side-menu__icon"><i data-lucide="layout"></i></div>
                 <div class="side-menu__title">
-                    Award
+                    Collections
                     <div class="side-menu__sub-icon "><i data-lucide="chevron-down"></i></div>
                 </div>
             </a>
@@ -111,19 +111,49 @@
                 <li>
                     <a href="<?php echo base_url() ?>award_categories" class="side-menu" id="cat_menu">
                         <div class="side-menu__icon"><i data-lucide="inbox"></i></div>
-                        <div class="side-menu__title"> Catégories</div>
+                        <div class="side-menu__title"> Ajout collection</div>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() ?>add_laureat" class="side-menu" id="add_award_menu">
                         <div class="side-menu__icon"><i data-lucide="hard-drive"></i></div>
-                        <div class="side-menu__title">Ajout Lauréats</div>
+                        <div class="side-menu__title">Ajout article dans collection</div>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() ?>award_laureats" class="side-menu" id="list_award_menu">
                         <div class="side-menu__icon"><i data-lucide="credit-card"></i></div>
-                        <div class="side-menu__title"> Liste Lauréats</div>
+                        <div class="side-menu__title"> Galerie par collections</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="side-nav__devider my-6"></li>
+        <li>
+            <a href="javascript:" class="side-menu" id="award_menu">
+                <div class="side-menu__icon"><i data-lucide="layout"></i></div>
+                <div class="side-menu__title">
+                    Promotions
+                    <div class="side-menu__sub-icon "><i data-lucide="chevron-down"></i></div>
+                </div>
+            </a>
+            <ul class="">
+                <li>
+                    <a href="<?php echo base_url() ?>award_categories" class="side-menu" id="cat_menu">
+                        <div class="side-menu__icon"><i data-lucide="inbox"></i></div>
+                        <div class="side-menu__title"> Ajout promotion</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url() ?>add_laureat" class="side-menu" id="add_award_menu">
+                        <div class="side-menu__icon"><i data-lucide="hard-drive"></i></div>
+                        <div class="side-menu__title">Ajout article dans promotion</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url() ?>award_laureats" class="side-menu" id="list_award_menu">
+                        <div class="side-menu__icon"><i data-lucide="credit-card"></i></div>
+                        <div class="side-menu__title"> Galerie par collections</div>
                     </a>
                 </li>
             </ul>
