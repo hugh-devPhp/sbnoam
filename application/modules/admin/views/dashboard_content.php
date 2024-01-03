@@ -300,6 +300,3 @@
         </div>
     </div>
 </div>
-
-
-<script src="<?php base_url() ?>assets/admin/mastercalendar/script.js"></script>

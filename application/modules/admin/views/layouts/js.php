@@ -1,5 +1,3 @@
-
-
 <script src="<?php echo base_url() ?>assets/admin/js/app.js"></script>
 <script src="<?php echo base_url() ?>assets/admin/js/jquery/jquery-3.5.1.min.js"></script>
 

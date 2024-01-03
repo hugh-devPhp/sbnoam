@@ -7,7 +7,7 @@ $config['modules_locations'] = array(
 
 
 global $BASE_URL;
-$config['base_url'] = 'http://sbnoam/sbnoam/';
+$config['base_url'] = 'http://sbnoam/';
 
 
 /*

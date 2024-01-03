@@ -2,7 +2,7 @@
     <div class="h-full flex items-center">
 
         <a href="" class="-intro-x hidden md:flex">
-            <img alt="sup'note logo" class="w-20" src="<?php echo base_url() ?>assets/corporate/img/logogdj-2.png">
+            <img alt="sup'note logo" class="w-20" src="<?php echo base_url() ?>assets/sbnoam_logo.png">
         </a>
 
         <nav aria-label="breadcrumb" class="-intro-x h-full mr-auto">

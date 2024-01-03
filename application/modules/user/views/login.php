@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="<?php echo base_url() ?>assets/corporate/img/logogdj-2.png" rel="shortcut icon">
+    <link href="<?php echo base_url() ?>assets/sbnoam_logo.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>gdj-Connexion</title>
+    <meta name="author" content="Hugh-Dev">
+    <title>sbnoam</title>
 
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/css/app.css" />
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/css/notiflix.css" />
@@ -20,13 +21,12 @@
         <div class="block xl:grid grid-cols-2 gap-4">
             <div class="hidden xl:flex flex-col min-h-screen">
                 <a href="" class="-intro-x flex items-center pt-5">
-                    <img alt="Sup'Note logo" class="w-52" src="<?php echo base_url() ?>assets/corporate/img/logogdj-2.png">
+                    <img alt="sbnoam logo" class="w-52" src="<?php echo base_url() ?>assets/sbnoam_logo.png">
                 </a>
                 <div class="my-auto">
                     <img alt="Image_bureau" class="-intro-x w-1/2 -mt-16" src="<?php echo base_url() ?>assets/admin/images/illustration.svg">
                     <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
                         Encore quelques clics pour vous
-
                         Connectez-vous à votre compte.
                     </div>
                 </div>

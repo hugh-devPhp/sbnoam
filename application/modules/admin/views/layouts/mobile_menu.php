@@ -1,7 +1,7 @@
 <div class="mobile-menu md:hidden">
     <div class="mobile-menu-bar">
         <a href="" class="flex mr-auto">
-            <img alt="Midone - HTML Admin Template" class="w-6" src="<?php echo base_url() ?>assets/corporate/img/logogdj-2.png">
+            <img alt="Midone - HTML Admin Template" class="w-6" src="<?php echo base_url() ?>assets/sbnoam_logo.png">
         </a>
         <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
     </div>
