@@ -1,0 +1,9 @@
+.idea/*
+dev_assets/imgphoto/
+qrcode/
+errors/
+cache/
+logs/
+vendor/
+photos/
+uploads/
