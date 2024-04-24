@@ -2,15 +2,14 @@
 <html lang="en">
 
     <head>
-        
+
         <meta charset="utf-8" />
-        <title>IVOIRE LAGUNE SERVICES | Connexion</title>
+        <title>SBNoame - Administration</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="" name="description" />
-        <meta content="Finasys technologies CI" name="author" />
+        <meta content="shine by noame site" name="description" />
+        <meta content="hugues_ody" name="author" />
         <!-- App favicon -->
-        <!-- <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/admin/images/favicon.ico"> -->
-        <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/front-end/img/logo.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="<?php echo base_url()?>assets/front-end/sbnoam_logo.ico">
         <!-- Bootstrap Css -->
         <link href="<?php echo base_url(); ?>assets/admin/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -22,7 +21,6 @@
     <body>
         <div class="account-pages my-5 pt-sm-5">
             <div class="container">
-                
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="text-center"><h4><font color="red" style="text-transform: uppercase;"><b><?php echo $this->session->flashdata('notifications_page'); ?></b></font></h4></div>
@@ -36,7 +34,7 @@
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
-                                        <img src="<?php echo base_url(); ?>assets/front-end/img/logo.png" alt="" class="img-fluid">
+                                        <img src="<?php echo base_url(); ?>assets/sbnoam_logo.png" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +43,7 @@
                                     <a href="Javascript:void(0);" class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="<?php echo base_url(); ?>assets/front-end/img/logo.png" alt="" class="rounded-circle" height="34">
+                                                <img src="<?php echo base_url(); ?>assets/sbnoam_logo.png" alt="" class="rounded-circle" height="34">
                                             </span>
                                         </div>
                                     </a>
@@ -53,7 +51,7 @@
                                     <a href="<?php echo base_url(); ?>" class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="<?php echo base_url(); ?>assets/front-end/img/logo.png" alt="" class="rounded-circle" height="34">
+                                                <img src="<?php echo base_url(); ?>assets/sbnoam_logo.png" alt="" class="rounded-circle" height="34">
                                             </span>
                                         </div>
                                     </a>
