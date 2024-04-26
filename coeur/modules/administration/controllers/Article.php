@@ -10,7 +10,6 @@ class Article extends MX_Controller
         $this->load->model('article_model');
         $this->load->model('adminacl_model');
         $this->load->model('administration_model');
-        $this->load->model('Configvehicule_model');
         $this->load->model('configuration_model');
         $this->load->model('tplconfig_model');
     }
@@ -30,7 +29,6 @@ class Article extends MX_Controller
     {
         $data['onglet_title'] = "Ajout article";
         $data['marques'] = $this->article_model->get_method('app_article_marque');
-        $data['couleurs'] = $this->Configvehicule_model->get_couleur();
         $data['categories'] = $this->article_model->get_method('app_category');
         $data['sous-categories'] = $this->article_model->get_method('app_sous_category');
         $this->load->view('article/add_article', $data);
@@ -170,7 +168,6 @@ class Article extends MX_Controller
             $article_id = $this->input->post("article_id");
             $data['onglet_title'] = "Modification";
             $data['marques'] = $this->article_model->get_method('app_article_marque');
-            $data['couleurs'] = $this->Configvehicule_model->get_couleur();
             $data['categories'] = $this->article_model->get_method('app_category');
             $data['sous_categories'] = $this->article_model->get_method('app_sous_category');
             $data['articles_images'] = $this->article_model->get_method('app_image');
@@ -314,7 +311,6 @@ class Article extends MX_Controller
         $data['articles_images'] = $this->article_model->get_method('app_image');
         $data['categories'] = $this->article_model->get_method('app_category');
         $data['marques'] = $this->article_model->get_method('app_article_marque');
-        $data['couleurs'] = $this->Configvehicule_model->get_couleur();
         $data['sous_categories'] = $this->article_model->get_method('app_sous_category');
         $articles_img = array();
         foreach ($data['articles_images'] as $image){

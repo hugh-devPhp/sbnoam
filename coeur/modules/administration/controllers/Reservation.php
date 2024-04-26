@@ -12,8 +12,6 @@ class Reservation extends MX_Controller
         $this->load->model('configuration_model');
         $this->load->model('tplconfig_model');
         $this->load->model('article_model');
-        $this->load->model('automobile_model');
-        $this->load->model('configvehicule_model');
 
 
     }

@@ -3,7 +3,7 @@
     <div class="sigma-footer-top">
         <div class="container-fluid">
             <div class="row no-gutters">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
 
                     <div class="row">
                         <div class="col-lg-6">
@@ -11,102 +11,93 @@
                             <div class="sigma-backto-top">
                                 <a href="#" class="back-to-top" id="backToTop">
                                     <i class="fal fa-chevron-up"></i>
-                                    Back to Top
+                                    Retour en haut
                                 </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="h-100 d-flex align-items-center justify-content-end">
-                                <select>
-                                    <option>English</option>
-                                    <option>Español</option>
-                                </select>
-                                <select>
-                                    <option>USD</option>
-                                    <option>GBP</option>
-                                    <option>INR</option>
-                                </select>
                             </div>
                         </div>
                     </div>
 
                     <!--====== Footer content ======-->
-                    <div class="sigma-footer-box">
-                        <div class="sigma-footer-box-top">
-                            <div class="ft-logo">
-                                <a href="index-2.html">
-                                    <img src="assets/img/logo.png" alt="Logo">
-                                </a>
+                    <div class="sigma-footer-box" style="padding-bottom: 0;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="sigma-footer-box-top">
+                                    <div class="ft-logo">
+                                        <a href="index-2.html">
+                                            <img width="250" height="250" src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="Logo">
+                                        </a>
+                                    </div>
+                                    <ul class="ft-social-media">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="ft-social-media">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <div class="col-lg-6">
+                                <div class="sigma-footer-nav">
+                                    <ul class="ft-nav">
+                                        <li class="menu-item">
+                                            <a href="index-2.html">
+                                                Accueil
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="about.html">
+                                                Apropos de nous
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="blog-grid.html">
+                                                Blog
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="gallery.html">
+                                                Gallerie
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="contact.html">
+                                                Contact
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="sigma-footer-nav">
-                            <ul class="ft-nav">
-                                <li class="menu-item">
-                                    <a href="index-2.html">
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="about.html">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="blog-grid.html">
-                                        News
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="gallery.html">
-                                        Gallery
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="contact.html">
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-maps" id="map"></div>
                 </div>
             </div>
         </div>
     </div>
     <div class="sigma-footer-bottom">
         <div class="container-fluid">
-            <div class="sigma-footer-bottom-inner">
+            <div class="sigma-footer-bottom-inner" style="padding-top: 0; padding-bottom: 0;">
                 <div class="row no-gutters align-items-end">
                     <div class="col-lg-6">
                         <div class="sigma-footer-contact">
                             <ul>
                                 <li>
                                     <i class="flaticon-phone"></i>
-                                    <a href="tel:"><span>Phone Number</span> +987 876 765 76 577</a>
+                                    <a href="tel:"><span>Telephone</span> <?php echo $infos['contact1_info'] ?></a>
                                 </li>
                                 <li>
                                     <i class="flaticon-message"></i>
-                                    <a href="mailto:"><span>Email Address</span> info@webmail.com</a>
+                                    <a href="mailto:<?php echo $infos['email_info'] ?>"><span>Email</span> <?php echo $infos['email_info'] ?></a>
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +119,7 @@
                             <ul>
                                 <li>
                                     <i class="flaticon-location-pin"></i>
-                                    <a href="#"><span>Office Address</span> 14/A, Miranda City, NYC</a>
+                                    <a href="#"><span>Adresse bureau </span><?php echo $infos['localisation_info'] ?></a>
                                 </li>
                             </ul>
                         </div>
@@ -143,19 +134,7 @@
             <div class="sigma-copyright-inner">
                 <div class="row">
                     <div class="col-lg-6 col-md-5 order-2 order-md-1">
-                        <p class="sigma-copyright-text">Copyright By@<a href="#">Milarossa</a> - 2022</p>
-                    </div>
-                    <div class="col-lg-6 col-md-7 order-1 order-md-2">
-                        <div class="sigma-copyright-menu">
-                            <ul>
-                                <li>
-                                    <a href="#">Terms of use</a>
-                                </li>
-                                <li>
-                                    <a href="#">Privacy Environmental Policy</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <p class="sigma-copyright-text">Copyright By@<a href="#">shinebynoame</a> - 2022</p>
                     </div>
                 </div>
             </div>

@@ -38,8 +38,8 @@
             <div class="col-lg-6 col-md-8 col-sm-10 wow fadeInRight" data-wow-delay=".3s">
                 <div class="abour-text pl-50 pr-50">
                     <div class="section-title mb-30">
-                        <span class="title-tag">about us</span>
-                        <h2>Crafting Jewellery Since 1990.  </h2>
+                        <span class="title-tag">à propos de nous</span>
+                        <h2>Création de bijoux depuis 2020  </h2>
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor

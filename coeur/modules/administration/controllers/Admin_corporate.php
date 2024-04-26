@@ -91,7 +91,6 @@ class Admin_corporate extends MX_Controller
 
     function add_information(){
         if($_POST){
-
             $contact1 = $this->input->post('contact1');
             $contact2 = $this->input->post('contact2');
             $email = $this->input->post('email');
@@ -106,10 +105,9 @@ class Admin_corporate extends MX_Controller
 
             $config['upload_path'] = './uploads/logo';
             $config['allowed_types'] = 'jpeg|jpg|png';
-            $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
+            $config['file_name'] = date("Y_m_d_H_i_s_").rand();
 
             $img = array();
-
 
             $this->upload->initialize($config);
 

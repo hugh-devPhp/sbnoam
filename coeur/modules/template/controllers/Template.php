@@ -5,13 +5,14 @@ class Template extends MX_Controller {
     public function __construct() {
         parent::__construct();
 //        $this->load->model('article_model');
+        $this->load->model('administration/information_model');
     }
 
 
     function index(){
         $data['infos'] = $this->article_model->get_method('app_infos_gen');
         $data['sliders'] = $this->article_model->get_method('app_sliders');
-        $data['offers'] = $this->article_model->get_method('app_offer');
+        $data['offers'] =$this->information_model->get_information();
 
         $this->load->view('index', $data);
 

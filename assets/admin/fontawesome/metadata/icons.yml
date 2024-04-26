@@ -33675,7 +33675,7 @@ square-odnoklassniki:
 square-parking:
   aliases:
     names:
-      - parking
+      - collection
     unicodes:
       composite:
         - 1f17f
@@ -33695,7 +33695,7 @@ square-parking:
       - car
       - garage
       - meter
-      - parking
+      - collection
   styles:
     - solid
   unicode: f540

@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-md-8 col-sm-7">
                 <div class="section-title">
                     <span class="title-tag">Blog</span>
-                    <h2>News Feeds</h2>
+                    <h2>Fil d'actualité</h2>
                 </div>
             </div>
             <div class="col-lg-6 col-md-4 col-sm-5 d-none d-sm-block">

@@ -10,10 +10,9 @@ class Accueil extends MX_Controller {
         $this->load->model('administration/article_model');
         $this->load->model('administration/adminacl_model');
         $this->load->model('administration/administration_model');
-        $this->load->model('administration/Configvehicule_model');
         $this->load->model('administration/configuration_model');
         $this->load->model('administration/tplconfig_model');
-        $this->load->model('administration/automobile_model');
+        $this->load->model('administration/information_model');
     }
 
 
@@ -22,8 +21,8 @@ class Accueil extends MX_Controller {
         $donnees['categories'] = $this->article_model->get_method('app_category');
         $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
         $donnees['articles'] = $this->article_model->get_method('app_article');
-        $donnees['vehicules'] = $this->automobile_model->liste_vehicule();
-        $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
+        $infos = $this->information_model->get_information();
+        $donnees['infos'] = (array)$infos[0];
         $donnees['sliders'] = $this->article_model->get_method('app_sliders');
         $donnees['offers'] = $this->accueil_model->offre();
 

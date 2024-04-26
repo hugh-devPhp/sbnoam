@@ -11,7 +11,7 @@
         </ul>
     </div>
 
-    <div class="d-none d-md-block vertical-text right wow fadeIn" data-wow-delay=".3s">
+    <div class="d-none d-md-block vertical-text right wow fadeIn mt-5" data-wow-delay=".3s">
         <span>Appelez nous: </span>
         <span>+225 78 70 17 73</span>
     </div>
@@ -35,9 +35,15 @@
             <div class="col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="0.5s">
                 <div class="banner-thumb d-none d-md-block">
                     <div class="hero-slider-one">
+                        <?php
+                        foreach ($sliders as $slider):
+                        ?>
                         <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b9.jpeg" alt="images">
+                            <img width="500" height="600" src="<?php echo base_url()?>uploads/site/<?php echo $slider['slider_image'] ?>" alt="images">
                         </div>
+                        <?php
+                        endforeach;
+                        ?>
                         <div class="single-thumb">
                             <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b6-2.png" alt="images">
                         </div>

@@ -28,12 +28,11 @@
 <!--====== Mapbox Map ======-->
 <script src="<?php echo base_url()?>assets/front-end/js/leaflet.js"></script>
 <script src="<?php echo base_url()?>assets/front-end/js/mapbox-gl.min.js"></script>
-<script src="<?php echo base_url()?>assets/front-end/js/map.js"></script>
+
 <!--====== Main js ======-->
 <script src="<?php echo base_url()?>assets/front-end/js/main.js"></script>
 <script>
     $(document).ready(function (){
-
         $('#form_newsletter').on('submit', function(e){
             e.preventDefault();
             var email_news = $('#email_news').val();
@@ -47,7 +46,6 @@
                 $('#message_newletters').html('Format d\'e-mail invalide').css('color', 'red');
                 return false;
             }
-
 
             $.ajax({
                 url: "<?php echo base_url();?>contact/newletters/",
@@ -71,7 +69,6 @@
             });
 
         })
-
     })
 </script>
 <!-- JS Plugins Init. -->

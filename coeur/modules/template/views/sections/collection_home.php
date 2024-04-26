@@ -16,11 +16,11 @@
                           d="M456.607,435.393l-63-63c-5.858-5.857-15.356-5.857-21.213,0c-5.858,5.858-5.858,15.356,0,21.213l63,63    c2.928,2.929,6.767,4.394,10.606,4.394s7.678-1.465,10.607-4.394C462.465,450.748,462.465,441.25,456.607,435.393z" fill="#613228" />
           </svg>
             </div>
-            <span class="title-tag"> avail our offer  </span>
-            <h2>Trending Collection</h2>
+            <span class="title-tag"> Profitez de nos offres  </span>
+            <h2>Collections tendances</h2>
         </div>
         <div class="text-center mb-20">
-            <a href="#">View more
+            <a href="#">Voir plus
                 <i class="fal fa-arrow-right ml-2"></i>
             </a>
         </div>
