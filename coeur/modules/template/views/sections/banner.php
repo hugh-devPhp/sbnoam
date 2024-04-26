@@ -44,24 +44,6 @@
                         <?php
                         endforeach;
                         ?>
-                        <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b6-2.png" alt="images">
-                        </div>
-                        <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b7.jpeg" alt="images">
-                        </div>
-                        <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b4.jpeg" alt="images">
-                        </div>
-                        <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b8.jpeg" alt="images">
-                        </div>
-                        <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b5.jpeg" alt="images">
-                        </div>
-                        <div class="single-thumb">
-                            <img width="500" height="600" src="<?php echo base_url()?>assets/front-end/img/banner/b6.jpeg" alt="images">
-                        </div>
                     </div>
                 </div>
             </div>

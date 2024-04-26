@@ -25,11 +25,7 @@
                                 <tr>
                                     <th width="5%">#</th>
                                     <th width="15%">Slider</th>
-                                    <th>Titre</th>
-                                    <th>Courte description</th>
-                                    <th>prix (fcfa)</th>
-                                    <th>Lien</th>
-                                    <th>Text bouton</th>
+                                    <th>Date ajout</th>
                                     <th>Statut</th>
                                     <th width="10%">
                                         <button type="button" class="btn btn-sm btn-primary"
@@ -50,11 +46,7 @@
                                         <td><?php echo $i; ?></td>
                                         <td><img src="<?php echo base_url() ?>uploads/site/<?php echo $slider['slider_image']; ?>" alt=""
                                                  style="width: 200px;"></td>
-                                        <td valign="middle"><?php echo $slider['titre']; ?></td>
-                                        <td valign="middle"><?php echo $slider['description']; ?></td>
-                                        <td valign="middle"><?php echo $slider['price']; ?></td>
-                                        <td valign="middle"><?php echo $slider['lien_slider']; ?></td>
-                                        <td valign="middle"><?php echo $slider['bouton_label']; ?></td>
+                                        <td valign="middle"><?php echo $slider['date_add']; ?></td>
                                         <td valign="middle">
                                             <?php
                                             if ($slider['statut']):
@@ -69,9 +61,6 @@
                                             ?>
                                         </td>
                                         <td align="middle" valign="middle">
-                                            <button type="button" class="btn btn-outline-warning edite"
-                                                    data-id="<?php echo $slider['slider_id']; ?>">
-                                                <i class="far fa-edit"></i></button>
                                             <button type="button" class="btn btn-outline-danger delete"
                                                     data-id="<?php echo $slider['slider_id']; ?>" data-name="<?php echo $slider['slider_image']; ?>">
                                                 <i class="far fa-trash-alt"></i></button>
@@ -101,29 +90,9 @@
                 <form action="" method="post" id="add_slider" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="titre" class="col-form-label">Titre:</label>
-                            <input type="text" id="titre" class="form-control" name="titre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="description" class="col-form-label">Courte Description:</label>
-                            <input type="text" id="description" name="description" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="price" class="col-form-label">Prix:</label>
-                            <input type="text" id="price" name="price" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="bouton_label" class="col-form-label">Texte bouton:</label>
-                            <input type="text" id="bouton_label" name="bouton_label" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="lien_slider" class="col-form-label">Lien slider:</label>
-                            <input type="text" id="lien_slider" name="lien_slider" class="form-control">
-                        </div>
-                        <div class="mb-3">
                             <label for="position" class="col-form-label">Image:</label>
                             <input type="file" name="image" class="form-control" required>
-                            <span>Taille recommandée : 416 x 420 px</span>
+                            <span>Taille recommandée : 500 x 600 px</span>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -136,62 +105,6 @@
     </div>
 </div>
 
-<div>
-    <div class="modal fade" id="editeModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editeModalLabel">Modification Slider</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="#" method="post" id="update_slider" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="titre" class="col-form-label">Titre:</label>
-                            <input type="text" class="form-control" name="titre" id="edit_titre" required>
-                            <input type="hidden" name="slider_id" id="id">
-                        </div>
-                        <div class="mb-3">
-                            <label for="description" class="col-form-label">Courte Description:</label>
-                            <input type="text" name="description" id="edit_description" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_price" class="col-form-label">Prix:</label>
-                            <input type="number" name="price" id="edit_price" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_bouton_label" class="col-form-label">Texte bouton:</label>
-                            <input type="text" id="edit_bouton_label" name="bouton_label" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_lien_slider" class="col-form-label">Lien slider:</label>
-                            <input type="text" id="edit_lien_slider" name="lien_slider" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="statut" class="col-form-label">Statut:</label>
-                            <select name="statut" id="statut" class="form-control">
-                                <option value="" id="option1">selection</option>
-                                <option value="1">Activé</option>
-                                <option value="0">Désactivé</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_image" class="col-form-label">Image:</label>
-                            <input type="file" name="slider" id="edit_image" class="form-control">
-                            <span>Taille recommandée : 416 x 420 px</span>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                        <button type="submit" id="btn-edite" class="btn btn-success">Modifier</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Required datatable js -->
 <script src="<?php echo base_url(); ?>assets/admin/libs/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -246,61 +159,6 @@
         });
     });
 
-    $('.edite').on('click', function () {
-        var id = $(this).attr('data-id');
-        $.ajax({
-            url: "<?php echo base_url(); ?>administration/admin_corporate/get_slider_for_edit",
-            method: 'post',
-            data: {
-                'slider_id': id,
-            },
-            dataType: 'json',
-            success: function (response) {
-                $('#id').val(response.slider_id);
-                $('#edit_titre').val(response.titre);
-                $('#edit_description').val(response.description);
-                $('#edit_price').val(response.price);
-                $('#edit_lien_slider').val(response.lien_slider);
-                $('#edit_bouton_label').val(response.bouton_label);
-
-                $('#option1').val(response.statut);
-                if (response.statut) {
-                    $('#option1').text('Activé');
-                } else {
-                    $('#option1').text('Désactivé');
-                }
-                $('#editeModal').modal('toggle');
-            }
-        })
-
-    })
-
-    $("#update_slider").on('submit', function (e) {
-        e.preventDefault();
-        var data = new FormData(this);
-        $('#btn-edite').html('Modification en cours...');
-        $('#btn-edite').attr('disabled', 'disabled');
-        $.ajax({
-            url: "<?php echo base_url(); ?>administration/admin_corporate/edit_slider",
-            method: 'post',
-            data: data,
-            dataType: 'json',
-            processData: false,
-            contentType: false,
-            success: function (json) {
-                $('#editeModal').modal('toggle');
-                if (json) {
-                    Notiflix.Notify.success("Modifié.");
-                    $("#getcontent").load("<?php echo base_url("administration/admin_corporate/get_sliders") ?>");
-                } else {
-                    Notiflix.Notify.failure(
-                        response['detail'], {
-                            timeout: 5000,
-                        });
-                }
-            }
-        })
-    })
 
     $(".delete").click(function () {
         var id = $(this).attr('data-id');

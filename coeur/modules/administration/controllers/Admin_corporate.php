@@ -167,16 +167,6 @@ class Admin_corporate extends MX_Controller
     function add_slider()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $this->form_validation->set_rules('titre', 'titre', 'required');
-
-            if ($this->form_validation->run()) {
-                $titre = $this->input->post("titre");
-                $description = $this->input->post("description");
-                $price = $this->input->post("price");
-                $lien_slider = $this->input->post("lien_slider");
-                $bouton_label = $this->input->post("bouton_label");
-
-
                 //Upload Image
                 $config['upload_path'] = './uploads/site';
                 $config['allowed_types'] = 'jpeg|jpg|png|webp';
@@ -187,12 +177,7 @@ class Admin_corporate extends MX_Controller
                 if ($this->upload->do_upload('image')) {
                     $image = $this->upload->data('file_name');
                     $slider = array(
-                        "titre" => strtolower($titre),
                         'date_add' => date("Y-m-d H:i:s"),
-                        'price' => $price,
-                        'description' => $description,
-                        'lien_slider' => $lien_slider,
-                        'bouton_label' => $bouton_label,
                         "slider_image" => $image
                     );
                     $rep = $this->article_model->add_method('app_sliders', $slider);
@@ -202,7 +187,6 @@ class Admin_corporate extends MX_Controller
                     $error = array('error' => $this->upload->display_errors());
                     echo json_encode($error);
                 }
-            }
         } else {
             echo json_encode('Validation failed');
         }
@@ -213,58 +197,6 @@ class Admin_corporate extends MX_Controller
         $slider_id = $this->input->post("slider_id");
         $slider = $this->article_model->get_method_where('app_sliders', array( 'slider_id'=>$slider_id ));
         echo json_encode($slider[0]);
-    }
-
-    function edit_slider()
-    {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $this->form_validation->set_rules('titre', 'titre', 'required');
-
-            if ($this->form_validation->run()) {
-                $slider_id = $this->input->post("slider_id");
-                $titre = $this->input->post("titre");
-                $description = $this->input->post("description");
-                $price = $this->input->post("price");
-                $statut = $this->input->post("statut");
-                $lien_slider = $this->input->post("lien_slider");
-                $bouton_label = $this->input->post("bouton_label");
-
-                //Upload Image
-                $config['upload_path'] = './uploads/site';
-                $config['allowed_types'] = 'jpeg|jpg|png|webp';
-                $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
-
-                // Charger la bibliothèque de téléchargement une seule fois
-                $this->upload->initialize($config);
-                if ($this->upload->do_upload('slider')) {
-                    $image = $this->upload->data('file_name');
-                    $slider = array(
-                        "titre" => strtolower($titre),
-                        'date_update' => date("Y-m-d H:i:s"),
-                        'price' => $price,
-                        'description' => $description,
-                        'lien_slider' => $lien_slider,
-                        'bouton_label' => $bouton_label,
-                        "slider_image" => $image,
-                        "statut" => $statut
-                    );
-                } else {
-                    $slider = array(
-                        "titre" => strtolower($titre),
-                        'date_update' => date("Y-m-d H:i:s"),
-                        'price' => $price,
-                        'description' => $description,
-                        'lien_slider' => $lien_slider,
-                        'bouton_label' => $bouton_label,
-                        "statut" => $statut
-                    );
-                }
-                $rep = $this->article_model->update_method('app_sliders', $slider, array('slider_id' => $slider_id));
-                echo json_encode(true);
-            }
-        } else {
-            echo json_encode('Validation failed');
-        }
     }
 
     function delete_slider()
