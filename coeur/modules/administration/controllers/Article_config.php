@@ -25,6 +25,49 @@ class Article_config extends MX_Controller
         $this->load->view('intro_view', $data);
     }
 
+    function get_collections()
+    {
+        $data['onglet_title'] = "Liste des catégories";
+        $data['collections'] = $this->article_model->get_method('app_collection');
+        $this->load->view('article/collection_view', $data);
+    }
+
+    function add_collections()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $this->form_validation->set_rules('name', "name", 'required');
+            if ($this->form_validation->run()) {
+                $name = $this->input->post("name");
+                //Upload Image
+                $config['upload_path'] = './uploads/collections';
+                $config['allowed_types'] = 'jpeg|jpg|png|webp';
+                $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
+
+                // Charger la bibliothèque de téléchargement une seule fois
+                $this->upload->initialize($config);
+                if ($this->upload->do_upload('image')) {
+                    $image = $this->upload->data('file_name');
+                    $slider = array(
+                        'name' => $name,
+                        'date_add' => date("Y-m-d H:i:s"),
+                        "image_princ" => $image
+                    );
+                    $rep = $this->article_model->add_method('app_collection', $slider);
+
+                    $response = array('reponse' => true);
+                } else {
+                    $error = array('error' => $this->upload->display_errors());
+                    $response = array('reponse' => $error);
+                }
+            } else {
+                $response = array('reponse' => false);
+            }
+        } else {
+            $response = array('reponse' => 'Validation failed');
+        }
+        echo json_encode($response);
+    }
+
     function get_categories()
     {
         $data['onglet_title'] = "Liste des catégories";
