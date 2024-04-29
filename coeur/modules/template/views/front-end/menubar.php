@@ -438,31 +438,15 @@ $infos = (array)$infoss[0];
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="menu-item menu-item-has-children">
+                                    <li class="menu-item">
                                         <a href="#">
                                             Blog
                                         </a>
                                     </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">
-                                            Pages
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item">
-                                                <a href="<?php echo base_url()?>a_propos/index">A propos</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="classification.html">Classification</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="gallery.html">Gallerie</a>
-                                            </li>
-<!--                                            <li class="menu-item">-->
-<!--                                                <a href="team.html">Team</a>-->
-<!--                                            </li>-->
-                                        </ul>
+                                    <li class="menu-item">
+                                        <a href="<?php echo base_url()?>a_propos/index">A propos</a>
                                     </li>
-                                    <li class="menu-item menu-item-has-children">
+                                    <li class="menu-item">
                                         <a href="about.html">
                                             Boutique
                                         </a>

@@ -40,22 +40,6 @@
                 Blog
             </a>
         </li>
-        <li class="menu-item menu-item-has-children">
-            <a href="#">
-                Pages
-            </a>
-            <ul class="sub-menu">
-                <li class="menu-item">
-                    <a href="classification.html">Classification</a>
-                </li>
-                <li class="menu-item">
-                    <a href="gallery.html">Gallerie</a>
-                </li>
-<!--                <li class="menu-item">-->
-<!--                    <a href="team.html">Team</a>-->
-<!--                </li>-->
-            </ul>
-        </li>
         <li class="menu-item">
             <a href="about.html">
                 A propos
