@@ -1,17 +1,4 @@
-<!--====== BREADCRUMB PART START ======-->
-<section class="breadcrumb-area" style="background-image: url(<?php echo base_url()?>/assets/front-end/img/bg/04.jpg);">
-    <div class="container">
-        <div class="breadcrumb-text">
-            <span>CRÉATION ET VENTE DE BIJOUX</span>
-            <h2 class="page-title">Apropos de nous</h2>
-            <ul class="breadcrumb-nav">
-                <li><a href="<?php echo base_url()?>">Accueil</a></li>
-                <li class="active">Apropos</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--====== BREADCRUMB PART END ======-->
+
 
 <!--====== ABOUT PART START ======-->
 <section class="about-section pt-115 pb-115">

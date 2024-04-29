@@ -10,7 +10,8 @@ class Contact extends MX_Controller {
 
 
     function index(){
-        $donnees['menu_actif'] = "contact";
+        $donnees['title'] = "Contactez nous";
+        $donnees['menu_actif'] = "Contact";
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
         $donnees['categories'] = $this->article_model->get_method('app_category');
         $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
@@ -20,14 +21,10 @@ class Contact extends MX_Controller {
     }
 
     function message(){
-
-
-
-
-        $nom = $this->input->post('nom');
+        $nom = $this->input->post('name');
         $contact = $this->input->post('phone');
         $email = $this->input->post('email');
-        $objet = $this->input->post('objet');
+        $objet = $this->input->post('subject');
         $message = $this->input->post('message');
 
         $data = array("nom"=>$nom, "telephone"=>$contact, "email"=>$email, "objet"=>$objet, "message"=>$message, "date_add"=>date('Y-m-d'), "is_read"=>0);
@@ -37,49 +34,6 @@ class Contact extends MX_Controller {
         $this->session->set_flashdata('success', "Votre message a bien été envoyé");
 
         redirect('contact');
-
-//            $email = strtolower($email);
-//            $message_form = "<p><strong> Prospect : </strong> ".$nom." ".$prenom."</p>";
-//            $message_form .= "<p><strong>Email  : </strong>".$email."</p>";
-//            $message_form .= "<p><strong>Objet  : </strong>".$objet."</p>";
-//            $message_form .= "<p><strong> Demande  : </strong>".$message."</p>";
-//
-//
-//
-//            $config['protocol'] = "smtp";
-//            $config['smtp_host'] = "ssl://mail55.lwspanel.com";
-//            $config['smtp_port'] = "465";
-//            $config['smtp_user'] = "infos@safezone-it.com";
-//            $config['smtp_pass'] = "Safezone123!";
-//            $config['mailtype'] = "html";
-//            $config['charset'] = "utf-8";
-//            $config['wordwrap'] = TRUE;
-//            $config['newline'] = "\r\n";
-
-
-
-
-//            $message = "<p style='font: 18px 900 arial'>test</p>";
-
-//            $this->load->library('email', $config);
-//            $this->email->initialize($config);
-//            $this->email->from('infos@safezone-it.com', 'Demande de Vedis');
-//            $this->email->to("commercial@safezone-it.com");
-//            $this->email->subject("$objet");
-//            $this->email->message($message_form);
-//            // $this->email->send();
-//
-//            if (!$this->email->send()) {
-//                echo json_encode(show_error($this->email->print_debugger()));
-//            }
-//            else{
-//                $this->session->set_flashdata("success", "Votre message a bien été envoyé");
-//                redirect('contact');
-//                echo json_encode(array("reponse"=>"1"));
-//            }
-
-
-
     }
 
     function newletters(){

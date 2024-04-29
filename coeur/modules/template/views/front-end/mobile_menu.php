@@ -1,3 +1,12 @@
+<?php
+$this->load->model('administration/information_model');
+$this->load->model('administration/article_model');
+$categories = $this->article_model->get_method('app_category');
+$sous_categories = $this->article_model->get_method('app_sous_category');
+$infoss = $this->information_model->get_information();
+$infos = (array)$infoss[0];
+?>
+
 <!-- Mobile Header Start -->
 <div class="sigma-mobile-header">
     <div class="container">
@@ -41,12 +50,12 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="about.html">
+            <a href="<?php echo base_url()?>a_propos/index">
                 A propos
             </a>
         </li>
         <li class="menu-item">
-            <a href="contact.html">
+            <a href="<?php echo base_url()?>contact/index">
                 Contact
             </a>
         </li>

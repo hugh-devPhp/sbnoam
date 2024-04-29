@@ -12,7 +12,8 @@ class A_propos extends MX_Controller {
 
 
     function index(){
-        $donnees['menu_actif'] = "a_propos";
+        $donnees['title'] = "Apropos de nous";
+        $donnees['menu_actif'] = "Apropos";
         $donnees['page_content'] = "apropos_view";
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
         $this->load->view('index', $donnees);

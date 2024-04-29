@@ -63,7 +63,7 @@ $infos = (array)$infoss[0];
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="about.html">
+                                            <a href="<?php echo base_url()?>a_propos/index">
                                                 Apropos de nous
                                             </a>
                                         </li>
@@ -74,11 +74,11 @@ $infos = (array)$infoss[0];
                                         </li>
                                         <li class="menu-item">
                                             <a href="gallery.html">
-                                                Gallerie
+                                                Gallérie
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="contact.html">
+                                            <a href="<?php echo base_url()?>contact/index">
                                                 Contact
                                             </a>
                                         </li>
