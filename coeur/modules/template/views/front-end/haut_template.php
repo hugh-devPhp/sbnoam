@@ -8,7 +8,8 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--====== Title ======-->
-    <title> SBNoame </title><?php $this->load->view('template/front-end/base_css')?>
+    <title> SBNoame </title>
+    <?php $this->load->view('template/front-end/base_css')?>
 
 </head>
 

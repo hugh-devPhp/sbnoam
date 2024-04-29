@@ -1,63 +1,149 @@
-<main id="content" role="main">
-    <!-- breadcrumb -->
-    <div class="bg-gray-13 bg-md-transparent">
-        <div class="container">
-            <!-- breadcrumb -->
-            <div class="my-md-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="<?php echo base_url()?>accueil">Accueil</a></li>
-                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">A propos</li>
-                    </ol>
-                </nav>
-            </div>
-            <!-- End breadcrumb -->
-        </div>
-    </div>
-    <!-- End breadcrumb -->
-
+<!--====== BREADCRUMB PART START ======-->
+<section class="breadcrumb-area" style="background-image: url(<?php echo base_url()?>/assets/front-end/img/bg/04.jpg);">
     <div class="container">
-        <div class="row mb-8">
-            <div class="col-12">
-                <article id="post-9471" class="post-9471 page type-page status-publish hentry">
-                    <header class="entry-header">
-                        <h1 class="entry-title" style="text-align:center">A propos de nous</h1>
-                    </header><!-- .entry-header -->
-                    <div class="entry-content">
-                        <div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
-                                        <div class="wpb_text_column wpb_content_element " >
-                                            <div class="wpb_wrapper">
-                                                <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></p>
-                                            </div>
-                                        </div>
-                                    </div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
-                                        <div class="wpb_text_column wpb_content_element " >
-                                            <div class="wpb_wrapper">
-                                                <p> </span></span></p>
-                                                <h2><strong>IVOIRE LAGUNE SERVICE de sa création à aujourd&#8217;hui</strong></h2>
-                                                <p>Rogatus ad ultimum admissusque in consistorium ambage nulla praegressa inconsiderate et leviter proficiscere
-                                                    inquit ut praeceptum est, Caesar sciens quod si cessaveris, et tuas et palatii tui auferri iubebo prope diem annonas.
-                                                    hocque solo contumaciter dicto subiratus abscessit nec in conspectum eius postea venit saepius arcessitus.
+        <div class="breadcrumb-text">
+            <span>CRÉATION ET VENTE DE BIJOUX</span>
+            <h2 class="page-title">Apropos de nous</h2>
+            <ul class="breadcrumb-nav">
+                <li><a href="<?php echo base_url()?>">Accueil</a></li>
+                <li class="active">Apropos</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--====== BREADCRUMB PART END ======-->
 
-                                                    Adolescebat autem obstinatum propositum erga haec et similia multa scrutanda, stimulos admovente regina,
-                                                    quae abrupte mariti fortunas trudebat in exitium praeceps, cum eum potius lenitate feminea ad veritatis
-                                                    humanitatisque viam reducere utilia suadendo deberet, ut in Gordianorum actibus factitasse Maximini truculenti
-                                                    illius imperatoris rettulimus coniugem.
+<!--====== ABOUT PART START ======-->
+<section class="about-section pt-115 pb-115">
+    <div class="container">
+        <div class="video-wrap video-wrap-two video-about mb-60" style="background-image: url(<?php echo base_url()?>/assets/front-end/img/text-block/04.jpg);">
+            <a href="<?php echo base_url()?>/assets/video/shine.mp4" class="popup-video"><i class="fas fa-play"></i></a>
+        </div>
+        <div class="section-title about-title text-center">
+            <span class="title-tag">Depuis <span>2022</span></span>
+            <h4>
+                Bienvenue chez SHYNE BY NOAME, votre destination en ligne pour des bijoux et accessoires uniques et inspirants.
+                Nous nous engageons à créer des pièces magnifiques qui racontent des histoires et captivent votre imagination.
 
-                                                    Dumque ibi diu moratur commeatus opperiens, quorum translationem ex Aquitania verni imbres solito crebriores
-                                                    prohibebant auctique torrentes, Herculanus advenit protector domesticus, Hermogenis ex magistro equitum filius, apud Constantinopolim, ut supra rettulimus, populari quondam turbela discerpti. quo verissime referente quae Gallus egerat,
-                                                    damnis super praeteritis maerens et futurorum timore suspensus angorem animi quam diu potuit emendabat.</p>
-                                            </div>
-                                        </div>
-                                    </div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
-                                    </div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="wpb_gallery wpb_content_element vc_clearfix" ><div class="wpb_wrapper"><div class="wpb_gallery_slides wpb_flexslider flexslider_fade flexslider" data-interval="3" data-flex_fx="fade">
+                Chez SHYNE BY NOAME, chaque bijou est méticuleusement conçu avec amour et soin, alliant artisanat traditionnel
+                et style contemporain. Nos collections variées vous offrent un éventail de choix, des pièces délicates pour le quotidien
+                aux créations audacieuses pour les occasions spéciales.
 
-                                                </div></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
-                                    </div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
-                                    </div></div></div></div>
-                    </div><!-- .entry-content -->
-                </article><!-- #post-## -->
+                Nous croyons en la beauté intemporelle des détails et nous nous efforçons d'offrir à nos SHYNÉS des bijoux qui expriment
+                votre individualité et votre élégance personnelle. Explorez notre sélection et laissez-vous inspirer par notre
+                passion pour l'art de la joaillerie.
+
+                Découvrez votre prochain trésor chez SHYNE BY NOAME.
+            </h4>
+        </div>
+        <ul class="about-features">
+            <li class="wow fadeInUp" data-wow-delay=".3s">
+                <a href="#">
+                    <i class="flaticon-ring"></i>
+                    <i class="hover-icon flaticon-ring"></i>
+                    <span class="title">Diamond Ring</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".4s">
+                <a href="#">
+                    <i class="flaticon-bracelet"></i>
+                    <i class="hover-icon flaticon-bracelet"></i>
+                    <span class="title">Bracelets</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".5s">
+                <a href="#">
+                    <i class="flaticon-necklace"></i>
+                    <i class="hover-icon flaticon-necklace"></i>
+                    <span class="title">Necklaces</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".6s">
+                <a href="#">
+                    <i class="flaticon-bracelet-2"></i>
+                    <i class="hover-icon flaticon-bracelet-2"></i>
+                    <span class="title">Pendants</span>
+                </a>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".7s">
+                <a href="#">
+                    <i class="flaticon-earrings"></i>
+                    <i class="hover-icon flaticon-earrings"></i>
+                    <span class="title">Earrings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--====== ABOUT PART END ======-->
+
+<!--====== INSTAGRAM FEED PART START ======-->
+<section>
+<div class="instagram-feed-section">
+    <div class="container-fluid p-0">
+        <div class="instagram-slider">
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/01.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/01.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/02.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/02.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/03.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/03.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/04.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/04.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/05.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/05.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/06.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/06.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/01.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/01.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/02.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/02.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/03.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/03.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/04.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/04.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/05.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/05.jpg" alt="instagram-feed">
+                </a>
+            </div>
+            <div class="image">
+                <a href="<?php echo base_url()?>/assets/front-end/img/instagram/06.jpg" class="insta-popup">
+                    <img src="<?php echo base_url()?>/assets/front-end/img/instagram/06.jpg" alt="instagram-feed">
+                </a>
             </div>
         </div>
     </div>
-</main>
+</div>
+</section>
+<!--====== INSTAGRAM FEED PART END ======-->

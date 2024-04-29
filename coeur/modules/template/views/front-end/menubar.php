@@ -1,3 +1,11 @@
+<?php
+$this->load->model('administration/information_model');
+$this->load->model('administration/article_model');
+$categories = $this->article_model->get_method('app_category');
+$sous_categories = $this->article_model->get_method('app_sous_category');
+$infoss = $this->information_model->get_information();
+$infos = (array)$infoss[0];
+?>
 <div class="main-menu-area sticky-header">
     <div class="container-fluid container-custom-three">
         <div class="nav-container d-flex align-items-center justify-content-between">
@@ -24,7 +32,7 @@
                             <nav>
                                 <ul class="sigma-main-menu">
                                     <li class="menu-item menu-item-has-children">
-                                        <a href="#">
+                                        <a href="<?php echo base_url()?>">
                                             Accueil
                                         </a>
                                     </li>
@@ -441,7 +449,7 @@
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="menu-item">
-                                                <a href="about.html">A propos</a>
+                                                <a href="<?php echo base_url()?>a_propos/index">A propos</a>
                                             </li>
                                             <li class="menu-item">
                                                 <a href="classification.html">Classification</a>
