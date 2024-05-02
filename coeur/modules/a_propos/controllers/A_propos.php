@@ -5,7 +5,7 @@ class A_propos extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('administration/article_model');
-
+        $this->load->model('administration/information_model');
         visitor();
     }
 
@@ -15,7 +15,10 @@ class A_propos extends MX_Controller {
         $donnees['title'] = "Apropos de nous";
         $donnees['menu_actif'] = "Apropos";
         $donnees['page_content'] = "apropos_view";
-        $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
+        $infoss = $this->information_model->get_information();
+        $categories = $this->article_model->get_method('app_category');
+        $sous_categories = $this->article_model->get_method('app_sous_category');
+        $donnees['infos'] = (array)$infoss[0];
         $this->load->view('index', $donnees);
 
     }

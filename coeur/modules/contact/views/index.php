@@ -1,11 +1,3 @@
-<?php
-$this->load->model('administration/information_model');
-$this->load->model('administration/article_model');
-$categories = $this->article_model->get_method('app_category');
-$sous_categories = $this->article_model->get_method('app_sous_category');
-$infoss = $this->information_model->get_information();
-$infos = (array)$infoss[0];
-?>
 
 <?php $this->load->view('template/front-end/haut_template', array("title"=>$menu_actif))?>
 <!-- ========== END HEADER ========== -->

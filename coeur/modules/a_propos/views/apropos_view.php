@@ -8,20 +8,7 @@
         </div>
         <div class="section-title about-title text-center">
             <span class="title-tag">Depuis <span>2022</span></span>
-            <h4>
-                Bienvenue chez SHYNE BY NOAME, votre destination en ligne pour des bijoux et accessoires uniques et inspirants.
-                Nous nous engageons à créer des pièces magnifiques qui racontent des histoires et captivent votre imagination.
-
-                Chez SHYNE BY NOAME, chaque bijou est méticuleusement conçu avec amour et soin, alliant artisanat traditionnel
-                et style contemporain. Nos collections variées vous offrent un éventail de choix, des pièces délicates pour le quotidien
-                aux créations audacieuses pour les occasions spéciales.
-
-                Nous croyons en la beauté intemporelle des détails et nous nous efforçons d'offrir à nos SHYNÉS des bijoux qui expriment
-                votre individualité et votre élégance personnelle. Explorez notre sélection et laissez-vous inspirer par notre
-                passion pour l'art de la joaillerie.
-
-                Découvrez votre prochain trésor chez SHYNE BY NOAME.
-            </h4>
+            <h4><?php echo $infos['court_description'] ?></h4>
         </div>
         <ul class="about-features">
             <li class="wow fadeInUp" data-wow-delay=".3s">

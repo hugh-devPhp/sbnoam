@@ -6,15 +6,17 @@ class Contact extends MX_Controller {
         parent::__construct();
         $this->load->model('administration/article_model');
         $this->load->model('contact_model');
+        $this->load->model('administration/information_model');
     }
 
 
     function index(){
         $donnees['title'] = "Contactez nous";
         $donnees['menu_actif'] = "Contact";
-        $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
         $donnees['categories'] = $this->article_model->get_method('app_category');
         $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
+        $infoss = $this->information_model->get_information();
+        $donnees['infos'] = (array)$infoss[0];
 
         $this->load->view('index', $donnees);
 

@@ -1,11 +1,3 @@
-<?php
-$this->load->model('administration/information_model');
-$this->load->model('administration/article_model');
-$categories = $this->article_model->get_method('app_category');
-$sous_categories = $this->article_model->get_method('app_sous_category');
-$infoss = $this->information_model->get_information();
-$infos = (array)$infoss[0];
-?>
 <div class="main-menu-area sticky-header">
     <div class="container-fluid container-custom-three">
         <div class="nav-container d-flex align-items-center justify-content-between">
