@@ -14,7 +14,7 @@
                             <button type="button" data-bs-toggle="modal" data-bs-target="#add_cat_modal" class="btn btn-primary waves-effect waves-light">Ajouter +
                             </button>
                         </div>
-                        <a href="javascript:" class="btn btn-sm btn-danger float-end" id="delete_all_cat">
+                        <a href="javascript:" class="btn btn-sm btn-outline-danger float-end" id="delete_all_cat">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                         <input class="btn btn-outline-primary form-check-input form-check-success float-end waves-effect waves-light me-2" type="checkbox" name="checkAllCat" id="checkAllCat">
@@ -38,10 +38,12 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cat['name']; ?></td>
                                 <td>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#manage_cat_modal" onclick="record_name('<?php echo $cat['category_id']; ?>', '<?php echo $cat['name']; ?>')" class="btn btn-success waves-effect waves-light me-2">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#manage_cat_modal" onclick="record_name('<?php echo $cat['category_id']; ?>', '<?php echo $cat['name']; ?>')"
+                                            class="btn btn-outline-success waves-effect waves-light me-2">
                                         <i class="bx bx-pencil font-size-16"></i>
                                     </button>
-                                    <button type="button" onclick="delete_cat('<?php echo $cat['category_id']; ?>')" class="btn btn-danger waves-effect waves-light me-2">
+                                    <button type="button" onclick="delete_cat('<?php echo $cat['category_id']; ?>')"
+                                            class="btn btn-outline-danger waves-effect waves-light me-2">
                                         <i class="bx bx-trash font-size-16"></i>
                                     </button>
                                     <button class="btn btn-outline-primary waves-effect waves-light me-2">

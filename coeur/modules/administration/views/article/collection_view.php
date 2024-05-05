@@ -12,13 +12,17 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="collection-pills" role="tabpanel"
                          aria-labelledby="collection-tab">
-                        <div>
-                            <div class="row mb-3">
-                                <div class="col-lg">
-                                    <h4 class="color-r">Liste des collections</h4>
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $onglet_title; ?></h4>
+                            <div class="mb-3 page-title-right">
+                                <div class="mb-2">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                            class="btn btn-primary waves-effect waves-light">Ajouter +
+                                    </button>
                                 </div>
                             </div>
-                            <table id="datatable"
+                        </div>
+                        <table id="datatable"
                                    class="table table-bordered dt-responsive  nowrap w-100 text-center"
                                    style="width:100%">
                                 <thead>
@@ -29,11 +33,6 @@
                                     <th>Date création</th>
                                     <th>Statut</th>
                                     <th width="10%">
-                                        <button type="button" class="btn btn-sm btn-primary"
-                                                id="add" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                data-bs-whatever="@getbootstrap" style="float:right">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
                                         Action
                                     </th>
                                 </tr>
@@ -50,7 +49,7 @@
                                                  style="width: 100px; height: 60px;">
                                         </td>
                                         <td><?php echo $collection['name']; ?></td>
-                                        <td valign="middle"><?php echo $collection['date_add']; ?></td>
+                                        <td valign="middle"><?php echo $collection['date_creation']; ?></td>
                                         <td valign="middle">
                                             <?php
                                             if ($collection['statut']):
@@ -65,9 +64,15 @@
                                             ?>
                                         </td>
                                         <td align="middle" valign="middle">
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#manage_cat_modal"
+                                                    onclick="record_name('<?php echo $collection['id_collection']; ?>', '<?php echo $collection['name']; ?>')"
+                                                    class="btn btn-outline-success waves-effect waves-light me-2">
+                                                <i class="bx bx-pencil font-size-16"></i>
+                                            </button>
                                             <button type="button" class="btn btn-outline-danger delete"
-                                                    data-id="<?php echo $collection['id_collection']; ?>" data-name="<?php echo $collection['image_princ']; ?>">
+                                                    data-id="<?php echo $collection['id_collection']; ?>">
                                                 <i class="far fa-trash-alt"></i></button>
+                                        </td>
                                     </tr>
                                     <?php
                                         $i++;
@@ -75,7 +80,6 @@
                                     ?>
                                 </tbody>
                             </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -96,6 +100,10 @@
                         <div class="mb-3">
                             <label for="titre" class="col-form-label">Nom:</label>
                             <input type="text" id="titre" class="form-control" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="col-form-label">Date création:</label>
+                            <input type="date" id="date" class="form-control" name="date_creation">
                         </div>
                         <div class="mb-3">
                             <label for="position" class="col-form-label">Image:</label>
@@ -221,7 +229,6 @@
 
     $(".delete").click(function () {
         var id = $(this).attr('data-id');
-        var image_name = $(this).attr('data-name');
         Swal.fire({
             title: "Êtes-vous sûr ?",
             text: "Vous ne pourrez pas revenir en arrière !",
@@ -233,16 +240,15 @@
         }).then(function (t) {
             if (t.isConfirmed) {
                 $.ajax({
-                    url: "<?php echo base_url(); ?>administration/admin_corporate/delete_collection",
+                    url: "<?php echo base_url(); ?>administration/article_config/delete_collection",
                     dataType: 'json',
                     method: 'post',
                     data: {
                         collection_id: id,
-                        image_name: image_name,
                     },
                     success: function (response) {
                         if (response === true) {
-                            $("#getcontent").load("<?php echo base_url("administration/admin_corporate/get_collections") ?>");
+                            $("#getcontent").load("<?php echo base_url("administration/article_config/get_collections") ?>");
                             Notiflix.Notify.success('Supprimé avec succès.',
                                 {
                                     position: 'right-bottom',

@@ -27,7 +27,7 @@ class Article_config extends MX_Controller
 
     function get_collections()
     {
-        $data['onglet_title'] = "Liste des catégories";
+        $data['onglet_title'] = "Liste des collections";
         $data['collections'] = $this->article_model->get_method('app_collection');
         $this->load->view('article/collection_view', $data);
     }
@@ -38,6 +38,7 @@ class Article_config extends MX_Controller
             $this->form_validation->set_rules('name', "name", 'required');
             if ($this->form_validation->run()) {
                 $name = $this->input->post("name");
+                $date_creation = $this->input->post("date_creation");
                 //Upload Image
                 $config['upload_path'] = './uploads/collections';
                 $config['allowed_types'] = 'jpeg|jpg|png|webp';
@@ -49,6 +50,7 @@ class Article_config extends MX_Controller
                     $image = $this->upload->data('file_name');
                     $slider = array(
                         'name' => $name,
+                        'date_creation' => $date_creation,
                         'date_add' => date("Y-m-d H:i:s"),
                         "image_princ" => $image
                     );
@@ -66,6 +68,18 @@ class Article_config extends MX_Controller
             $response = array('reponse' => 'Validation failed');
         }
         echo json_encode($response);
+    }
+
+    function delete_collection()
+    {
+        $collection_id = $this->input->post('collection_id');
+        $data_delete = $this->article_model->delete_mod('app_collection', array('id_collection' => $collection_id));
+
+        if ($data_delete == true) {
+            echo json_encode(true);
+        } else {
+            echo json_encode(false);
+        }
     }
 
     function get_categories()
