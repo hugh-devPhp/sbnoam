@@ -13,6 +13,7 @@ class Template extends MX_Controller {
         $data['infos'] = $this->article_model->get_method('app_infos_gen');
         $data['sliders'] = $this->article_model->get_method('app_sliders');
         $data['offers'] =$this->information_model->get_information();
+        $data['collections'] = $this->article_model->get_method('app_collection');
 
         $this->load->view('index', $data);
 

@@ -8,18 +8,18 @@
                             <div class="icon">
                                 <i class="flaticon-ring"></i>
                             </div>
-                            <h4><a href="#">New Rings</a></h4>
+                            <h4><a href="#">Nouvelles bagues</a></h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+
                             </p>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="single-feature-box only-bg mt-30" style="background-image: url(<?php echo base_url()?>assets/front-end/img/feature/04.jpg);">
+                        <div class="single-feature-box only-bg mt-30" style="background-image: url(<?php echo base_url()?>assets/front-end/img/banner/b9.jpeg);">
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="single-feature-box only-bg mt-30" style="background-image: url(<?php echo base_url()?>assets/front-end/img/feature/05.jpg);">
+                        <div class="single-feature-box only-bg mt-30" style="background-image: url(<?php echo base_url()?>assets/front-end/img/banner/b7.jpeg);">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -27,7 +27,7 @@
                             <div class="icon">
                                 <i class="flaticon-necklace"></i>
                             </div>
-                            <h4><a href="#">Wedding Collection</a></h4>
+                            <h4><a href="#">Collection de mariage</a></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
                             </p>
@@ -42,11 +42,9 @@
                         <h2>Création de bijoux depuis 2020  </h2>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <?php echo  character_limiter(strip_tags($infos['court_description']),200); ?>
                     </p>
-                    <a href="contact.html" class="main-btn btn-filled mt-40"> Know More</a>
+                    <a href="contact.html" class="main-btn btn-filled mt-40"> Savoir plus</a>
                 </div>
             </div>
         </div>

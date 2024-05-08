@@ -7,8 +7,8 @@
               <span class="icon">
                 <i class="flaticon-bracelet"></i>
               </span>
-                        <h5 class="title">Golden Pendants</h5>
-                        <p>12 Products</p>
+                        <h5 class="title">Pendentifs dorés</h5>
+                        <p>12 Produits</p>
                         <span class="overlay-icon">
                 <i class="flaticon-bracelet"></i>
               </span>
@@ -19,8 +19,8 @@
               <span class="icon">
                 <i class="flaticon-ring"></i>
               </span>
-                        <h5 class="title">Diamond Rings</h5>
-                        <p>27 Products</p>
+                        <h5 class="title">Bagues en diamant</h5>
+                        <p>27 Produits</p>
                         <span class="overlay-icon">
                 <i class="flaticon-ring"></i>
               </span>
@@ -31,8 +31,8 @@
               <span class="icon">
                 <i class="flaticon-necklace"></i>
               </span>
-                        <h5 class="title">Gold Necklaces</h5>
-                        <p>18 Products</p>
+                        <h5 class="title">Colliers en or</h5>
+                        <p>18 Produits</p>
                         <span class="overlay-icon">
                 <i class="flaticon-necklace"></i>
               </span>
@@ -43,8 +43,8 @@
               <span class="icon">
                 <i class="flaticon-earrings"></i>
               </span>
-                        <h5 class="title">Designer Earings</h5>
-                        <p>23 Products</p>
+                        <h5 class="title">Boucles d'oreilles</h5>
+                        <p>23 Produits</p>
                         <span class="overlay-icon">
                 <i class="flaticon-earrings"></i>
               </span>

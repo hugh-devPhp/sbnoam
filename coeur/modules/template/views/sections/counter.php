@@ -11,7 +11,7 @@
                                         <i class="flaticon-bracelet-1"></i>
                                     </div>
                                     <h4><span class="counter">84</span>k<span class="plus-icon">+</span></h4>
-                                    <span class="title">Jewelriess in Album</span>
+                                    <span class="title">Bijoux dans l'album</span>
                                 </div>
                             </div>
                         </div>
@@ -22,7 +22,7 @@
                                         <i class="flaticon-like"></i>
                                     </div>
                                     <h4><span class="counter">10</span>M<span class="plus-icon">+</span></h4>
-                                    <span class="title">Happy Feedbacks </span>
+                                    <span class="title">Commentaires heureux </span>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                                         <i class="flaticon-earrings"></i>
                                     </div>
                                     <h4><span class="counter">02</span>k<span class="plus-icon">+</span></h4>
-                                    <span class="title">Categories Served</span>
+                                    <span class="title">Catégories servies</span>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                         <i class="flaticon-user-1"></i>
                                     </div>
                                     <h4><span class="counter">100</span>M<span class="plus-icon">+</span></h4>
-                                    <span class="title">Happy Clients</span>
+                                    <span class="title">Clients Heureux</span>
                                 </div>
                             </div>
                         </div>

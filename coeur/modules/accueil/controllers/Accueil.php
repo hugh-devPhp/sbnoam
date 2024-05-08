@@ -25,6 +25,7 @@ class Accueil extends MX_Controller {
         $donnees['infos'] = (array)$infos[0];
         $donnees['sliders'] = $this->article_model->get_method('app_sliders');
         $donnees['offers'] = $this->accueil_model->offre();
+        $donnees['collections'] = $this->article_model->get_method('app_collection');
 
         $donnees['menu_actif'] = "accueil";
         $this->load->view('index', $donnees);

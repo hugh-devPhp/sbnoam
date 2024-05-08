@@ -18,10 +18,10 @@
                 <article class="blog-post" style="background-image: url('<?php echo base_url()?>assets/front-end/img/blog/blog-1.png');">
                     <div class="blog-data">
                         <div class="post-date">
-                            26 Jun, 2022
+                            15 Avril, 2024
                         </div>
-                        <h3 class="post-title"><a href="#">Ruby on Rose Accessories and Blue Gemstones.</a></h3>
-                        <a href="blog-details.html" class="post-link"><span>Read More</span></a>
+                        <h3 class="post-title"><a href="#">Accessoires rubis sur rose et pierres précieuses bleues.</a></h3>
+                        <a href="blog-details.html" class="post-link"><span>Lecture</span></a>
                     </div>
                     <a href="blog-details.html"></a>
                 </article>
@@ -30,10 +30,10 @@
                 <article class="blog-post" style="background-image: url('<?php echo base_url()?>assets/front-end/img/blog/blog-2.png');">
                     <div class="blog-data">
                         <div class="post-date">
-                            26 Jun, 2022
+                            20 Avril, 2024
                         </div>
-                        <h3 class="post-title"><a href="#">Matching Jewellery Sets with your Outwear.</a></h3>
-                        <a href="blog-details.html" class="post-link"><span>Read More</span></a>
+                        <h3 class="post-title"><a href="#">Des ensembles de bijoux assortis à vos vêtements d'extérieur.</a></h3>
+                        <a href="blog-details.html" class="post-link"><span>Lecture</span></a>
                     </div>
                     <a href="blog-details.html"></a>
                 </article>
@@ -42,10 +42,10 @@
                 <article class="blog-post" style="background-image: url('<?php echo base_url()?>assets/front-end/img/blog/blog-3.png');">
                     <div class="blog-data">
                         <div class="post-date">
-                            26 Jun, 2022
+                            01 Mai, 2024
                         </div>
-                        <h3 class="post-title"><a href="#">New Retro Collection of Pendants and Ring sets.</a></h3>
-                        <a href="blog-details.html" class="post-link"><span>Read More</span></a>
+                        <h3 class="post-title"><a href="#">Nouvelle collection rétro de pendentifs et ensembles de bagues.</a></h3>
+                        <a href="blog-details.html" class="post-link"><span>Lecture</span></a>
                     </div>
                     <a href="blog-details.html"></a>
                 </article>
@@ -54,10 +54,11 @@
                 <article class="blog-post" style="background-image: url('<?php echo base_url()?>assets/front-end/img/blog/blog-4.png');">
                     <div class="blog-data">
                         <div class="post-date">
-                            26 Jun, 2022
+                            06 Mai, 2024
                         </div>
-                        <h3 class="post-title"><a href="#">Special Wedding Rings Sets for Him and for Her.</a></h3>
-                        <a href="blog-details.html" class="post-link"><span>Read More</span></a>
+                        <h3 class="post-title"><a href="#">
+                                Ensembles d'alliances spéciaux pour elle et lui.</a></h3>
+                        <a href="blog-details.html" class="post-link"><span>Lecture</span></a>
                     </div>
                     <a href="blog-details.html"></a>
                 </article>

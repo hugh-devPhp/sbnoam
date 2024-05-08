@@ -25,70 +25,30 @@
             </a>
         </div>
         <div class="row">
+            <?php
+            $i = 1;
+            foreach ($collections as $collection) :
+            ?>
             <div class="col-lg-3 col-md-6">
                 <div class="apartment-box">
                     <div class="image-box">
                         <a href="shop-detail.html" class="d-block">
-                            <img src="<?php echo base_url()?>assets/front-end/img/list-suite/01.jpg" alt="img">
+                            <img src="<?php echo base_url()?>uploads/collections/<?php echo $collection['image_princ']; ?>" width="370" height="260" alt="img">
                         </a>
                     </div>
                     <div class="content-box-2">
                         <h3 class="title">
-                            <a href="shop-detail.html">Wedding Ring</a>
+                            <a href="shop-detail.html"><?php echo $collection['name']; ?></a>
                         </h3>
-                        <p>Machine Design , 24 Carat</p>
-                        <span class="price">$345/10gm </span>
+                        <p><?php echo $collection['date_creation']; ?></p>
+                        <span class="price">2<?php echo $i; ?> produits </span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="apartment-box">
-                    <div class="image-box">
-                        <a href="shop-detail.html" class="d-block">
-                            <img src="<?php echo base_url()?>assets/front-end/img/list-suite/02.jpg" alt="img">
-                        </a>
-                    </div>
-                    <div class="content-box-2">
-                        <h3 class="title">
-                            <a href="shop-detail.html">Gold Neckless</a>
-                        </h3>
-                        <p>Machine Design , 24 Carat</p>
-                        <span class="price">$345/10gm </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="apartment-box">
-                    <div class="image-box">
-                        <a href="shop-detail.html" class="d-block">
-                            <img src="<?php echo base_url()?>assets/front-end/img/list-suite/03.jpg" alt="img">
-                        </a>
-                    </div>
-                    <div class="content-box-2">
-                        <h3 class="title">
-                            <a href="shop-detail.html">Barry Gold Bangle </a>
-                        </h3>
-                        <p>Machine Design , 24 Carat</p>
-                        <span class="price">$345/10gm </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="apartment-box">
-                    <div class="image-box">
-                        <a href="shop-detail.html" class="d-block">
-                            <img src="<?php echo base_url()?>assets/front-end/img/list-suite/01.jpg" alt="img">
-                        </a>
-                    </div>
-                    <div class="content-box-2">
-                        <h3 class="title">
-                            <a href="shop-detail.html">Gold Earring </a>
-                        </h3>
-                        <p>Machine Design , 24 Carat</p>
-                        <span class="price">$345/10gm </span>
-                    </div>
-                </div>
-            </div>
+                <?php
+                $i++;
+            endforeach;
+            ?>
         </div>
     </div>
 </section>
