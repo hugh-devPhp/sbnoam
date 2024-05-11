@@ -52,11 +52,8 @@ class Article extends MX_Controller
                 $prix = $this->input->post("price");
                 $prix_promo = $this->input->post("prix_promo");
                 $stock = $this->input->post("qte");
-                $couleur_id = $this->input->post("color");
                 $garantie = $this->input->post("garantie");
                 $marque_id = $this->input->post("brand");
-                $category_id = $this->input->post("cat");
-                $sous_category_id = $this->input->post("s_cat");
                 $description = $this->input->post("desc");
                 $sku = $this->input->post("sku");
                 $dimension = $this->input->post("dimension");
@@ -84,11 +81,8 @@ class Article extends MX_Controller
                             'prix' => $prix,
                             'prix_promo' => $prix_promo,
                             'stock' => $stock,
-                            'couleur_id' => $couleur_id,
                             'garantie' => $garantie,
                             'marque_id' => $marque_id,
-                            'category_id' => $category_id,
-                            'sous_category_id' => $sous_category_id,
                             'description' => $description,
                             'sku' => $sku,
                             'dimension' => $dimension,

@@ -11,12 +11,10 @@ class Collection extends MX_Controller {
 
 
     function index($page=null){
-
-
         $donnees['menu_actif'] = "Collection";
+        $donnees['title'] = "Collections";
         $donnees['page_content'] = "collection_view";
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
-        $donnees['sliders'] = $this->article_model->get_method('app_sliders');
         $donnees['collections'] = $this->collection_model->get_collection();
 
         $this->load->view('index', $donnees);

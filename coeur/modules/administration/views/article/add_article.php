@@ -256,21 +256,6 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
-                                        <label for="color">Couleur</label>
-                                        <select id="color" class="form-select" name="color" required>
-                                            <option value="">Choisir...</option>
-                                            <?php
-                                            foreach ($couleurs as $color) :
-                                                ?>
-                                                <option value="<?php echo $color['id_couleur']; ?>"><?php echo $color['code_couleur']; ?></option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <div class="mb-3">
                                         <label for="sku" class="form-label">SKU</label>
                                         <input type="text" class="form-control" id="sku" name="sku" placeholder="Numéro sku">
                                     </div>
