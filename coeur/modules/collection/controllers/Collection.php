@@ -1,11 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Parking extends MX_Controller {
+class Collection extends MX_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('parking_model');
-        $this->load->model('administration/automobile_model');
+        $this->load->model('collection_model');
         $this->load->model('administration/article_model');
 
     }
@@ -14,71 +13,12 @@ class Parking extends MX_Controller {
     function index($page=null){
 
 
-        $donnees['menu_actif'] = "collection";
-        $donnees['page_content'] = "packing_view";
+        $donnees['menu_actif'] = "Collection";
+        $donnees['page_content'] = "collection_view";
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
         $donnees['sliders'] = $this->article_model->get_method('app_sliders');
-        $donnees['offers'] = $this->article_model->get_method('app_offer');
-        $donnees['marques'] = $this->parking_model->get_marque();
-        $type = $this->input->get('type');
+        $donnees['collections'] = $this->collection_model->get_collection();
 
-        $id_marque = $this->input->get('marque');
-        $transmission = $this->input->get('transmission');
-        $data = array('type' => $type, 'marque' => $id_marque, 'transmission' => $transmission);
-//        $query_string = http_build_query($data);
-        $base_url = base_url('collection/index/');
-        $donnees['type_selected'] = $donnees['marque_selected'] = $donnees['transmission_selected'] = array();
-        if(!empty($type) && !is_null($type)){
-            $donnees['type_selected'] = explode(",", $type);
-        }
-
-        if(!empty($id_marque) && !is_null($id_marque)){
-            $donnees['marque_selected'] = explode(",", $id_marque);
-        }
-
-        if(!empty($transmission) && !is_null($transmission)){
-            $donnees['transmission_selected'] = explode(",", $transmission);
-        }
-
-        $config['base_url'] = $base_url;
-        $config['total_rows'] = $donnees['total'] = $this->parking_model->nb_vehicule($type, $id_marque, $transmission);
-        $config['per_page'] = nb_vehicule(); // Nombre d'éléments à afficher par page
-        $config['use_page_numbers'] = true; // Nombre d'éléments à afficher par page
-        $config['full_tag_open'] = '<ul class="pagination">';
-        $config['full_tag_close'] = '</ul>';
-        $config['first_link'] = '&laquo;';
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
-        $config['last_link'] = '&raquo;';
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
-        $config['next_link'] = '&rsaquo;';
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
-        $config['prev_link'] = '&lsaquo;';
-        $config['prev_tag_open'] = '<li>';
-        $config['prev_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><a href="#">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $config['préfixe'] = '' ;
-        $config['suffixe'] = '' ;
-        $config['reuse_query_string'] = True;
-        $config['use_global_url_suffix'] = false;
-        $config['enable_query_strings'] = True;
-        $config['page_query_string'] = True;
-
-        $config['uri_segment'] = 3; // Segment URI contenant le numéro de la page
-        $this->pagination->initialize($config);
-//        echo $this->pagination->create_links();
-//        exit();
-        $page = $this->input->get("per_page");
-        $donnees['vehicules'] = $vehicules =  $this->parking_model->liste_vehicule(nb_vehicule(),$page, $type, $id_marque, $transmission);
-
-//        echo "<pre>";
-//        var_dump($donnees['vehicules']);
-//        echo "</pre>";
         $this->load->view('index', $donnees);
 
     }
@@ -153,7 +93,7 @@ class Parking extends MX_Controller {
         return $orderNumber;
     }
 
-    function add_reservation()
+    function add_collection()
     {
         $post = $this->input->post();
 
@@ -177,7 +117,7 @@ class Parking extends MX_Controller {
             $date_fin = $post['date_fin'];
         }
         $id_client = $this->session->userdata("id_client");
-        $numero_reservation = $this->generateNumeroCommande();
+        $numero_collection = $this->generateNumeroCommande();
         $data = array(
             "numero_reserv"=>$numero_reservation,
             "nom"=>$nom,
