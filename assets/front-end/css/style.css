@@ -9241,7 +9241,7 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
 }
 
 .restaurant-tab-area .food-box .desc {
-    padding: 30px;
+    padding: 30px 30px 10px 10px;
     background-color: #FCF8F3;
     position: relative;
 }

@@ -53,11 +53,8 @@ class Article extends MX_Controller
                 $prix_promo = $this->input->post("prix_promo");
                 $stock = $this->input->post("qte");
                 $garantie = $this->input->post("garantie");
-                $marque_id = $this->input->post("brand");
                 $description = $this->input->post("desc");
                 $sku = $this->input->post("sku");
-                $dimension = $this->input->post("dimension");
-                $poids = $this->input->post("poids");
 
                 $app_article_sku = $this->article_model->get_method_where('app_article', array('sku' => $sku));
                 if ($app_article_sku){
@@ -82,11 +79,7 @@ class Article extends MX_Controller
                             'prix_promo' => $prix_promo,
                             'stock' => $stock,
                             'garantie' => $garantie,
-                            'marque_id' => $marque_id,
                             'description' => $description,
-                            'sku' => $sku,
-                            'dimension' => $dimension,
-                            'poids' => $poids,
                             "image_principale_article" => $image
                         );
                         $article_rep = $this->article_model->add_article('app_article', $article);

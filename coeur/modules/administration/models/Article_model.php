@@ -16,6 +16,14 @@ class Article_model extends CI_Model
         return $query->result_array();
     }
 
+    public function get_method_order_by($table)
+    {
+        $this->db->order_by('vues', 'DESC');
+        $query = $this->db->get($table);
+
+        return $query->result();
+    }
+
     public function get_method_simple($table)
     {
         $query = $this->db->get($table);

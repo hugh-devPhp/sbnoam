@@ -51,7 +51,7 @@ class Boutique extends MX_Controller
         $donnees['marques'] = $this->article_model->get_method('app_article_marque');
         $donnees['categories'] = $this->article_model->get_method('app_category');
         $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
-        $donnees['articles'] = $this->article_model->get_method('app_article');
+        $donnees['pop_articles'] = $this->article_model->get_method_order_by('app_article');
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
 
         $donnees['menu_actif'] = "boutique";
@@ -246,11 +246,10 @@ class Boutique extends MX_Controller
         $donnees['marques'] = $this->article_model->get_method('app_article_marque');
         $donnees['categories'] = $this->article_model->get_method('app_category');
         $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
-        $donnees['articles'] = $this->article_model->get_method('app_article');
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
         $donnees['sous_category'] = $this->article_model->get_method_where('app_sous_category', array('sous_category_id' => $sous_cat_id));
         $donnees['category'] = $this->article_model->get_method_where('app_category', array('category_id' => $donnees['sous_category'][0]['cat_id']));
-
+        $donnees['pop_articles'] = $this->article_model->get_method_order_by('app_article');
         $donnees['menu_actif'] = "boutique";
         $this->load->view('sous_cat_boutique_view', $donnees);
 

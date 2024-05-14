@@ -14,48 +14,58 @@
                     <!-- About Author Widget -->
                     <!-- Search Widget -->
                     <div class="widget search-widget mb-40">
-                        <h5 class="widget-title">Search Objects</h5>
+                        <h5 class="widget-title">Faite une recherhce</h5>
                         <form action="#">
-                            <input type="text" placeholder="Search your keyword...">
+                            <input type="text" placeholder="entrez un mot clé...">
                             <button type="submit"><i class="far fa-search"></i></button>
                         </form>
                     </div>
                     <!-- Popular Post Widget -->
                     <div class="widget popular-feeds mb-40">
-                        <h5 class="widget-title">Popular Products</h5>
+                        <h5 class="widget-title">Produits populaire</h5>
                         <div class="popular-feed-loop">
-                            <div class="single-popular-feed">
-                                <div class="feed-img">
-                                    <img src="assets/img/recent-post-wid/04.png" alt="Image">
-                                </div>
-                                <div class="feed-desc desc">
-                                    <h6><a href="shop-detail.html">Golden Pendant.</a></h6>
-                                    <span class="price">$500 <span>$580</span></span>
-                                </div>
-                            </div>
-                            <div class="single-popular-feed">
-                                <div class="feed-img">
-                                    <img src="assets/img/recent-post-wid/05.png" alt="Image">
-                                </div>
-                                <div class="feed-desc desc">
-                                    <h6><a href="shop-detail.html">Silver Pendant.</a></h6>
-                                    <span class="price">$400 <span>$520</span></span>
-                                </div>
-                            </div>
-                            <div class="single-popular-feed">
-                                <div class="feed-img">
-                                    <img src="assets/img/recent-post-wid/06.png" alt="Image">
-                                </div>
-                                <div class="feed-desc desc">
-                                    <h6><a href="shop-detail.html">Diamond Ring.</a></h6>
-                                    <span class="price">$390 <span>$450</span></span>
-                                </div>
-                            </div>
+                            <?php
+                                if (!empty($pop_articles)) {
+                                    $i = 1;
+                                    foreach ($pop_articles as $pop) {
+                                        if ($i <= 3) {
+                                        ?>
+                                            <div class="single-popular-feed">
+                                                <div class="feed-img">
+                                                    <img src="<?php echo base_url() ?>uploads/articles/<?php echo $pop->image_principale_article; ?>"
+                                                         alt="Image">
+                                                </div>
+                                                <div class="feed-desc desc">
+                                                    <h6><a href="shop-detail.html"><?php echo ucfirst($pop->designation); ?></a></h6>
+                                                    <?php
+                                                    if ($pop->prix_promo) :
+                                                        ?>
+                                                        <span class="price">
+                                                        <?php echo number_format($pop->prix_promo, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
+                                                        <span>
+                                                            <?php echo number_format($pop->prix, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
+                                                        </span>
+                                                    </span>
+                                                    <?php
+                                                    else:
+                                                        ?>
+                                                        <span class="price"><?php echo number_format($pop->prix, 0, ',', ' '); ?><row style="font-size:10px;"> FCFA</row>
+                                                    </span>
+                                                    <?php
+                                                    endif;
+                                                    ?>
+                                                </div>
+                                                <span><?php echo ucfirst($pop->vues); ?> <i class="fas fa-eye text-pink"></i></span>
+                                            </div>
+                                    <?php } }
+                                    $i++;
+                                }
+                            ?>
                         </div>
                     </div>
                     <!-- Popular Tags Widget -->
                     <div class="widget popular-tag-widget">
-                        <h5 class="widget-title">Popular Tags</h5>
+                        <h5 class="widget-title">Populaires</h5>
                         <ul>
                             <li><a href="#">Rings</a></li>
                             <li><a href="#">earrings</a></li>
@@ -77,16 +87,6 @@
                 <div class="shop-products-wrapper">
                     <div class="shop-product-top">
                         <p>Showing 1 To 9 Of 60 results</p>
-                        <div class="sorting-box">
-                            <select name="guests" id="guests">
-                                <option value="" disabled selected>Default Sorting</option>
-                                <option value="1">Sort By Popularity</option>
-                                <option value="2">Sort By Latest</option>
-                                <option value="4">Sort By Rating</option>
-                                <option value="8">Sort By Price:Low to High</option>
-                                <option value="8">Sort By Price:High to Low</option>
-                            </select>
-                        </div>
                     </div>
                     <div class="product-wrapper restaurant-tab-area">
                         <div class="row">
@@ -94,54 +94,53 @@
                             if (!empty($articles_page)) {
                                 foreach ($articles_page as $article) {
                                     ?>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="food-box shop-box">
-                                    <div class="thumb" style="height: 150px !important;">
-                                        <img src="<?php echo base_url() ?>uploads/articles/<?php echo $article->image_principale_article; ?>"
-                                             alt="images">
-                                        <?php
-                                        if ($article->prix_promo) :
-                                            ?>
-                                        <div class="badges">
-                                            <span class="price">Promo</span>
-                                            <span class="price discounted">-15%</span>
-                                        </div>
-                                        <?php
-                                        endif;
-                                        ?>
-                                        <div class="button-group">
-                                            <a href="#"><i class="far fa-heart"></i></a>
-                                            <a href="#"><i class="far fa-sync-alt"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quickViewModal">
-                                                <i class="far fa-eye"></i></a>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="food-box shop-box">
+                                            <div class="thumb" style="height: 150px !important;">
+                                                <img src="<?php echo base_url() ?>uploads/articles/<?php echo $article->image_principale_article; ?>"
+                                                     alt="images">
+                                                <?php
+                                                if ($article->prix_promo) :
+                                                    ?>
+                                                <div class="badges">
+                                                    <span class="price">Promo</span>
+                                                    <span class="price discounted">-15%</span>
+                                                </div>
+                                                <?php
+                                                endif;
+                                                ?>
+                                                <div class="button-group">
+                                                    <a href="#" data-toggle="modal" data-target="#quickViewModal">
+                                                        <i class="far fa-eye"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <h4>
+                                                    <a href="shop-detail.html">
+                                                        <?php echo ucfirst($article->designation); ?>
+                                                    </a>
+                                                </h4>
+                                                <?php
+                                                if ($article->prix_promo) :
+                                                    ?>
+                                                    <span class="price">
+                                                        <?php echo number_format($article->prix_promo, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
+                                                        <span>
+                                                            <?php echo number_format($article->prix, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
+                                                        </span>
+                                                    </span>
+                                                <?php
+                                                else:
+                                                    ?>
+                                                    <span class="price"><?php echo number_format($article->prix, 0, ',', ' '); ?><row style="font-size:10px;"> FCFA</row>
+                                                    </span>
+                                                <?php
+                                                endif;
+                                                ?>
+                                                <a href="shop-detail.html" class="link"><i class="fal fa-arrow-right"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="desc">
-                                        <h4>
-                                            <a href="shop-detail.html">
-                                                <?php echo ucfirst($article->designation); ?>
-                                            </a>
-                                        </h4>
-                                    <?php
-                                    if ($article->prix_promo) :
-                                        ?>
-                                        <span class="price">
-                                            <?php echo number_format($article->prix_promo, 0, ',', ' '); ?> FCFA
-                                            <span style="font-size: 9px;">
-                                                <?php echo number_format($article->prix, 0, ',', ' '); ?> FCFA
-                                            </span>
-                                        </span>
-                                    <?php
-                                    else:
-                                        ?>
-                                        <span class="price"><?php echo number_format($article->prix, 0, ',', ' '); ?> FCFA</span>
-                                    <?php
-                                    endif;
-                                    ?>
-                                        <a href="shop-detail.html" class="link"><i class="fal fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                                 <?php }
                             }
                             ?>
