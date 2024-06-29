@@ -21,7 +21,7 @@
     <!--====== Condos Overlay END ======-->
 
     <!--====== COUNTER UP START ======-->
-    <?php $this->load->view('template/sections/counter') ?>
+<!--    --><?php //$this->load->view('template/sections/counter') ?>
     <!--====== COUNTER UP END ======-->
 
     <!--====== LATEST NEWS START ======-->

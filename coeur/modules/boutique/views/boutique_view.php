@@ -1,7 +1,7 @@
 <?php $this->load->view('template/front-end/haut_template', array("menu_actif" => $menu_actif)) ?>
 
 <!--====== BREADCRUMB PART START ======-->
-<?php $this->load->view('template/front-end/page_head', array("title"=>$title, "menu_actif"=>$menu_actif))?>
+<?php $this->load->view('template/front-end/page_head', array("title" => $title, "menu_actif" => $menu_actif)) ?>
 
 <!--====== BREADCRUMB PART END ======-->
 <!--====== SHOP SECTION START ======-->
@@ -25,46 +25,47 @@
                         <h5 class="widget-title">Produits populaire</h5>
                         <div class="popular-feed-loop">
                             <?php
-                                if (!empty($pop_articles)) {
-                                    $i = 1;
-                                    foreach ($pop_articles as $pop) {
-                                        if ($i <= 3) {
+                            if (!empty($pop_articles)) {
+                                $i = 1;
+                                foreach ($pop_articles as $pop) {
+                                    if ($i <= 3) {
                                         ?>
-                                            <div class="single-popular-feed">
-                                                <div class="feed-img">
-                                                    <img src="<?php echo base_url() ?>uploads/articles/<?php echo $pop->image_principale_article; ?>"
-                                                         alt="Image">
-                                                </div>
-                                                <div class="feed-desc desc">
-                                                    <h6><a href="shop-detail.html"><?php echo ucfirst($pop->designation); ?></a></h6>
+                                        <div class="single-popular-feed">
+                                            <div class="feed-img">
+                                                <img src="<?php echo base_url() ?>uploads/articles/<?php echo $pop->image_principale_article; ?>"
+                                                     alt="Image">
+                                            </div>
+                                            <div class="feed-desc desc">
+                                                <h6>
+                                                    <a href="shop-detail.html"><?php echo ucfirst($pop->designation); ?></a>
+                                                </h6>
+                                                <div class="font-weight-bold">
                                                     <?php
                                                     if ($pop->prix_promo) :
                                                         ?>
-                                                        <span class="price">
-                                                        <?php echo number_format($pop->prix_promo, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
-                                                        <span>
-                                                            <?php echo number_format($pop->prix, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
-                                                        </span>
-                                                    </span>
+                                                        <del class="d-block" style="font-size:11px; font-weight: 9;"><?php echo number_format($pop->prix, 0, ',', ' '); ?>
+                                                            FCFA
+                                                        </del>
+                                                        <ins class="font-size-15 text-red text-decoration-none d-block price"><?php echo number_format($pop->prix_promo, 0, ',', ' '); ?>
+                                                            FCFA
+                                                        </ins>
                                                     <?php
                                                     else:
-                                                        ?>
-                                                        <span class="price"><?php echo number_format($pop->prix, 0, ',', ' '); ?><row style="font-size:10px;"> FCFA</row>
-                                                    </span>
-                                                    <?php
+                                                        echo '<span  class="price">'. number_format($pop->prix, 0, ',', ' ').' FCFA </span>';
                                                     endif;
                                                     ?>
                                                 </div>
-                                                <span><?php echo ucfirst($pop->vues); ?> <i class="fas fa-eye text-pink"></i></span>
                                             </div>
-                                    <?php } }
-                                    $i++;
+                                        </div>
+                                    <?php }
                                 }
+                                $i++;
+                            }
                             ?>
                         </div>
                     </div>
                     <!-- Popular Tags Widget -->
-                    <div class="widget popular-tag-widget">
+                    <!-- <div class="widget popular-tag-widget">
                         <h5 class="widget-title">Populaires</h5>
                         <ul>
                             <li><a href="#">Rings</a></li>
@@ -80,7 +81,7 @@
                             <li><a href="#">copper bracelet</a></li>
                             <li><a href="#">tech</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-8 col-md-10">
@@ -102,10 +103,10 @@
                                                 <?php
                                                 if ($article->prix_promo) :
                                                     ?>
-                                                <div class="badges">
-                                                    <span class="price">Promo</span>
-                                                    <span class="price discounted">-15%</span>
-                                                </div>
+                                                    <div class="badges">
+                                                        <span class="price">Promo</span>
+                                                        <span class="price discounted">-15%</span>
+                                                    </div>
                                                 <?php
                                                 endif;
                                                 ?>
@@ -123,21 +124,26 @@
                                                 <?php
                                                 if ($article->prix_promo) :
                                                     ?>
-                                                    <span class="price">
-                                                        <?php echo number_format($article->prix_promo, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
-                                                        <span>
-                                                            <?php echo number_format($article->prix, 0, ',', ' '); ?><row style="font-size:10px;">FCFA</row>
+                                                    <span class="price" >
+                                                        <?php echo number_format($article->prix_promo, 0, ',', ' '); ?>
+                                                        <row style="font-size:10px;"><sup>Fcfa</sup></row>
+                                                        <span style="font-size:11px; font-weight: 9;">
+                                                            <?php echo number_format($article->prix, 0, ',', ' '); ?>
+                                                            <row style="font-size:10px;"><sup>Fcfa</sup></row>
                                                         </span>
                                                     </span>
                                                 <?php
                                                 else:
                                                     ?>
-                                                    <span class="price"><?php echo number_format($article->prix, 0, ',', ' '); ?><row style="font-size:10px;"> FCFA</row>
+                                                    <span class="price"><?php echo number_format($article->prix, 0, ',', ' '); ?><row
+                                                                style="font-size:10px;"> <sup>Fcfa</sup></row>
                                                     </span>
                                                 <?php
                                                 endif;
                                                 ?>
-                                                <a href="shop-detail.html" class="link"><i class="fal fa-arrow-right"></i></a>
+                                                <a href="shop-detail.html" class="link">
+                                                    <i class="fal fa-arrow-right"></i>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -176,25 +182,26 @@
             //     this.checked = false;
             // });
 
-        $.ajax({
-            url: '<?php echo base_url(); ?>boutique/boutique_by_cat',
-            data: {'cats_id': cats_id},
-            method: 'post',
-            datatype: 'html',
-            success: function (response) {
-                if (response === false) {
-                    Notiflix.Notify.failure('Rien.',
-                        {
-                            position: 'right-bottom',
-                        },
-                    );
-                } else {
-                    $('#showProduct').html(response);
+            $.ajax({
+                url: '<?php echo base_url(); ?>boutique/boutique_by_cat',
+                data: {'cats_id': cats_id},
+                method: 'post',
+                datatype: 'html',
+                success: function (response) {
+                    if (response === false) {
+                        Notiflix.Notify.failure('Rien.',
+                            {
+                                position: 'right-bottom',
+                            },
+                        );
+                    } else {
+                        $('#showProduct').html(response);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-    }
+
     function getProductByMarque() {
         if ($("input:checkbox:checked").length > 0) {
             var marques_id = $("input[name='marque_id']:checkbox:checked").map(function () {
@@ -208,25 +215,26 @@
             //     this.checked = false;
             // });
 
-        $.ajax({
-            url: '<?php echo base_url(); ?>boutique/boutique_by_mark',
-            data: {'marques_id': marques_id},
-            method: 'post',
-            datatype: 'html',
-            success: function (response) {
-                if (response === false) {
-                    Notiflix.Notify.failure('Rien.',
-                        {
-                            position: 'right-bottom',
-                        },
-                    );
-                } else {
-                    $('#showProduct').html(response);
+            $.ajax({
+                url: '<?php echo base_url(); ?>boutique/boutique_by_mark',
+                data: {'marques_id': marques_id},
+                method: 'post',
+                datatype: 'html',
+                success: function (response) {
+                    if (response === false) {
+                        Notiflix.Notify.failure('Rien.',
+                            {
+                                position: 'right-bottom',
+                            },
+                        );
+                    } else {
+                        $('#showProduct').html(response);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-    }
+
     function getProductByColor() {
         if ($("input:checkbox:checked").length > 0) {
             var colors_id = $("input[name='color_id']:checkbox:checked").map(function () {
@@ -239,24 +247,24 @@
             $("input[name='marque_id']").each(function () {
                 this.checked = false;
             });
-        $.ajax({
-            url: '<?php echo base_url(); ?>boutique/boutique_by_color',
-            data: {'colors_id': colors_id},
-            method: 'post',
-            datatype: 'html',
-            success: function (response) {
-                if (response === false) {
-                    Notiflix.Notify.failure('Rien.',
-                        {
-                            position: 'right-bottom',
-                        },
-                    );
-                } else {
-                    $('#showProduct').html(response);
+            $.ajax({
+                url: '<?php echo base_url(); ?>boutique/boutique_by_color',
+                data: {'colors_id': colors_id},
+                method: 'post',
+                datatype: 'html',
+                success: function (response) {
+                    if (response === false) {
+                        Notiflix.Notify.failure('Rien.',
+                            {
+                                position: 'right-bottom',
+                            },
+                        );
+                    } else {
+                        $('#showProduct').html(response);
+                    }
                 }
-            }
-        });
-    }
+            });
+        }
     }
 </script>
 <?php $this->load->view('template/front-end/bas_template') ?>

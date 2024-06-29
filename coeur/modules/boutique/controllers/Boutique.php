@@ -54,8 +54,8 @@ class Boutique extends MX_Controller
         $donnees['pop_articles'] = $this->article_model->get_method_order_by('app_article');
         $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
 
-        $donnees['menu_actif'] = "boutique";
-        $donnees['title'] = "boutique";
+        $donnees['menu_actif'] = "Boutique";
+        $donnees['title'] = "Boutique";
         $this->load->view('boutique_view', $donnees);
 
     }
