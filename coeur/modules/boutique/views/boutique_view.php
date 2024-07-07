@@ -37,13 +37,14 @@
                                             </div>
                                             <div class="feed-desc desc">
                                                 <h6>
-                                                    <a href="shop-detail.html"><?php echo ucfirst($pop->designation); ?></a>
+                                                    <a href="<?php echo base_url(); ?>boutique/article_detail/<?php echo $pop->article_id; ?>"><?php echo ucfirst($pop->designation); ?></a>
                                                 </h6>
                                                 <div class="font-weight-bold">
                                                     <?php
                                                     if ($pop->prix_promo) :
                                                         ?>
-                                                        <del class="d-block" style="font-size:11px; font-weight: 9;"><?php echo number_format($pop->prix, 0, ',', ' '); ?>
+                                                        <del class="d-block"
+                                                             style="font-size:11px; font-weight: 9;"><?php echo number_format($pop->prix, 0, ',', ' '); ?>
                                                             FCFA
                                                         </del>
                                                         <ins class="font-size-15 text-red text-decoration-none d-block price"><?php echo number_format($pop->prix_promo, 0, ',', ' '); ?>
@@ -51,44 +52,30 @@
                                                         </ins>
                                                     <?php
                                                     else:
-                                                        echo '<span  class="price">'. number_format($pop->prix, 0, ',', ' ').' FCFA </span>';
+                                                        echo '<span  class="price">' . number_format($pop->prix, 0, ',', ' ') . ' FCFA </span>';
                                                     endif;
                                                     ?>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php }
+                                    $i++;
                                 }
-                                $i++;
                             }
                             ?>
                         </div>
                     </div>
-                    <!-- Popular Tags Widget -->
-                    <!-- <div class="widget popular-tag-widget">
-                        <h5 class="widget-title">Populaires</h5>
-                        <ul>
-                            <li><a href="#">Rings</a></li>
-                            <li><a href="#">earrings</a></li>
-                            <li><a href="#">necklace</a></li>
-                            <li><a href="#">bracelets</a></li>
-                            <li><a href="#">wedding ring</a></li>
-                            <li><a href="#">bangles</a></li>
-                            <li><a href="#">hard ring</a></li>
-                            <li><a href="#">ankle bracelet</a></li>
-                            <li><a href="#">silver braclet</a></li>
-                            <li><a href="#">earring</a></li>
-                            <li><a href="#">copper bracelet</a></li>
-                            <li><a href="#">tech</a></li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
             <div class="col-lg-8 col-md-10">
                 <div class="shop-products-wrapper">
-                    <div class="shop-product-top">
-                        <p>Showing 1 To 9 Of 60 results</p>
-                    </div>
+                    <?php
+                    if ($total > 0) {
+                        ?>
+                        <div class="shop-product-top">
+                            <p> Affichage 1–<?php echo count($articles_page); ?> sur <?php echo $total; ?> total</p>
+                        </div>
+                    <?php } ?>
                     <div class="product-wrapper restaurant-tab-area">
                         <div class="row">
                             <?php
@@ -105,7 +92,7 @@
                                                     ?>
                                                     <div class="badges">
                                                         <span class="price">Promo</span>
-                                                        <span class="price discounted">-15%</span>
+<!--                                                        <span class="price discounted">-15%</span>-->
                                                     </div>
                                                 <?php
                                                 endif;
@@ -117,14 +104,14 @@
                                             </div>
                                             <div class="desc">
                                                 <h4>
-                                                    <a href="shop-detail.html">
+                                                    <a href="<?php echo base_url(); ?>boutique/article_detail/<?php echo $article->article_id; ?>">
                                                         <?php echo ucfirst($article->designation); ?>
                                                     </a>
                                                 </h4>
                                                 <?php
                                                 if ($article->prix_promo) :
                                                     ?>
-                                                    <span class="price" >
+                                                    <span class="price">
                                                         <?php echo number_format($article->prix_promo, 0, ',', ' '); ?>
                                                         <row style="font-size:10px;"><sup>Fcfa</sup></row>
                                                         <span style="font-size:11px; font-weight: 9;">
@@ -141,7 +128,7 @@
                                                 <?php
                                                 endif;
                                                 ?>
-                                                <a href="shop-detail.html" class="link">
+                                                <a href="<?php echo base_url(); ?>boutique/article_detail/<?php echo $article->article_id; ?>" class="link">
                                                     <i class="fal fa-arrow-right"></i>
                                                 </a>
                                             </div>
@@ -152,15 +139,13 @@
                             ?>
                         </div>
                         <div class="pagination-wrap">
-                            <ul>
-                                <li><a href="#"><i class="far fa-angle-double-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">10</a></li>
-                                <li><a href="#"><i class="far fa-angle-double-right"></i></a></li>
-                            </ul>
+                            <?php
+                            if ($total > 0) {
+                                ?>
+                                <?php
+                                echo $this->pagination->create_links();
+                                ?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

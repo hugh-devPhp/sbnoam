@@ -18,7 +18,7 @@ class Article_model extends CI_Model
 
     public function get_method_order_by($table)
     {
-        $this->db->order_by('vues', 'DESC');
+        $this->db->order_by('vues', 'desc');
         $query = $this->db->get($table);
 
         return $query->result();

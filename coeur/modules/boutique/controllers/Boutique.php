@@ -16,22 +16,22 @@ class Boutique extends MX_Controller
     }
 
 
-    function index()
+    function index($page=null)
     {
         $config = array();
-        $config["base_url"] = base_url() . "boutique/boutique_view";
+        $config["base_url"] = base_url() . "boutique/index";
         $config["total_rows"] = $donnees['total'] = $this->article_model->get_count('app_article');
-        $config["per_page"] = 17;
+        $config["per_page"] = 12;
         $config["uri_segment"] = 3;
         $config['use_page_numbers'] = true;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = '&laquo;';
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
+        $config['first_tag_open'] = '<li><a href="#"><i class="far fa-angle-double-left"></i>';
+        $config['first_tag_close'] = '</a></li>';
         $config['last_link'] = '&raquo;';
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li><a href="#"><i class="far fa-angle-double-right"></i>';
+        $config['last_tag_close'] = '</a></li>';
         $config['next_link'] = '&rsaquo;';
         $config['next_tag_open'] = '<li>';
         $config['next_tag_close'] = '</li>';
