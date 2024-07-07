@@ -63,10 +63,11 @@ class Boutique extends MX_Controller
     function article_detail($article_id)
     {
         $donnees['marques'] = $this->article_model->get_method('app_article_marque');
-        $donnees['categories'] = $this->article_model->get_method('app_category');
+        $donnees['collections'] = $this->article_model->get_method('app_collection');
         $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
         $donnees['article'] = $this->article_model->get_method_where('app_article', array('article_id' => $article_id));
         $donnees['menu_actif'] = "boutique";
+        $donnees['title'] = "Detail Article";
         $donnees['articles_images'] = $this->article_model->get_method('app_image');
         $articles_img = array();
         foreach ($donnees['articles_images'] as $image) {

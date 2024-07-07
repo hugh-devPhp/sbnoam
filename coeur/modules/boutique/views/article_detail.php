@@ -1,6 +1,7 @@
 <?php $this->load->view('template/front-end/haut_template', array("menu_actif" => $menu_actif)) ?>
     <!-- ========== END HEADER ========== -->
-
+    <!--====== BREADCRUMB PART START ======-->
+<?php $this->load->view('template/front-end/page_head', array("title" => $title, "menu_actif" => $menu_actif)) ?>
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content" role="main">
         <!-- breadcrumb -->
@@ -46,9 +47,8 @@
                             foreach ($articles_img as $img) :
                                 ?>
                                 <div class="js-slide">
-                                    <img class="img-fluid"
-                                         src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
-                                         alt="Image Description">
+                                    <img class="img-fluid" alt="Image Description"
+                                         src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>">
                                 </div>
                                 <?php
                                 $i++;
@@ -84,9 +84,9 @@
                         <div class="mb-2">
                             <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block">
                                 <?php
-                                foreach ($categories as $cat) :
-                                    if ($cat['category_id'] == $article[0]['category_id']) :
-                                        echo ucfirst($cat['name']);
+                                foreach ($collections as $collection) :
+                                    if ($collection['id_collection'] == $article[0]['collection_id']) :
+                                        echo ucfirst($collection['name']);
                                     endif;
                                 endforeach;
                                 ?>
@@ -259,11 +259,11 @@
                                 <span class="sku"><?php echo $article[0]['sku']; ?></span></li>
                             <li class="nav-item text-gray-111 mx-3 flex-shrink-0 flex-xl-shrink-1">/</li>
                             <li class="nav-item text-gray-111 flex-shrink-0 flex-xl-shrink-1">
-                                <strong>Categorie:</strong> <a href="#" class="text-blue">
+                                <strong>collection :</strong> <a href="#" class="text-blue">
                                     <?php
-                                    foreach ($categories as $cat) :
-                                        if ($cat['category_id'] == $article[0]['category_id']) :
-                                            echo ucfirst($cat['name']);
+                                    foreach ($collections as $collection) :
+                                        if ($collection['id_collection'] == $article[0]['collection_id']) :
+                                            echo ucfirst($collection['name']);
                                         endif;
                                     endforeach;
                                     ?>
