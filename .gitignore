@@ -7,3 +7,4 @@ logs/
 vendor/
 photos/
 uploads/
+/coeur/includes/env_properties/ody.php
