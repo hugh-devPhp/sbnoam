@@ -16,7 +16,7 @@ $infos = (array)$infoss[0];
                 <a href="index-2.html">
                     <img class="img-fluid" width="100" height="100" src="<?php echo base_url()?>assets/sbnoam_logo.png" alt="">
                     <div class="site-logo-text">
-                        <h3>Shine By Noame</h3>
+                        <h3>Shine By Noam</h3>
                         <h6>Le meilleur choix pour sublimer</h6>
                     </div>
                 </a>
