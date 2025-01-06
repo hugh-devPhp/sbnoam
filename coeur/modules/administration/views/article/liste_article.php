@@ -28,7 +28,7 @@
                         <th>#</th>
                         <th>image</th>
                         <th>Designation</th>
-                        <th>Catégorie</th>
+                        <th>Collection</th>
                         <th>sku</th>
                         <th>prix</th>
                         <th>prix promo</th>
@@ -54,9 +54,9 @@
                             </td>
                             <td>
                                 <?php
-                                foreach ($categories as $cat) :
-                                    if ($cat['category_id'] == $article['category_id']) :
-                                        echo $cat['name'];
+                                foreach ($collections as $col) :
+                                    if ($col['id_collection'] == $article['collection_id']) :
+                                        echo $col['name'];
                                     endif;
                                 endforeach;
                                 ?>

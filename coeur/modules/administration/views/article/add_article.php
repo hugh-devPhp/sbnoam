@@ -171,7 +171,7 @@
                         <input type="hidden" name="type" value=" type.id ">
                         <section>
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-6 col-md-6 col-sm-4">
                                     <div class="mb-3">
                                         <label for="firstname">Designation </label>
                                         <input type="text" class="form-control" id="firstname" name="name" placeholder="Nom du produit" required>
@@ -189,55 +189,47 @@
                                         <input type="number" class="form-control" id="prix_promo" name="prix_promo">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="qte" class="form-label">Quantité</label>
                                         <input type="number" class="form-control" id="qte" required name="qte">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="garantie" class="form-label">Garantie (en mois)</label>
                                         <input type="number" class="form-control" id="garantie" required name="garantie">
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+<!--                                <div class="col-lg-3 col-md-3 col-sm-3">-->
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="brand">Marque</label>-->
+<!--                                        <select id="brand" class="form-select" name="brand" required>-->
+<!--                                            <option value="">Choisir...</option>-->
+<!--                                            --><?php
+//                                            foreach ($marques as $marq) :
+//                                            ?>
+<!--                                                <option value="--><?php //echo $marq['article_marque_id']; ?><!--">--><?php //echo $marq['name']; ?><!--</option>-->
+<!--                                            --><?php
+//                                            endforeach;
+//                                            ?>
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <div class="col-lg-6 col-md-6 col-sm-4">
                                     <div class="mb-3">
-                                        <label for="brand">Marque</label>
-                                        <select id="brand" class="form-select" name="brand" required>
+                                        <label for="cat">Collection</label>
+                                        <select id="cat" class="form-select" name="collection" required>
                                             <option value="">Choisir...</option>
                                             <?php
-                                            foreach ($marques as $marq) :
+                                            foreach ($collection as $col) :
                                             ?>
-                                                <option value="<?php echo $marq['article_marque_id']; ?>"><?php echo $marq['name']; ?></option>
+                                                <option value="<?php echo $col['id_collection']; ?>"><?php echo $col['name']; ?></option>
                                             <?php
                                             endforeach;
                                             ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <div class="mb-3">
-                                        <label for="cat">Catégorie</label>
-                                        <select id="cat" class="form-select cat_choice" name="cat" required>
-                                            <option value="">Choisir...</option>
-                                            <?php
-                                            foreach ($categories as $cat) :
-                                            ?>
-                                                <option value="<?php echo $cat['category_id']; ?>"><?php echo $cat['name']; ?></option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <div class="mb-3">
-                                        <label for="sou_cat">Sous Catégorie</label>
-                                        <select id="sou_cat" class="form-select" name="s_cat">
-                                            <option value="">Choisir...</option>
                                         </select>
                                     </div>
                                 </div>
@@ -406,27 +398,6 @@
 
 <script>
     $(document).ready(function() {
-        $('.cat_choice').on('change', function() {
-            let cat_id = $(this).val();
-            Notiflix.Loading.dots('Chargement des sous-catégories...');
-            $.ajax({
-                url: '<?php echo base_url(); ?>administration/article_config/get_sous_categories_by_cat',
-                data: {
-                    'cat_id': cat_id
-                },
-                method: 'post',
-                dataType: 'json',
-                success: function(json) {
-                    let i;
-                    var option = '<option value="">Sous-catégorie</option>';
-                    for (i = 0; i < json.length; i++) {
-                        option += "<option value='" + json[i].sous_category_id + "'>" + json[i].name + "</option>";
-                    }
-                    $('#sou_cat').html(option);
-                    Notiflix.Loading.remove();
-                }
-            })
-        });
 
         $('#add_product').submit(function(e) {
             e.preventDefault();

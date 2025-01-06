@@ -29,16 +29,14 @@ class Article extends MX_Controller
     {
         $data['onglet_title'] = "Ajout article";
         $data['marques'] = $this->article_model->get_method('app_article_marque');
-        $data['categories'] = $this->article_model->get_method('app_category');
-        $data['sous-categories'] = $this->article_model->get_method('app_sous_category');
+        $data['collection'] = $this->article_model->get_method('app_collection');
         $this->load->view('article/add_article', $data);
     }
 
     function get_articles()
     {
         $data['onglet_title'] = "Liste des articles";
-        $data['categories'] = $this->article_model->get_method('app_category');
-        $data['sous-categories'] = $this->article_model->get_method('app_sous_category');
+        $data['collections'] = $this->article_model->get_method('app_collection');
         $data['articles'] = $this->article_model->get_method('app_article');
         $this->load->view('article/liste_article', $data);
     }
@@ -53,6 +51,7 @@ class Article extends MX_Controller
                 $prix_promo = $this->input->post("prix_promo");
                 $stock = $this->input->post("qte");
                 $garantie = $this->input->post("garantie");
+                $collection = $this->input->post("collection");
                 $description = $this->input->post("desc");
                 $sku = $this->input->post("sku");
 
@@ -77,6 +76,7 @@ class Article extends MX_Controller
                             'date_add' => date("Y-m-d H:i:s"),
                             'prix' => $prix,
                             'prix_promo' => $prix_promo,
+                            'collection_id' => $collection,
                             'stock' => $stock,
                             'garantie' => $garantie,
                             'description' => $description,
