@@ -142,7 +142,7 @@ $infos = (array)$infoss[0];
             <div class="sigma-copyright-inner">
                 <div class="row">
                     <div class="col-lg-6 col-md-5 order-2 order-md-1">
-                        <p class="sigma-copyright-text">Copyright By@<a href="#">shinebynoame</a> - 2022</p>
+                        <p class="sigma-copyright-text">Copyright By@<a href="#">shinebynoam</a> - 2022</p>
                     </div>
                 </div>
             </div>
