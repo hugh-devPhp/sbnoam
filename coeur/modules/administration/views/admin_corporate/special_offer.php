@@ -68,13 +68,13 @@
                                 <?php
                                 foreach ($articles as $article) {
                                     if ($article['article_id'] == $offer['article_id']) {
-                                        $rix_promo = number_format($article['prix_promo'], 0, ',', '.');
+                                        $prix_promo = number_format($article['prix_promo'], 0, ',', '.');
                                         echo number_format($article['prix'], 0, ',', '.');
                                     }
                                 }
                                 ?>
                             </td>
-                            <td valign="middle"><?php echo $rix_promo; ?></td>
+                            <td valign="middle"><?php echo $offer['prix_promo']; ?></td>
                             <td valign="middle"><?php echo $offer['date_fin']; ?></td>
                             <td valign="middle">
                                 <?php
@@ -133,10 +133,10 @@
                                 ?>
                             </select>
                         </div>
-<!--                        <div class="mb-3">-->
-<!--                            <label for="prix_promo" class="col-form-label">Prix promo:</label>-->
-<!--                            <input type="number" class="form-control" id="prix_promo" name="prix_promo" required>-->
-<!--                        </div>-->
+                        <div class="mb-3">
+                            <label for="prix_promo" class="col-form-label">Prix promo:</label>
+                            <input type="number" class="form-control" id="prix_promo" name="prix_promo" required>
+                        </div>
                         <div class="mb-3">
                             <label for="qte_produit" class="col-form-label">Date fin:</label>
                             <input type="date" class="form-control" id="date_fin" name="date_fin" required>

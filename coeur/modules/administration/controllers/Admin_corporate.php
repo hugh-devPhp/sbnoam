@@ -226,7 +226,7 @@ class Admin_corporate extends MX_Controller
 
             if ($this->form_validation->run()) {
                 $product_id = $this->input->post("product_id");
-//                $prix_promo = $this->input->post("prix_promo");
+                $prix_promo = $this->input->post("prix_promo");
                 $date_fin = $this->input->post("date_fin");
 
                 $offers = array(
