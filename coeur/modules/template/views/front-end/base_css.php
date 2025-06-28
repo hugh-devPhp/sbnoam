@@ -25,5 +25,7 @@
 <link rel="stylesheet" href="<?php echo base_url()?>assets/front-end/css/ion.rangeSlider.min.css" />
 <!--====== Default css ======-->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/front-end/css/default.css" />
+
+<link rel="stylesheet" href="<?php echo base_url()?>assets/admin/sweetalert2/sweetalert2.min.css" />
 <!--====== Style css ======-->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/front-end/css/style.css" />

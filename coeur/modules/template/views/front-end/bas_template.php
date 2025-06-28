@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="shop-detail-image">
-                                <img src="assets/img/shop/detail-1.png" class="img-fluid" alt="img">
+                                <img src="<?php echo base_url("assets/front-end/img/shop/detail-1.png") ?>" class="img-fluid" alt="img">
                             </div>
                         </div>
                         <div class="col-lg-7">
@@ -159,7 +159,7 @@
 <!-- The Modal -->
 <div class="modal fade on-load-modal" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background-image: url(assets/img/popup.jpg)">
+        <div class="modal-content" style="background-image: url(assets/front-end/img/popup.jpg)">
             <!-- Modal Header -->
             <div class="modal-header">
                 <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>

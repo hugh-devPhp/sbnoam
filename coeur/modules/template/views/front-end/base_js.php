@@ -29,6 +29,8 @@
 <script src="<?php echo base_url()?>assets/front-end/js/leaflet.js"></script>
 <script src="<?php echo base_url()?>assets/front-end/js/mapbox-gl.min.js"></script>
 
+<script src="<?php echo base_url()?>assets/admin/sweetalert2/sweetalert2.all.min.js"></script>
+
 <!--====== Main js ======-->
 <script src="<?php echo base_url()?>assets/front-end/js/main.js"></script>
 <script>
