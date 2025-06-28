@@ -356,8 +356,12 @@ if (!function_exists('RepEfface')) {
     function ip_details($IPaddress)
     {
 //    $IPaddress="154.0.27.156";
-        $json       = file_get_contents("http://ipinfo.io/{$IPaddress}");
-        $details    = json_decode($json);
+        $details = '';
+        if ($IPaddress){
+            $json = file_get_contents("http://ipinfo.io/{$IPaddress}");
+            $details    = json_decode($json);
+
+        }
         return $details;
     }
 
@@ -369,6 +373,11 @@ if (!function_exists('RepEfface')) {
         curl_close($ch);
 
         $data = json_decode($response, true);
-        return $data['origin'];
+        $return = '';
+        if ($data)
+        {
+            $return = $data['origin'];
+        }
+        return $return;
     }
 }
