@@ -27,9 +27,9 @@
                             <div class="icon">
                                 <i class="flaticon-necklace"></i>
                             </div>
-                            <h4><a href="#">Collection de mariage</a></h4>
+                            <h4><a href="<?php echo base_url() ?>collection">Collection de mariage</a></h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                                Découvrez nos collections et choisissez le bijoux parfait pour votre jour.
                             </p>
                         </div>
                     </div>
@@ -41,9 +41,9 @@
                         <span class="title-tag">à propos de nous</span>
                         <h2>Création de bijoux depuis 2020 </h2>
                     </div>
-                    <p>
+                    <h4>
                         <?php echo  character_limiter(strip_tags($infos['court_description']), 200); ?>
-                    </p>
+                    </h4>
                     <a href="contact.html" class="main-btn btn-filled mt-40"> Savoir plus</a>
                 </div>
             </div>
