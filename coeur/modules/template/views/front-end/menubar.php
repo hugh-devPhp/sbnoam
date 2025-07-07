@@ -3,8 +3,8 @@
         <div class="nav-container d-flex align-items-center justify-content-between">
             <!-- Site Logo -->
             <div class="site-logo site-logo-text">
-                <a href="<?php echo base_url()?>accueil">
-                    <img class="img-fluid" width="120" height="120" src="<?php echo base_url()?>assets/sbnoam_logo.png" alt="">
+                <a href="<?php echo base_url() ?>accueil">
+                    <img class="img-fluid" width="140" height="140" src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="">
                     <div class="site-logo-text">
                         <h3>Shine By Noam</h3>
                         <h6>Le meilleur choix pour sublimer</h6>
@@ -24,17 +24,17 @@
                             <nav>
                                 <ul class="sigma-main-menu">
                                     <li class="menu-item">
-                                        <a href="<?php echo base_url()?>accueil">
+                                        <a href="<?php echo base_url() ?>accueil">
                                             Accueil
                                         </a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="<?php echo base_url()?>collection">
+                                        <a href="<?php echo base_url() ?>collection">
                                             Collections
                                         </a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="<?php echo base_url()?>boutique">
+                                        <a href="<?php echo base_url() ?>boutique">
                                             Boutique
                                         </a>
                                     </li>
@@ -44,11 +44,11 @@
                                         </a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="<?php echo base_url()?>a_propos">A propos</a>
+                                        <a href="<?php echo base_url() ?>a_propos">A propos</a>
                                     </li>
 
                                     <li class="menu-item">
-                                        <a href="<?php echo base_url()?>contact">
+                                        <a href="<?php echo base_url() ?>contact">
                                             Contact
                                         </a>
                                     </li>
@@ -88,5 +88,5 @@
 </div>
 
 <!-- Mobile menu -->
-<?php $this->load->view('template/front-end/mobile_menu')?>
+<?php $this->load->view('template/front-end/mobile_menu') ?>
 <!-- End Mobile menu -->

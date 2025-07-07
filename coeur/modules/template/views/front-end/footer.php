@@ -31,8 +31,8 @@ $infos = (array)$infoss[0];
                             <div class="col-lg-6">
                                 <div class="sigma-footer-box-top">
                                     <div class="ft-logo">
-                                        <a href="index-2.html">
-                                            <img width="250" height="250" src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="Logo">
+                                        <a href="/">
+                                            <img width="200" height="120" src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="Logo">
                                         </a>
                                     </div>
                                     <ul class="ft-social-media">
@@ -63,7 +63,7 @@ $infos = (array)$infoss[0];
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="<?php echo base_url()?>a_propos/index">
+                                            <a href="<?php echo base_url() ?>a_propos/index">
                                                 Apropos de nous
                                             </a>
                                         </li>
@@ -78,7 +78,7 @@ $infos = (array)$infoss[0];
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="<?php echo base_url()?>contact/index">
+                                            <a href="<?php echo base_url() ?>contact/index">
                                                 Contact
                                             </a>
                                         </li>
