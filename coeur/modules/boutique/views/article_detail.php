@@ -1,245 +1,250 @@
 <?php $this->load->view('template/front-end/haut_template', array("menu_actif" => $menu_actif)) ?>
-    <!-- ========== END HEADER ========== -->
-    <!--====== BREADCRUMB PART START ======-->
+<!-- ========== END HEADER ========== -->
+<!--====== BREADCRUMB PART START ======-->
 <?php $this->load->view('template/front-end/page_head', array("title" => $title, "menu_actif" => $menu_actif)) ?>
-    <!-- ========== MAIN CONTENT ========== -->
-    <main id="content" role="main">
-        <!-- breadcrumb -->
-        <div class="bg-gray-13 bg-md-transparent">
-            <div class="container">
-                <!-- breadcrumb -->
-                <div class="my-md-3">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a
-                                        href="<?php echo base_url() ?>accueil">Accueil</a></li>
-                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a
-                                        href="<?php echo base_url() ?>boutique/boutique_view">Boutique</a></li>
-                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="#">Detail article</a>
-                            </li>
-                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
-                                <?php echo ucfirst($article[0]['designation']); ?>
-                            </li>
-                        </ol>
-                    </nav>
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+    <!-- breadcrumb -->
+    <div class="bg-gray-13 bg-md-transparent">
+        <div class="container">
+            <!-- breadcrumb -->
+            <div class="my-md-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a
+                                href="<?php echo base_url() ?>accueil">Accueil</a></li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a
+                                href="<?php echo base_url() ?>boutique/boutique_view">Boutique</a></li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="#">Detail article</a>
+                        </li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">
+                            <?php echo ucfirst($article[0]['designation']); ?>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- End breadcrumb -->
+        </div>
+    </div>
+    <!-- End breadcrumb -->
+    <div class="container">
+        <!-- Single Product Body -->
+        <div class="mb-14">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl-5 mb-4 mb-md-0">
+                    <div class="shop-detail-image">
+                        <div class="detail-slider-1">
+                            <div class="slide-item">
+                                <div class="image-box">
+                                    <a href="#">
+                                        <img
+                                            src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
+                                            class="img-fluid" alt="img">
+                                    </a>
+                                    <span class="price">Sale</span>
+                                </div>
+                            </div>
+                            <?php
+                            $i = 1;
+                            foreach ($articles_img as $img) :
+                            ?>
+                                <div class="slide-item">
+                                    <div class="image-box">
+                                        <a href="#">
+                                            <img class="img-fluid" src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>">
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php
+                                $i++;
+                            endforeach;
+                            ?>
+                        </div>
+                        <div class="detail-slider-2">
+                            <div class="slide-item">
+                                <div class="image-box">
+                                    <img
+                                        src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
+                                        class="img-fluid" alt="img">
+                                </div>
+                            </div>
+                            <?php
+                            $i = 1;
+                            foreach ($articles_img as $img) :
+                            ?>
+                                <div class="slide-item">
+                                    <div class="image-box">
+                                        <img class="img-fluid" src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
+                                            alt="Image Description">
+                                    </div>
+                                </div>
+                            <?php
+                                $i++;
+                            endforeach;
+                            ?>
+                        </div>
+                    </div>
                 </div>
-                <!-- End breadcrumb -->
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-md-6 mb-lg-0">
+                    <div class="mb-2">
+                        <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block">
+                            <?php
+                            foreach ($collections as $collection) :
+                                if ($collection['id_collection'] == $article[0]['collection_id']) :
+                                    echo ucfirst($collection['name']);
+                                endif;
+                            endforeach;
+                            ?>
+                        </a>
+                        <h2 class="font-size-25 text-lh-1dot2"><?php echo ucfirst($article[0]['designation']); ?></h2>
+                        <div class="mb-2">
+                            <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
+                                <div class="text-warning mr-2">
+                                    <small class="fas fa-star"></small>
+                                    <small class="fas fa-star"></small>
+                                    <small class="fas fa-star"></small>
+                                    <small class="fas fa-star"></small>
+                                    <small class="far fa-star text-muted"></small>
+                                </div>
+                                <span class="text-secondary font-size-13">(3 vues)</span>
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <ul class="font-size-14 pl-3 ml-1 text-gray-110">
+                                <?php
+                                if ($article[0]['marque_id']) {
+                                ?>
+                                    <li>Marque:
+                                        <?php
+                                        foreach ($marques as $marq) :
+                                            if ($marq['article_marque_id'] == $article[0]['marque_id']) {
+                                                echo ucfirst($marq['name']);
+                                            }
+                                        endforeach;
+                                        ?>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($article[0]['couleur_id']) {
+                                ?>
+                                    <li>Couleur:
+                                        <?php
+                                        foreach ($couleurs as $color) :
+                                            if ($color['id_couleur'] == $article[0]['couleur_id']) {
+                                                echo ucfirst($color['code_couleur']);
+                                            }
+                                        endforeach;
+                                        ?>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+                                if ($article[0]['garantie']) {
+                                ?>
+                                    <li>Garantie:<?php echo $article[0]['garantie']; ?> mois</li>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+                                if ($article[0]['dimension']) {
+                                ?>
+                                    <li>Dimension:<?php echo $article[0]['dimension']; ?></li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                        <p><strong>SKU</strong>: <?php echo $article[0]['sku']; ?></p>
+                    </div>
+                </div>
+                <div class="mx-md-auto mx-lg-0 col-md-6 col-lg-4 col-xl-4">
+                    <div class="mb-2">
+                        <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
+                            <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">
+                                Disponibles:
+                                <span class="text-green font-weight-bold"><?php echo $article[0]['stock']; ?> en stock</span>
+                            </div>
+                            <div class="mb-3">
+
+                                <?php
+                                if ($article[0]['prix_promo']) :
+                                ?>
+                                    <del class="font-size-20 text-gray-9 d-block"><?php echo number_format($article[0]['prix'], 0, ',', ' '); ?>
+                                        XOF
+                                    </del>
+                                    <ins class="font-size-36 text-red text-decoration-none d-block"><?php echo number_format($article[0]['prix_promo'], 0, ',', ' '); ?>
+                                        XOF
+                                    </ins>
+                                <?php
+                                else:
+                                ?>
+                                    <div class="font-size-36"><?php echo number_format($article[0]['prix'], 0, ',', ' ') . ' XOF'; ?></div>
+                                <?php
+                                endif;
+                                ?>
+                            </div>
+                            <!--                                <div class="mb-3">-->
+                            <!--                                    <h6 class="font-size-14">Quantité</h6>-->
+                            <!-- Quantity -->
+                            <!--                                    <div class="border rounded-pill py-1 w-md-60 height-35 px-3 border-color-1">-->
+                            <!--                                        <div class="js-quantity row align-items-center">-->
+                            <!--                                            <div class="col">-->
+                            <!--                                                <input class="js-result form-control h-auto border-0 rounded p-0 shadow-none"-->
+                            <!--                                                       type="text" value="1">-->
+                            <!--                                            </div>-->
+                            <!--                                            <div class="col-auto pr-1">-->
+                            <!--                                                <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"-->
+                            <!--                                                   href="javascript:;">-->
+                            <!--                                                    <small class="fas fa-minus btn-icon__inner"></small>-->
+                            <!--                                                </a>-->
+                            <!--                                                <a class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"-->
+                            <!--                                                   href="javascript:;">-->
+                            <!--                                                    <small class="fas fa-plus btn-icon__inner"></small>-->
+                            <!--                                                </a>-->
+                            <!--                                            </div>-->
+                            <!--                                        </div>-->
+                            <!--                                    </div>-->
+                            <!-- End Quantity -->
+                            <!--                                </div>-->
+                            <div class="mb-2 pb-0dot5">
+                                <a href="#" class="btn btn-block btn-primary-dark panier"
+                                    data-id="<?php echo $article[0]['article_id']; ?>"
+                                    data-prix="<?php echo $article[0]['prix']; ?>">
+                                    <i class="ec ec-add-to-cart mr-2 font-size-20"></i> Ajouter au panier</a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="<?php echo base_url() ?>panier/verification" class="btn btn-block btn-dark">Acheter maintenant</a>
+                            </div>
+                            <div class="flex-content-center flex-wrap">
+                                <a href="#" class="text-gray-6 font-size-13 mr-2 favorite"
+                                    data-id="<?php echo $article[0]['article_id']; ?>"
+                                    data-prix="<?php echo $article[0]['prix']; ?>">
+                                    <i class="ec ec-favorites mr-1 font-size-15"></i> Favoris</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- End breadcrumb -->
-        <div class="container">
-            <!-- Single Product Body -->
-            <div class="mb-14">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-5 mb-4 mb-md-0">
-                        <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2" data-infinite="true"
-                             data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-                             data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-                             data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
-                             data-nav-for="#sliderSyncingThumb">
-                            <div class="js-slide">
-                                <img class="img-fluid"
-                                     src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
-                                     alt="Image Description">
-                            </div>
-                            <?php
-                            $i = 1;
-                            foreach ($articles_img as $img) :
-                                ?>
-                                <div class="js-slide">
-                                    <img class="img-fluid" alt="Image Description"
-                                         src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>">
-                                </div>
-                                <?php
-                                $i++;
-                            endforeach;
-                            ?>
-                        </div>
-
-                        <div id="sliderSyncingThumb"
-                             class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
-                             data-infinite="true" data-slides-show="5" data-is-thumbs="true"
-                             data-nav-for="#sliderSyncingNav">
-                            <div class="js-slide" style="cursor: pointer;">
-                                <img class="img-fluid"
-                                     src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
-                                     alt="Image Description">
-                            </div>
-                            <?php
-                            $i = 1;
-                            foreach ($articles_img as $img) :
-                                ?>
-                                <div class="js-slide" style="cursor: pointer;">
-                                    <img class="img-fluid"
-                                         src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
-                                         alt="Image Description">
-                                </div>
-                                <?php
-                                $i++;
-                            endforeach;
-                            ?>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 mb-md-6 mb-lg-0">
-                        <div class="mb-2">
-                            <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block">
-                                <?php
-                                foreach ($collections as $collection) :
-                                    if ($collection['id_collection'] == $article[0]['collection_id']) :
-                                        echo ucfirst($collection['name']);
-                                    endif;
-                                endforeach;
-                                ?>
-                            </a>
-                            <h2 class="font-size-25 text-lh-1dot2"><?php echo ucfirst($article[0]['designation']); ?></h2>
-                            <div class="mb-2">
-                                <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
-                                    <div class="text-warning mr-2">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <span class="text-secondary font-size-13">(3 vues)</span>
-                                </a>
-                            </div>
-                            <div class="mb-2">
-                                <ul class="font-size-14 pl-3 ml-1 text-gray-110">
-                                    <?php
-                                    if ($article[0]['marque_id']) {
-                                        ?>
-                                        <li>Marque:
-                                            <?php
-                                            foreach ($marques as $marq) :
-                                                if ($marq['article_marque_id'] == $article[0]['marque_id']) {
-                                                    echo ucfirst($marq['name']);
-                                                }
-                                            endforeach;
-                                            ?>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                    <?php
-                                    if ($article[0]['couleur_id']) {
-                                        ?>
-                                        <li>Couleur:
-                                            <?php
-                                            foreach ($couleurs as $color) :
-                                                if ($color['id_couleur'] == $article[0]['couleur_id']) {
-                                                    echo ucfirst($color['code_couleur']);
-                                                }
-                                            endforeach;
-                                            ?>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-
-                                    <?php
-                                    if ($article[0]['garantie']) {
-                                        ?>
-                                        <li>Garantie:<?php echo $article[0]['garantie']; ?> mois</li>
-                                        <?php
-                                    }
-                                    ?>
-
-                                    <?php
-                                    if ($article[0]['dimension']) {
-                                        ?>
-                                        <li>Dimension:<?php echo $article[0]['dimension']; ?></li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
-                            <p><strong>SKU</strong>: <?php echo $article[0]['sku']; ?></p>
-                        </div>
-                    </div>
-                    <div class="mx-md-auto mx-lg-0 col-md-6 col-lg-4 col-xl-4">
-                        <div class="mb-2">
-                            <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
-                                <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">
-                                    Disponibles:
-                                    <span class="text-green font-weight-bold"><?php echo $article[0]['stock']; ?> en stock</span>
-                                </div>
-                                <div class="mb-3">
-
-                                    <?php
-                                    if ($article[0]['prix_promo']) :
-                                        ?>
-                                        <del class="font-size-20 text-gray-9 d-block"><?php echo number_format($article[0]['prix'], 0, ',', ' '); ?>
-                                            XOF
-                                        </del>
-                                        <ins class="font-size-36 text-red text-decoration-none d-block"><?php echo number_format($article[0]['prix_promo'], 0, ',', ' '); ?>
-                                            XOF
-                                        </ins>
-                                    <?php
-                                    else:
-                                        ?>
-                                    <div class="font-size-36"><?php echo number_format($article[0]['prix'], 0, ',', ' ').' XOF';?></div>
-                                    <?php
-                                    endif;
-                                    ?>
-                                </div>
-<!--                                <div class="mb-3">-->
-<!--                                    <h6 class="font-size-14">Quantité</h6>-->
-                                    <!-- Quantity -->
-<!--                                    <div class="border rounded-pill py-1 w-md-60 height-35 px-3 border-color-1">-->
-<!--                                        <div class="js-quantity row align-items-center">-->
-<!--                                            <div class="col">-->
-<!--                                                <input class="js-result form-control h-auto border-0 rounded p-0 shadow-none"-->
-<!--                                                       type="text" value="1">-->
-<!--                                            </div>-->
-<!--                                            <div class="col-auto pr-1">-->
-<!--                                                <a class="js-minus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"-->
-<!--                                                   href="javascript:;">-->
-<!--                                                    <small class="fas fa-minus btn-icon__inner"></small>-->
-<!--                                                </a>-->
-<!--                                                <a class="js-plus btn btn-icon btn-xs btn-outline-secondary rounded-circle border-0"-->
-<!--                                                   href="javascript:;">-->
-<!--                                                    <small class="fas fa-plus btn-icon__inner"></small>-->
-<!--                                                </a>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-                                    <!-- End Quantity -->
-<!--                                </div>-->
-                                <div class="mb-2 pb-0dot5">
-                                    <a href="#" class="btn btn-block btn-primary-dark panier"
-                                       data-id="<?php echo $article[0]['article_id']; ?>"
-                                       data-prix="<?php echo $article[0]['prix']; ?>">
-                                        <i class="ec ec-add-to-cart mr-2 font-size-20"></i> Ajouter au panier</a>
-                                </div>
-                                <div class="mb-3">
-                                    <a href="<?php echo base_url()?>panier/verification" class="btn btn-block btn-dark">Acheter maintenant</a>
-                                </div>
-                                <div class="flex-content-center flex-wrap">
-                                    <a href="#" class="text-gray-6 font-size-13 mr-2 favorite"
-                                       data-id="<?php echo $article[0]['article_id']; ?>"
-                                       data-prix="<?php echo $article[0]['prix']; ?>">
-                                        <i class="ec ec-favorites mr-1 font-size-15"></i> Favoris</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Product Body -->
-            <div class="mb-8">
+        <!-- End Single Product Body -->
+        <div class="mb-8">
             <div class="position-relative position-md-static px-md-6">
                 <ul class="nav nav-classic nav-tab nav-tab-lg justify-content-xl-center flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble border-0 pb-1 pb-xl-0 mb-n1 mb-xl-0"
                     id="pills-tab-8" role="tablist">
                     <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                         <a class="nav-link active" id="Jpills-two-example1-tab" data-toggle="pill"
-                           href="#Jpills-two-example1" role="tab" aria-controls="Jpills-two-example1"
-                           aria-selected="false">Description</a>
+                            href="#Jpills-two-example1" role="tab" aria-controls="Jpills-two-example1"
+                            aria-selected="false">Description</a>
                     </li>
                     <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">
                         <a class="nav-link" id="Jpills-three-example1-tab" data-toggle="pill"
-                           href="#Jpills-three-example1" role="tab" aria-controls="Jpills-three-example1"
-                           aria-selected="false">Specification</a>
+                            href="#Jpills-three-example1" role="tab" aria-controls="Jpills-three-example1"
+                            aria-selected="false">Specification</a>
                     </li>
                     <!--                <li class="nav-item flex-shrink-0 flex-xl-shrink-1 z-index-2">-->
                     <!--                    <a class="nav-link" id="Jpills-four-example1-tab" data-toggle="pill" href="#Jpills-four-example1" role="tab" aria-controls="Jpills-four-example1" aria-selected="false">Commentaires</a>-->
@@ -250,13 +255,14 @@
             <div class="borders-radius-17 border p-4 mt-4 mt-md-0 px-lg-10 py-lg-9">
                 <div class="tab-content" id="Jpills-tabContent">
                     <div class="tab-pane fade active show" id="Jpills-two-example1" role="tabpanel"
-                         aria-labelledby="Jpills-two-example1-tab">
+                        aria-labelledby="Jpills-two-example1-tab">
                         <div class="row">
                             <?php echo $article[0]['description']; ?>
                         </div>
                         <ul class="nav flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
                             <li class="nav-item text-gray-111 flex-shrink-0 flex-xl-shrink-1"><strong>SKU:</strong>
-                                <span class="sku"><?php echo $article[0]['sku']; ?></span></li>
+                                <span class="sku"><?php echo $article[0]['sku']; ?></span>
+                            </li>
                             <li class="nav-item text-gray-111 mx-3 flex-shrink-0 flex-xl-shrink-1">/</li>
                             <li class="nav-item text-gray-111 flex-shrink-0 flex-xl-shrink-1">
                                 <strong>collection :</strong> <a href="#" class="text-blue">
@@ -267,52 +273,53 @@
                                         endif;
                                     endforeach;
                                     ?>
-                                </a></li>
+                                </a>
+                            </li>
                             <li class="nav-item text-gray-111 mx-3 flex-shrink-0 flex-xl-shrink-1">/</li>
                         </ul>
                     </div>
                     <div class="tab-pane fade" id="Jpills-three-example1" role="tabpanel"
-                         aria-labelledby="Jpills-three-example1-tab">
+                        aria-labelledby="Jpills-three-example1-tab">
                         <div class="mx-md-5 pt-1">
                             <div class="table-responsive mb-4">
                                 <table class="table table-hover">
                                     <tbody>
-                                    <tr>
-                                        <th class="px-4 px-xl-5 border-top-0">Poids</th>
-                                        <td class="border-top-0"> <?php echo $article[0]['poids']; ?> kg</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="px-4 px-xl-5">Dimensions</th>
-                                        <td> <?php echo $article[0]['dimension']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="px-4 px-xl-5">Marque</th>
-                                        <td>
-                                            <?php
-                                            foreach ($marques as $marq) :
-                                                if ($marq['article_marque_id'] == $article[0]['marque_id']) {
-                                                    echo ucfirst($marq['name']);
-                                                }
-                                            endforeach;
-                                            ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="px-4 px-xl-5">couleur</th>
-                                        <td>
-                                            <?php
-                                            foreach ($couleurs as $color) :
-                                                if ($color['id_couleur'] == $article[0]['couleur_id']) {
-                                                    echo ucfirst($color['code_couleur']);
-                                                }
-                                            endforeach;
-                                            ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="px-4 px-xl-5">Garantie</th>
-                                        <td> <?php echo $article[0]['garantie']; ?> mois</td>
-                                    </tr>
+                                        <tr>
+                                            <th class="px-4 px-xl-5 border-top-0">Poids</th>
+                                            <td class="border-top-0"> <?php echo $article[0]['poids']; ?> kg</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="px-4 px-xl-5">Dimensions</th>
+                                            <td> <?php echo $article[0]['dimension']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="px-4 px-xl-5">Marque</th>
+                                            <td>
+                                                <?php
+                                                foreach ($marques as $marq) :
+                                                    if ($marq['article_marque_id'] == $article[0]['marque_id']) {
+                                                        echo ucfirst($marq['name']);
+                                                    }
+                                                endforeach;
+                                                ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="px-4 px-xl-5">couleur</th>
+                                            <td>
+                                                <?php
+                                                foreach ($couleurs as $color) :
+                                                    if ($color['id_couleur'] == $article[0]['couleur_id']) {
+                                                        echo ucfirst($color['code_couleur']);
+                                                    }
+                                                endforeach;
+                                                ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="px-4 px-xl-5">Garantie</th>
+                                            <td> <?php echo $article[0]['garantie']; ?> mois</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -504,11 +511,11 @@
             </div>
             <!--         End Tab Content -->
         </div>
-        </div>
+    </div>
 
 
-    </main>
-    <!-- ========== END MAIN CONTENT ========== -->
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
 
 
 <?php $this->load->view('template/front-end/bas_template') ?>

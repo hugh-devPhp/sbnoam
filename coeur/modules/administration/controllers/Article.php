@@ -41,7 +41,8 @@ class Article extends MX_Controller
         $this->load->view('article/liste_article', $data);
     }
 
-    function add_article() {
+    function add_article()
+    {
         if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérification de la méthode de requête
             $this->form_validation->set_rules('name', 'name', 'required');
 
@@ -56,15 +57,14 @@ class Article extends MX_Controller
                 $sku = $this->input->post("sku");
 
                 $app_article_sku = $this->article_model->get_method_where('app_article', array('sku' => $sku));
-                if ($app_article_sku){
+                if ($app_article_sku) {
                     $error = array('error' => 'SKU est déjà utilisé');
                     echo json_encode($error);
-                }
-                else {
+                } else {
 
                     //Upload Image
                     $config['upload_path'] = './uploads/articles';
-                    $config['allowed_types'] = 'jpeg|jpg|png|webp';
+                    $config['allowed_types'] = 'jpeg|jpg|png|webp|jfif';
                     $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
 
                     // Charger la bibliothèque de téléchargement une seule fois
@@ -150,17 +150,18 @@ class Article extends MX_Controller
         }
     }
 
-    function edit_article() {
+    function edit_article()
+    {
         if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérification de la méthode de requête
             $article_id = $this->input->post("article_id");
             $data['onglet_title'] = "Modification";
             $data['marques'] = $this->article_model->get_method('app_article_marque');
-            $data['categories'] = $this->article_model->get_method('app_category');
-            $data['sous_categories'] = $this->article_model->get_method('app_sous_category');
+            $data['couleurs'] = $this->article_model->get_method_simple('app_couleur');
+            $data['materiels'] = $this->article_model->get_method('app_article_materiel');
             $data['articles_images'] = $this->article_model->get_method('app_image');
             $articles_img = array();
-            foreach ($data['articles_images'] as $image){
-                if($image['article_id'] == $article_id){
+            foreach ($data['articles_images'] as $image) {
+                if ($image['article_id'] == $article_id) {
                     $articles_img[] = array(
                         "id" => $image['image_id'],
                         "name" => $image['name'],
@@ -173,7 +174,8 @@ class Article extends MX_Controller
         }
     }
 
-    function edit_data_article(){
+    function edit_data_article()
+    {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->form_validation->set_rules('article_id', 'article_id', 'required');
 
@@ -186,22 +188,20 @@ class Article extends MX_Controller
                 $couleur_id = $this->input->post("color");
                 $garantie = $this->input->post("garantie");
                 $marque_id = $this->input->post("brand");
-                $category_id = $this->input->post("cat");
-                $sous_category_id = $this->input->post("s_cat");
+                $materiel_id = $this->input->post("materiel_id");
                 $description = $this->input->post("desc");
                 $sku = $this->input->post("sku");
                 $dimension = $this->input->post("dimension");
                 $poids = $this->input->post("poids");
 
                 $app_article_sku = $this->article_model->get_method_where('app_article', array('sku' => $sku));
-                if (!empty($app_article_sku) and $app_article_sku[0]['article_id'] != $article_id){
+                if (!empty($app_article_sku) and $app_article_sku[0]['article_id'] != $article_id) {
                     $error = array('error' => 'SKU est déjà utilisé');
                     echo json_encode($error);
-                }
-                else {
+                } else {
                     //Upload Image
                     $config['upload_path'] = './uploads/articles';
-                    $config['allowed_types'] = 'jpeg|jpg|png|webp';
+                    $config['allowed_types'] = 'jpeg|jpg|png|webp|jfif';
                     $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
 
                     // Charger la bibliothèque de téléchargement une seule fois
@@ -217,8 +217,7 @@ class Article extends MX_Controller
                             'couleur_id' => $couleur_id,
                             'garantie' => $garantie,
                             'marque_id' => $marque_id,
-                            'category_id' => $category_id,
-                            'sous_category_id' => $sous_category_id,
+                            'materiel_id' => $materiel_id,
                             'description' => $description,
                             'sku' => $sku,
                             'dimension' => $dimension,
@@ -237,8 +236,7 @@ class Article extends MX_Controller
                             'couleur_id' => $couleur_id,
                             'garantie' => $garantie,
                             'marque_id' => $marque_id,
-                            'category_id' => $category_id,
-                            'sous_category_id' => $sous_category_id,
+                            'materiel_id' => $materiel_id,
                             'description' => $description,
                             'sku' => $sku,
                             'dimension' => $dimension,
@@ -290,18 +288,19 @@ class Article extends MX_Controller
         }
     }
 
-    function detail_article(){
+    function detail_article()
+    {
         $article_id = $this->input->post("article_id");
         $data['onglet_title'] = "Details article";
-        $data['liste_active']=array(1 =>'Active', 0 =>'Inactive');
+        $data['liste_active'] = array(1 => 'Active', 0 => 'Inactive');
         $data['article'] = $this->article_model->get_method_where('app_article', array('article_id' => $article_id));
         $data['articles_images'] = $this->article_model->get_method('app_image');
         $data['categories'] = $this->article_model->get_method('app_category');
         $data['marques'] = $this->article_model->get_method('app_article_marque');
         $data['sous_categories'] = $this->article_model->get_method('app_sous_category');
         $articles_img = array();
-        foreach ($data['articles_images'] as $image){
-            if($image['article_id'] == $article_id){
+        foreach ($data['articles_images'] as $image) {
+            if ($image['article_id'] == $article_id) {
                 $articles_img[] = array(
                     "id" => $image['image_id'],
                     "name" => $image['name'],
@@ -309,7 +308,6 @@ class Article extends MX_Controller
             }
         }
         $data['articles_img'] = $articles_img;
-        $this->load->view('article/details_article_view',$data);
+        $this->load->view('article/details_article_view', $data);
     }
-
 }

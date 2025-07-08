@@ -60,11 +60,11 @@
         width: 100%;
         margin: 0;
         color: #fff;
-        background:  #f69900;
+        background: #f69900;
         border: none;
         padding: 10px;
         border-radius: 4px;
-        border-bottom: 4px solid  #f69900;
+        border-bottom: 4px solid #f69900;
         transition: all .2s ease;
         outline: none;
         text-transform: uppercase;
@@ -72,7 +72,7 @@
     }
 
     .file-upload-btn:hover {
-        background:  #f69900;
+        background: #f69900;
         color: #ffffff;
         transition: all .2s ease;
         cursor: pointer;
@@ -101,13 +101,13 @@
 
     .image-upload-wrap {
         margin-top: 20px;
-        border: 4px dashed  #f69900;
+        border: 4px dashed #f69900;
         position: relative;
     }
 
     .image-dropping,
     .image-upload-wrap:hover {
-        background-color:  #f69900;
+        background-color: #f69900;
         border: 4px dashed #ffffff;
     }
 
@@ -178,28 +178,28 @@
                                     <div class="mb-3">
                                         <label for="firstname">Designation </label>
                                         <input type="text" class="form-control" value="<?php echo $article[0]['designation']; ?>"
-                                               id="firstname" name="name">
+                                            id="firstname" name="name">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="price">Prix</label>
                                         <input type="text" class="form-control" value="<?php echo  $article[0]['prix']; ?>"
-                                               id="price" name="price">
+                                            id="price" name="price">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="prix_promo">Prix promo</label>
-                                        <input type="text" class="form-control"   value="<?php echo  $article[0]['prix_promo']; ?>"
-                                               id="prix_promo" name="prix_promo">
+                                        <input type="text" class="form-control" value="<?php echo  $article[0]['prix_promo']; ?>"
+                                            id="prix_promo" name="prix_promo">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="qte" class="form-label">Quantité</label>
                                         <input type="text" class="form-control" id="qte"
-                                               value="<?php echo  $article[0]['stock']; ?>" name="qte">
+                                            value="<?php echo  $article[0]['stock']; ?>" name="qte">
                                     </div>
                                 </div>
                             </div>
@@ -208,18 +208,18 @@
                                     <div class="mb-3">
                                         <label for="garantie" class="form-label">Garantie</label>
                                         <input type="text" class="form-control" id="garantie"
-                                               value="<?php echo  $article[0]['garantie']; ?>" name="garantie">
+                                            value="<?php echo  $article[0]['garantie']; ?>" name="garantie">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="brand">Marque</label>
-                                        <select id="brand" class="form-select" name="brand" >
+                                        <select id="brand" class="form-select" name="brand">
                                             <?php
                                             foreach ($marques as $marq) :
-                                                if ($marq['article_marque_id'] ==  $article[0]['marque_id']){
+                                                if ($marq['article_marque_id'] ==  $article[0]['marque_id']) {
                                             ?>
-                                                <option value="<?php echo $marq['article_marque_id']; ?>"><?php echo $marq['name']; ?></option>
+                                                    <option value="<?php echo $marq['article_marque_id']; ?>"><?php echo $marq['name']; ?></option>
                                             <?php
                                                 }
                                             endforeach;
@@ -237,21 +237,21 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
-                                        <label for="cat">Catégorie</label>
-                                        <select id="cat" class="form-select cat_choice" name="cat" >
+                                        <label for="color">Couleur</label>
+                                        <select id="color" class="form-select" name="color">
                                             <?php
-                                            foreach ($categories as $cat) :
-                                                if ($cat['category_id'] ==  $article[0]['category_id']){
-                                                    ?>
-                                                    <option value="<?php echo $cat['category_id']; ?>"><?php echo $cat['name']; ?></option>
+                                            foreach ($couleurs as $color) :
+                                                if ($color['id_couleur'] ==  $article[0]['couleur_id']) {
+                                            ?>
+                                                    <option value="<?php echo $color['id_couleur']; ?>"><?php echo $color['code_couleur']; ?></option>
                                             <?php
                                                 }
                                             endforeach;
                                             ?>
                                             <?php
-                                            foreach ($categories as $cat) :
+                                            foreach ($couleurs as $color) :
                                             ?>
-                                                <option value="<?php echo $cat['category_id']; ?>"><?php echo $cat['name']; ?></option>
+                                                <option value="<?php echo $color['id_couleur']; ?>"><?php echo $color['code_couleur']; ?></option>
                                             <?php
                                             endforeach;
                                             ?>
@@ -260,18 +260,24 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
-                                        <label for="sou_cat">Sous Catégorie</label>
-                                        <select id="sou_cat" class="form-select" name="s_cat">
+                                        <label for="materiel">materiel</label>
+                                        <select id="materiel" class="form-select" name="materiel">
                                             <?php
-                                            foreach ($sous_categories as $s_cat) :
-                                                if ($s_cat['sous_category_id'] ==  $article[0]['sous_category_id']){
-                                                    ?>
-                                                    <option value="<?php echo $s_cat['sous_category_id']; ?>"><?php echo $s_cat['name']; ?></option>
-                                                    <?php
+                                            foreach ($materiels as $materiel) :
+                                                if ($materiel['materiel_id'] ==  $article[0]['materiel_id']) {
+                                            ?>
+                                                    <option value="<?php echo $materiel['materiel_id']; ?>"><?php echo $materiel['name']; ?></option>
+                                            <?php
                                                 }
                                             endforeach;
                                             ?>
-                                            <option value="">Choisir...</option>
+                                            <?php
+                                            foreach ($materiels as $materiel) :
+                                            ?>
+                                                <option value="<?php echo $materiel['materiel_id']; ?>"><?php echo $materiel['name']; ?></option>
+                                            <?php
+                                            endforeach;
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -290,64 +296,41 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
-                                        <label for="color">Couleur</label>
-                                        <select id="color" class="form-select" name="color" >
-                                            <?php
-                                            foreach ($couleurs as $color) :
-                                                if ($color['id_couleur'] ==  $article[0]['couleur_id']){
-                                                    ?>
-                                                    <option value="<?php echo $color['id_couleur']; ?>"><?php echo $color['code_couleur']; ?></option>
-                                                    <?php
-                                                }
-                                            endforeach;
-                                            ?>
-                                            <?php
-                                            foreach ($couleurs as $color) :
-                                                ?>
-                                                <option value="<?php echo $color['id_couleur']; ?>"><?php echo $color['code_couleur']; ?></option>
-                                            <?php
-                                            endforeach;
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <div class="mb-3">
                                         <label for="sku" class="form-label">SKU</label>
                                         <input type="text" class="form-control" id="sku" name="sku"
-                                               value="<?php echo  $article[0]['sku']; ?>">
+                                            value="<?php echo  $article[0]['sku']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="dimension" class="form-label">Dimension</label>
                                         <input type="text" class="form-control" id="dimension" name="dimension"
-                                               value="<?php echo  $article[0]['dimension']; ?>">
+                                            value="<?php echo  $article[0]['dimension']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="poids" class="form-label">Poids</label>
                                         <input type="text" class="form-control" id="poids" name="poids"
-                                               value="<?php echo  $article[0]['poids']; ?>">
+                                            value="<?php echo  $article[0]['poids']; ?>">
                                     </div>
                                 </div>
                             </div>
                         </section>
 
-                        <h3 class="mb-2">Images</h3>
+                        <h3 class="mb-2">Images (format accepté : jpeg|jpg|png|webp)</h3>
                         <section>
                             <div>
                                 <div class="card-body p-0 p-md-4">
                                     <div class="row">
-                                        <div class="col-3 col-lg-1">
+                                        <div class="col-3 col-lg-1  me-4">
                                             <div class="image_min image">
                                                 <img src="<?php echo base_url(); ?>uploads/articles/<?php echo  $article[0]['image_principale_article']; ?>" alt="image"
-                                                     width="100" height="100"/>
+                                                    width="100" height="100" />
                                                 <div class="overlay border_radius">
                                                     <a class="fancybox centered"
-                                                       href="<?php echo base_url(); ?>uploads/articles/<?php echo  $article[0]['image_principale_article']; ?>"
-                                                       data-fancybox="gallery">
+                                                        href="<?php echo base_url(); ?>uploads/articles/<?php echo  $article[0]['image_principale_article']; ?>"
+                                                        data-fancybox="gallery">
                                                         <i class="icon-focus"></i>
                                                     </a>
                                                 </div>
@@ -357,27 +340,27 @@
                                         $i = 1;
                                         foreach ($articles_img as $img) :
                                         ?>
-                                        <div class="col-3 col-lg-1" id="image_liste">
-                                            <div class="image_min image">
-                                                <img src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>" alt="image"
-                                                     width="100" height="100"/>
-                                                <div class="overlay border_radius">
-                                                    <a class="fancybox centered"
-                                                       href="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
-                                                       data-fancybox="gallery">
-                                                        <i class="icon-focus"></i>
-                                                    </a>
+                                            <div class="col-3 col-lg-1 me-4" id="image_liste">
+                                                <div class="image_min image">
+                                                    <img src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>" alt="image"
+                                                        width="100" height="100" />
+                                                    <div class="overlay border_radius">
+                                                        <a class="fancybox centered"
+                                                            href="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
+                                                            data-fancybox="gallery">
+                                                            <i class="icon-focus"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-3 col-lg-1 my-1 mb-4">
-                                                <button type="button"
+                                                <div class="col-3 col-lg-1 my-1 mb-4">
+                                                    <button type="button"
                                                         class="btn btn-outline-danger btn-sm"
                                                         style="width: 100px" onclick="deleteImage('<?php echo $img['id']; ?>')">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                            <?php
+                                        <?php
                                             $i++;
                                         endforeach;
                                         ?>
@@ -392,7 +375,7 @@
                                                 </button>
 
                                                 <div class="image-upload-wrap">
-                                                    <input class="file-upload-input" name="picture"  type='file' onchange="readURL(this);" accept="image/*" />
+                                                    <input class="file-upload-input" name="picture" type='file' onchange="readURL(this);" accept="image/*" />
                                                     <div class="drag-text">
                                                         <h3>Faites glisser et déposez un fichier ou
                                                             cliquez sur choisir une image</h3>
@@ -419,7 +402,7 @@
                                                         <input type="file" class="uploadFile img" multiple name="images[]" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
                                                     </label>
                                                 </div>
-<!--                                                <i class="fa fa-plus imgAdd"></i>-->
+                                                <!--                                                <i class="fa fa-plus imgAdd"></i>-->
                                             </div><!-- row -->
                                         </div>
                                     </div>
@@ -453,7 +436,7 @@
 <script>
     /*galerie Image*/
     Fancybox.bind('[data-fancybox="gallery"]', {
-        caption: function (fancybox, carousel, slide) {
+        caption: function(fancybox, carousel, slide) {
             return (
                 `${slide.index + 1} / ${carousel.slides.length} <br />` + slide.caption
             );
@@ -469,10 +452,10 @@
     viewModel.multiFileData = ko.observable({
         dataURLArray: ko.observableArray(),
     });
-    viewModel.onClear = function (fileData) {
+    viewModel.onClear = function(fileData) {
         fileData.clear && fileData.clear();
     };
-    viewModel.debug = function () {
+    viewModel.debug = function() {
         window.viewModel = viewModel;
         console.log(ko.toJSON(viewModel));
         debugger;
@@ -480,7 +463,6 @@
     ko.fileBindings.defaultOptions.buttonText = 'Choisir';
     ko.fileBindings.defaultOptions.changeButtonText = 'Changer';
     ko.applyBindings(viewModel);
-
 </script>
 <script>
     function readURL(input) {
@@ -560,28 +542,6 @@
             }
         })
 
-        $('.cat_choice').on('change', function() {
-            let cat_id = $(this).val();
-            Notiflix.Loading.dots('Chargement des sous-catégories...');
-            $.ajax({
-                url: '<?php echo base_url(); ?>administration/article_config/get_sous_categories_by_cat',
-                data: {
-                    'cat_id': cat_id
-                },
-                method: 'post',
-                dataType: 'json',
-                success: function(json) {
-                    let i;
-                    var option = '<option value="">Sous-catégorie</option>';
-                    for (i = 0; i < json.length; i++) {
-                        option += "<option value='" + json[i].sous_category_id + "'>" + json[i].name + "</option>";
-                    }
-                    $('#sou_cat').html(option);
-                    Notiflix.Loading.remove();
-                }
-            })
-        });
-
         $('#update_product').submit(function(e) {
             e.preventDefault();
             var url = '<?php echo base_url(); ?>administration/article/edit_data_article';
@@ -637,13 +597,11 @@
                     data: {
                         image_id: image_id
                     },
-                    success: function (response) {
+                    success: function(response) {
                         if (response === true) {
-                            Notiflix.Notify.success('Supprimé avec succès.',
-                                {
-                                    position: 'right-bottom',
-                                },
-                            );
+                            Notiflix.Notify.success('Supprimé avec succès.', {
+                                position: 'right-bottom',
+                            }, );
                             $("#image_liste").load(location.href + " #image_liste");
                         } else {
                             swal.fire({
@@ -652,7 +610,7 @@
                             });
                         }
                     },
-                    error: function () {
+                    error: function() {
                         swal.fire('error');
                     }
                 });
