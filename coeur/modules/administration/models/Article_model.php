@@ -81,21 +81,25 @@ class Article_model extends CI_Model
         return $query;
     }
 
-    public function get_count($table) {
+    public function get_count($table)
+    {
         return $this->db->count_all($table);
     }
 
-    public function get_count_where($table, $where) {
+    public function get_count_where($table, $where)
+    {
         return $this->db->count_all($table, $where);
     }
 
-    public function get_articles($limit, $start, $table) {
+    public function get_articles($limit, $start, $table)
+    {
         $this->db->limit($limit, $start);
         $query = $this->db->get($table);
 
         return $query->result();
     }
-    public function get_articles_where($limit, $start, $table, $where) {
+    public function get_articles_where($limit, $start, $table, $where)
+    {
         $this->db->limit($limit, $start);
         $query = $this->db->get_where($table, $where);
 

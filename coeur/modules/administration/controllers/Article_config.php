@@ -101,8 +101,8 @@ class Article_config extends MX_Controller
                 foreach ($names as $name) {
                     $nameExists = false;
 
-                    foreach ($data['categories'] as $category_data){
-                        if (strtolower($name) === $category_data['name']){
+                    foreach ($data['categories'] as $category_data) {
+                        if (strtolower($name) === $category_data['name']) {
                             $nameExists = true;
                             break; // Sortie de la boucle dès qu'on trouve une correspondance
                         }
@@ -137,8 +137,8 @@ class Article_config extends MX_Controller
                 $name = $this->input->post("name_cat");
                 $categories = $this->article_model->get_method('app_category');
                 $nameExists = false;
-                foreach ($categories as $cat_data){
-                    if (strtolower($name) === $cat_data['name']){
+                foreach ($categories as $cat_data) {
+                    if (strtolower($name) === $cat_data['name']) {
                         $nameExists = true;
                         break; // Sortie de la boucle dès qu'on trouve une correspondance
                     }
@@ -168,7 +168,7 @@ class Article_config extends MX_Controller
         $category_id = $this->input->post('category_id');
         $data_delete = $this->article_model->delete_mod('app_category', array('category_id' => $category_id));
         $sous_categories = $this->article_model->get_method_where('app_sous_category', array('cat_id' => $category_id));
-        foreach ($sous_categories as $s_cat){
+        foreach ($sous_categories as $s_cat) {
             $data_delete_ = $this->article_model->delete_mod('app_sous_category', array('sous_category_id' => $s_cat['sous_category_id']));
         }
 
@@ -185,7 +185,7 @@ class Article_config extends MX_Controller
         $data_delete = false;
         foreach ($category_id as $item) {
             $sous_categories = $this->article_model->get_method_where('app_sous_category', array('cat_id' => $item));
-            foreach ($sous_categories as $s_cat){
+            foreach ($sous_categories as $s_cat) {
                 $data_delete = $this->article_model->delete_mod('app_sous_category', array('sous_category_id' => $s_cat['sous_category_id']));
             }
             $data_delete = $this->article_model->delete_mod('app_category', array('category_id' => $item));
@@ -214,7 +214,7 @@ class Article_config extends MX_Controller
             if ($this->form_validation->run()) {
                 $cat_id = $this->input->post("cat_id");
 
-                $query= $this->article_model->get_method_where('app_sous_category', array('cat_id' => $cat_id));
+                $query = $this->article_model->get_method_where('app_sous_category', array('cat_id' => $cat_id));
                 echo json_encode($query);
             }
         }
@@ -232,8 +232,8 @@ class Article_config extends MX_Controller
                 foreach ($names as $name) {
                     $nameExists = false;
 
-                    foreach ($sous_categories as $scat_data){
-                        if (strtolower($name) === $scat_data['name']){
+                    foreach ($sous_categories as $scat_data) {
+                        if (strtolower($name) === $scat_data['name']) {
                             $nameExists = true;
                             break; // Sortie de la boucle dès qu'on trouve une correspondance
                         }
@@ -270,8 +270,8 @@ class Article_config extends MX_Controller
                 $cat_id = $this->input->post("cat_id");
                 $sous_categories = $this->article_model->get_method_where('app_sous_category', array('cat_id' => $cat_id));
                 $nameExists = false;
-                foreach ($sous_categories as $scat_data){
-                    if (strtolower($name) === $scat_data['name']){
+                foreach ($sous_categories as $scat_data) {
+                    if (strtolower($name) === $scat_data['name']) {
                         $nameExists = true;
                         break; // Sortie de la boucle dès qu'on trouve une correspondance
                     }
@@ -328,6 +328,58 @@ class Article_config extends MX_Controller
         $data['onglet_title'] = "Liste des marques";
         $data['marques'] = $this->article_model->get_method('app_article_marque');
         $this->load->view('article/marque_article_view', $data);
+    }
+
+    function get_article_color()
+    {
+        $data['onglet_title'] = "Liste des couleurs";
+        $data['couleurs'] = $this->article_model->get_method_simple('app_couleur');
+        $this->load->view('article/couleur_article_view.php', $data);
+    }
+
+    function add_article_couleur()
+    {
+        if ($_POST) {
+            $this->form_validation->set_rules('code_couleur[]', "nom", 'required');
+            if ($this->form_validation->run()) {
+                $names = $this->input->post("code_couleur");
+
+                foreach ($names as $name) {
+                    $article_couleur = array(
+                        "code_couleur" => strtolower($name),
+                    );
+                    $query = $this->article_model->add_method('app_couleur', $article_couleur);
+                }
+                $response = array('reponse' => $query);
+            }
+        } else {
+            $response = array('reponse' => false);
+        }
+
+        echo json_encode($response);
+    }
+
+    function edit_article_couleur()
+    {
+        if ($_POST) {
+            $this->form_validation->set_rules('code_couleur_up', "nom", 'required');
+            if ($this->form_validation->run()) {
+                $id_couleur = $this->input->post('id_couleur');
+                $name = $this->input->post("code_couleur_up");
+                $article_couleur = array(
+                    "code_couleur" => strtolower($name)
+                );
+                $query = $this->article_model->update_method('app_couleur ', $article_couleur, array('id_couleur' => $id_couleur));
+
+                $response = array('reponse' => $query);
+            } else {
+                $response = array('reponse' => false);
+            }
+        } else {
+            $response = array('reponse' => false);
+        }
+
+        echo json_encode($response);
     }
 
     function add_article_marque()
