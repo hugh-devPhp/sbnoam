@@ -10149,12 +10149,6 @@ header.header-three.sigma-header .nav-container .menu-right-buttons .cart-dropdo
     position: relative;
 }
 
-.detail-slider-1 .image-box a,
-.detail-slider-1 .image-box a img,
-.detail-slider-2 .image-box img {
-    width: 100%;
-    height: 100%;
-}
 
 .detail-slider-1 .image-box .price {
     position: absolute;

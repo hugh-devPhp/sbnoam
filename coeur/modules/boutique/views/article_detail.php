@@ -37,9 +37,9 @@
                             <div class="slide-item">
                                 <div class="image-box">
                                     <a href="#">
-                                        <img
+                                        <img height="500" width="458"
                                             src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
-                                            class="img-fluid" alt="img">
+                                            class="" alt="img">
                                     </a>
                                     <span class="price">Sale</span>
                                 </div>
@@ -51,7 +51,8 @@
                                 <div class="slide-item">
                                     <div class="image-box">
                                         <a href="#">
-                                            <img class="img-fluid" src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>">
+                                            <img class="" height="500" width="458"
+                                                src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>">
                                         </a>
                                     </div>
                                 </div>
@@ -63,9 +64,9 @@
                         <div class="detail-slider-2">
                             <div class="slide-item">
                                 <div class="image-box">
-                                    <img
+                                    <img height="100" width="80"
                                         src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
-                                        class="img-fluid" alt="img">
+                                        class="" alt="img">
                                 </div>
                             </div>
                             <?php
@@ -74,7 +75,7 @@
                             ?>
                                 <div class="slide-item">
                                     <div class="image-box">
-                                        <img class="img-fluid" src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
+                                        <img height="100" width="80" class="" src="<?php echo base_url(); ?>uploads/articles/<?php echo $img['name']; ?>"
                                             alt="Image Description">
                                     </div>
                                 </div>
@@ -166,24 +167,27 @@
                     <div class="mb-2">
                         <div class="card p-5 border-width-2 border-color-1 borders-radius-17">
                             <div class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3">
-                                Disponibles:
+                                Disponible:
                                 <span class="text-green font-weight-bold"><?php echo $article[0]['stock']; ?> en stock</span>
                             </div>
                             <div class="mb-3">
-
                                 <?php
                                 if ($article[0]['prix_promo']) :
                                 ?>
-                                    <del class="font-size-20 text-gray-9 d-block"><?php echo number_format($article[0]['prix'], 0, ',', ' '); ?>
+                                    <del class="font-size-20 text-gray-9 d-block">
+                                        <?php echo number_format($article[0]['prix'], 0, ',', ' '); ?>
                                         XOF
                                     </del>
-                                    <ins class="font-size-36 text-red text-decoration-none d-block"><?php echo number_format($article[0]['prix_promo'], 0, ',', ' '); ?>
+                                    <ins class="font-size-36 text-red text-decoration-none d-block">
+                                        <?php echo number_format($article[0]['prix_promo'], 0, ',', ' '); ?>
                                         XOF
                                     </ins>
                                 <?php
                                 else:
                                 ?>
-                                    <div class="font-size-36"><?php echo number_format($article[0]['prix'], 0, ',', ' ') . ' XOF'; ?></div>
+                                    <div class="font-size-36">
+                                        <?php echo number_format($article[0]['prix'], 0, ',', ' ') . ' XOF'; ?>
+                                    </div>
                                 <?php
                                 endif;
                                 ?>

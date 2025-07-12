@@ -44,7 +44,7 @@
                     <h4>
                         <?php echo  character_limiter(strip_tags($infos['court_description']), 200); ?>
                     </h4>
-                    <a href="contact.html" class="main-btn btn-filled mt-40"> Savoir plus</a>
+                    <a href="<?php echo base_url() ?>contact" class="main-btn btn-filled mt-40"> Savoir plus</a>
                 </div>
             </div>
         </div>

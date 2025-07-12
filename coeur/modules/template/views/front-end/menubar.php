@@ -38,11 +38,11 @@
                                             Boutique
                                         </a>
                                     </li>
-                                    <li class="menu-item">
+                                    <!-- <li class="menu-item">
                                         <a href="#">
                                             Blog
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="menu-item">
                                         <a href="<?php echo base_url() ?>a_propos">A propos</a>
                                     </li>

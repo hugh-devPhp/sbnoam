@@ -14,7 +14,7 @@ $infos = (array)$infoss[0];
             <!-- Site Logo -->
             <div class="site-logo site-logo-text">
                 <a href="index-2.html">
-                    <img class="img-fluid" width="100" height="100" ssrc="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="">
+                    <img class="img-fluid" width="100" height="100" src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="">
                     <div class="site-logo-text">
                         <h3>Shine By Noam</h3>
                         <h6>Le meilleur choix pour sublimer</h6>
@@ -36,26 +36,26 @@ $infos = (array)$infoss[0];
 <!-- Mobile Menu Start -->
 <aside class="sigma-mobile-menu">
     <ul class="sigma-main-menu">
-        <li class="menu-item menu-item-has-children">
-            <a href="#">
+        <li class="menu-item">
+            <a href="<?php echo base_url() ?>accueil">
                 Accueil
             </a>
         </li>
-        <li class="menu-item menu-item-has-children">
-            <a href="#">Boutique</a>
+        <li class="menu-item">
+            <a href="<?php echo base_url() ?>boutique">Boutique</a>
         </li>
-        <li class="menu-item menu-item-has-children">
+        <!-- <li class="menu-item menu-item-has-children">
             <a href="#">
                 Blog
             </a>
-        </li>
+        </li> -->
         <li class="menu-item">
-            <a href="<?php echo base_url() ?>a_propos/index">
+            <a href="<?php echo base_url() ?>a_propos">
                 A propos
             </a>
         </li>
         <li class="menu-item">
-            <a href="<?php echo base_url() ?>contact/index">
+            <a href="<?php echo base_url() ?>contact">
                 Contact
             </a>
         </li>
