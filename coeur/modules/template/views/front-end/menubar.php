@@ -68,15 +68,15 @@
                     </a>
                     <div class="search-form">
                         <form action="#">
-                            <input type="text" placeholder="Search your keyword...">
+                            <input type="text" placeholder="Entrez un mot clé...">
                             <button type="submit"><i class="far fa-search"></i></button>
                         </form>
                     </div>
                 </div>
                 <!-- Off canvas Toggle -->
-                <div class="toggle">
+                <!-- <div class="toggle">
                     <a href="#" id="offCanvasBtn"><i class="fal fa-bars"></i></a>
-                </div>
+                </div> -->
 
                 <!-- Navbar Toggler -->
                 <div class="navbar-toggler">

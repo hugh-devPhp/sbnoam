@@ -42,7 +42,10 @@ $infos = (array)$infoss[0];
             </a>
         </li>
         <li class="menu-item">
-            <a href="<?php echo base_url() ?>boutique">Boutique</a>
+            <a href="<?php echo base_url() ?>boutique">Collections</a>
+        </li>
+        <li class="menu-item">
+            <a href="<?php echo base_url() ?>boutique">collection</a>
         </li>
         <!-- <li class="menu-item menu-item-has-children">
             <a href="#">

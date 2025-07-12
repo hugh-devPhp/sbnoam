@@ -10,10 +10,10 @@
         </ul>
     </div>
 
-    <div class="d-none d-md-block vertical-text right wow fadeIn mt-5" data-wow-delay=".3s">
+    <!-- <div class="d-none d-md-block vertical-text right wow fadeIn mt-5" data-wow-delay=".3s">
         <span>Appelez nous: </span>
         <span>+225 78 70 17 73</span>
-    </div>
+    </div> -->
 
     <div class="container container-custom-two">
         <div class="row align-items-center">
@@ -23,10 +23,10 @@
                     <h1 class="title wow fadeInLeft" data-wow-delay=".5s">Bijoux haut <br> de gamme </h1>
                     <ul>
                         <li>
-                            <a class="main-btn btn-filled wow fadeInUp" data-wow-delay=".7s" href="about.html">Acheter </a>
+                            <a class="main-btn btn-filled wow fadeInUp" data-wow-delay=".7s" href="<?php echo base_url() ?>boutique">Acheter </a>
                         </li>
                         <li>
-                            <a class="main-btn btn-border wow fadeInUp" data-wow-delay=".9s" href="about.html">Explorer</a>
+                            <a class="main-btn btn-border wow fadeInUp" data-wow-delay=".9s" href="<?php echo base_url() ?>collection">Explorer</a>
                         </li>
                     </ul>
                 </div>
@@ -38,7 +38,7 @@
                         foreach ($sliders as $slider):
                         ?>
                             <div class="single-thumb">
-                                <img width="500" height="600" src="<?php echo base_url() ?>uploads/site/<?php echo $slider['slider_image'] ?>" alt="images">
+                                <img width="500" height="520" src="<?php echo base_url() ?>uploads/site/<?php echo $slider['slider_image'] ?>" alt="images">
                             </div>
                         <?php
                         endforeach;
