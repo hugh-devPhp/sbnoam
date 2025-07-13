@@ -145,7 +145,6 @@
                         <div class="short-descr mb-20">
                             <p>
                                 <?php echo $article[0]['description']; ?>
-
                             </p>
                         </div>
                         <?php
@@ -155,14 +154,13 @@
                                 <div class="color-box">
                                     <label>Couleur :</label>
 
-                                    <label class="m-0">
+                                    <label style="margin-bottom: -10px;">
                                         <input type="radio" name="color">
                                         <?php
                                         foreach ($couleurs as $color) :
                                             if ($color['id_couleur'] == $article[0]['couleur_id']) {
                                         ?>
-                                                <span class="choose-color <?php echo ucfirst($color['code_couleur']); ?>    "></span>
-
+                                                <span class="choose-color <?php echo $color['code_couleur']; ?>"></span>
                                         <?php
                                             }
                                         endforeach;
@@ -253,7 +251,7 @@
                             </div>
                         <?php } ?>
 
-                        <div class="other-info flex mt-20">
+                        <!-- <div class="other-info flex mt-20">
                             <h6>Tags:</h6>
                             <ul>
                                 <li class="list-inline-item mr-2">
@@ -266,10 +264,12 @@
                                     <a href="#" class="grey">bracelet</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div class="quantity-cart d-block d-sm-flex">
                             <div class="cart-btn pl-40">
-                                <a href="#" class="main-btn btn-border">Commandez sur whatsapp</a>
+                                <a href="https://wa.me/message/LNPC6D4FVJIMK1" target="_blank" class="main-btn btn-border">Commandez sur whatsapp
+                                    <img src="<?php echo base_url('assets/whatsappIcon.png') ?>" alt="" class="ml-2" style="width: 50px; height: 50px;">
+                                </a>
                             </div>
                         </div>
                     </div>
