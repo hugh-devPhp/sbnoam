@@ -50,8 +50,7 @@ class Boutique extends MX_Controller
         $donnees['articles_page'] = $this->article_model->get_articles($config["per_page"], $this->uri->segment(3), 'app_article');
         $donnees['nb_article_per_page'] = count($donnees['articles_page']);
         $donnees['marques'] = $this->article_model->get_method('app_article_marque');
-        $donnees['categories'] = $this->article_model->get_method('app_category');
-        $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
+        $donnees['collections'] = $this->article_model->get_method('app_collection');
         $donnees['pop_articles'] = $this->article_model->get_method_order_by('app_article');
         $infoss = $this->information_model->get_information();
         $donnees['infos'] = (array)$infoss[0];
@@ -69,6 +68,9 @@ class Boutique extends MX_Controller
 
 
         $donnees['article'] = $this->article_model->get_method_where('app_article', array('article_id' => $article_id));
+        $vues = $donnees['article'][0]['vues'] + 1;
+        $this->article_model->update_method('app_article', array('vues' => $vues), array('article_id' => $article_id));
+
         $donnees['menu_actif'] = "boutique";
         $donnees['title'] = "Detail Article";
         $donnees['articles_images'] = $this->article_model->get_method('app_image');
@@ -169,11 +171,11 @@ class Boutique extends MX_Controller
         }
     }
 
-    function cat_boutique_view($cat_id)
+    function boutique_by_collection($collection_id)
     {
         $config = array();
-        $config["base_url"] = base_url() . "boutique/cat_boutique_view/" . $cat_id;
-        $config["total_rows"] = $donnees['total'] = $this->article_model->get_count_where('app_article', array('category_id' => $cat_id));
+        $config["base_url"] = base_url() . "boutique/boutique_by_collection/" . $collection_id;
+        $config["total_rows"] = $donnees['total'] = $this->article_model->get_count_where('app_article', array('collection_id' => $collection_id));
         $config["per_page"] = 17;
         $config["uri_segment"] = 4;
         $config['use_page_numbers'] = true;
@@ -199,16 +201,18 @@ class Boutique extends MX_Controller
 
         $donnees['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
         $donnees["link"] = $this->pagination->create_links();
-        $donnees['articles_page'] = $this->article_model->get_articles_where($config["per_page"], $this->uri->segment(4), 'app_article', array('category_id' => $cat_id));
+        $donnees['articles_page'] = $this->article_model->get_articles_where($config["per_page"], $this->uri->segment(4), 'app_article', array('collection_id' => $collection_id));
         $donnees['nb_article_per_page'] = count($donnees['articles_page']);
         $donnees['marques'] = $this->article_model->get_method('app_article_marque');
-        $donnees['categories'] = $this->article_model->get_method('app_category');
-        $donnees['sous_categories'] = $this->article_model->get_method('app_sous_category');
-        $donnees['articles'] = $this->article_model->get_method('app_article');
-        $donnees['infos'] = $this->article_model->get_method('app_infos_gen');
-        $donnees['category'] = $this->article_model->get_method_where('app_category', array('category_id' => $cat_id));
+        $donnees['collections'] = $this->article_model->get_method('app_collection');
+        $donnees['pop_articles'] = $this->article_model->get_method_order_by('app_article');
+        $infoss = $this->information_model->get_information();
+        $donnees['infos'] = (array)$infoss[0];
+        $donnees['collection'] = $this->article_model->get_method_where_simple('app_collection', array('id_collection' => $collection_id));
 
         $donnees['menu_actif'] = "boutique";
+        $donnees['title'] = "Collection " . ucfirst($donnees['collection'][0]['name']);
+
         $this->load->view('cat_boutique_view', $donnees);
     }
 

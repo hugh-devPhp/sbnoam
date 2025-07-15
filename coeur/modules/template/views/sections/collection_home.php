@@ -32,7 +32,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="apartment-box">
                         <div class="image-box">
-                            <a href="shop-detail.html" class="d-block">
+                            <a href="<?php echo base_url() . "boutique/boutique_by_collection/" . $collection['id_collection']; ?>" class="d-block">
                                 <img src="<?php echo base_url() ?>uploads/collections/<?php echo $collection['image_princ']; ?>" width="370" height="260" alt="img">
                             </a>
                         </div>
@@ -41,7 +41,10 @@
                                 <a href="shop-detail.html"><?php echo $collection['name']; ?></a>
                             </h3>
                             <p><?php echo $collection['date_creation']; ?></p>
-                            <span class="price">2<?php echo $i; ?> produits </span>
+                            <span class="price">
+                                <?php
+                                $articles_nb = $this->article_model->get_count_where('app_article', array('collection_id' => $collection['id_collection']));
+                                echo $articles_nb; ?> produits </span>
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,11 @@
                                             src="<?php echo base_url(); ?>uploads/articles/<?php echo $article[0]['image_principale_article']; ?>"
                                             class="" alt="img">
                                     </a>
-                                    <span class="price">Sale</span>
+                                    <span class="price">
+                                        <span>
+                                            <?php echo ucfirst($article[0]['vues']); ?>
+                                        </span> <i class="far fa-eye"></i>
+                                    </span>
                                 </div>
                             </div>
                             <?php
@@ -89,18 +93,9 @@
                 <div class="col-md-6 col-lg-7 col-xl-7 mb-md-6 mb-lg-0">
                     <div class="shop-detail-content">
                         <h3 class="product-title mb-20">
-                            <?php echo $article[0]['designation']; ?>
+                            <?php echo ucfirst($article[0]['designation']); ?>
 
                         </h3>
-                        <span class="rating mb-20">
-                            <span class="text-yellow"><i class="far fa-star"></i></span>
-                            <span class="text-yellow"><i class="far fa-star"></i></span>
-                            <span class="text-yellow"><i class="far fa-star"></i></span>
-                            <span class="text-dark-white"><i class="far fa-star"></i></span>
-                            <span class="text-dark-white"><i class="far fa-star"></i></span>
-                            <span class="pro-review"> <span>1 vu</span>
-                            </span>
-                        </span>
                         <?php
                         if ($article[0]['prix_promo']) :
                         ?>
@@ -216,7 +211,7 @@
                                         if ($materiel['materiel_id'] == $article[0]['materiel_id']) {
                                     ?>
                                             <label class="m-0">
-                                                <input type="radio" name="material">
+                                                <input type="radio" checked name="material">
                                                 <span class="choose-material">
 
                                                     <?php echo ucfirst($materiel['name']); ?>
@@ -265,7 +260,7 @@
                                 </li>
                             </ul>
                         </div> -->
-                        <div class="quantity-cart d-block d-sm-flex">
+                        <div class="quantity-cart d-block d-sm-flex mt-20">
                             <div class="cart-btn pl-40">
                                 <a href="https://wa.me/message/LNPC6D4FVJIMK1" target="_blank" class="main-btn btn-border">Commandez sur whatsapp
                                     <img src="<?php echo base_url('assets/whatsappIcon.png') ?>" alt="" class="ml-2" style="width: 50px; height: 50px;">

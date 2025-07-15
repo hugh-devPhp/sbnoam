@@ -88,7 +88,7 @@ class Article_model extends CI_Model
 
     public function get_count_where($table, $where)
     {
-        return $this->db->count_all($table, $where);
+        return $this->db->where($where)->from($table)->count_all_results();
     }
 
     public function get_articles($limit, $start, $table)

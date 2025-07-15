@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="keywords" content="shyne, alliance, bague, collier, SBNoam, Noam, Boutique, E-commerce, Online Shopping, jewelry, bijouterie, bijoux" />
     <meta name="author" content="hugh_dev" />
-    <link rel="shortcut icon" href="<?php echo base_url('assets/icon_shine.jpeg') ?>" type="image/png" />
+    <link rel="shortcut icon" href="<?php echo base_url('assets/sbnoam_icon.png') ?>" type="image/png" />
     <!--====== Title ======-->
     <title> SBNoam </title>
     <?php $this->load->view('template/front-end/base_css') ?>
