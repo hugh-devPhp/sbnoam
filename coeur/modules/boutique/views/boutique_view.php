@@ -15,8 +15,8 @@
                     <!-- Search Widget -->
                     <div class="widget search-widget mb-40">
                         <h5 class="widget-title">Faite une recherhce</h5>
-                        <form action="#">
-                            <input type="text" placeholder="entrez un mot clé...">
+                        <form action="<?php echo base_url('boutique'); ?>" method="get">
+                            <input type="text" name="keyword" placeholder="entrez un mot clé..." value="<?php echo isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : ''; ?>">
                             <button type="submit"><i class="far fa-search"></i></button>
                         </form>
                     </div>
@@ -76,6 +76,13 @@
                             <p> Affichage 1–<?php echo count($articles_page); ?> sur <?php echo $total; ?> total</p>
                         </div>
                     <?php } ?>
+                    
+                    <?php if (isset($keyword) && !empty($keyword) && empty($articles_page)): ?>
+                        <div class="alert alert-info text-center" role="alert">
+                            <i class="far fa-search"></i> Aucun article trouvé pour le mot-clé "<strong><?php echo htmlspecialchars($keyword); ?></strong>"
+                        </div>
+                    <?php endif; ?>
+                    
                     <div class="product-wrapper restaurant-tab-area">
                         <div class="row">
                             <?php

@@ -81,9 +81,17 @@ class Article_model extends CI_Model
         return $query;
     }
 
-    public function get_count($table)
+    public function get_count($table, $keyword = null)
     {
-        return $this->db->count_all($table);
+        if ($keyword) {
+            $this->db->group_start();
+            $this->db->like('designation', $keyword);
+            $this->db->or_like('prix', $keyword);
+            $this->db->or_like('prix_promo', $keyword);
+            $this->db->or_like('poids', $keyword);
+            $this->db->group_end();
+        }
+        return $this->db->count_all_results($table);
     }
 
     public function get_count_where($table, $where)
@@ -91,8 +99,17 @@ class Article_model extends CI_Model
         return $this->db->where($where)->from($table)->count_all_results();
     }
 
-    public function get_articles($limit, $start, $table)
+    public function get_articles($limit, $start, $table, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->group_start();
+            $this->db->like('designation', $keyword);
+            $this->db->or_like('description', $keyword);
+            $this->db->or_like('prix', $keyword);
+            $this->db->or_like('prix_promo', $keyword);
+            $this->db->or_like('poids', $keyword);
+            $this->db->group_end();
+        }
         $this->db->limit($limit, $start);
         $query = $this->db->get($table);
 

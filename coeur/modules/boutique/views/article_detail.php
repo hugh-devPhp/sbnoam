@@ -325,42 +325,54 @@
                                 <div class="table-responsive mb-4">
                                     <table class="table table-hover">
                                         <tbody>
-                                            <tr>
-                                                <th class="px-4 px-xl-5 border-top-0">Poids</th>
-                                                <td class="border-top-0"> <?php echo $article[0]['poids']; ?> kg</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="px-4 px-xl-5">Dimensions</th>
-                                                <td> <?php echo $article[0]['dimension']; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th class="px-4 px-xl-5">Marque</th>
-                                                <td>
-                                                    <?php
-                                                    foreach ($marques as $marq) :
-                                                        if ($marq['article_marque_id'] == $article[0]['marque_id']) {
-                                                            echo ucfirst($marq['name']);
-                                                        }
-                                                    endforeach;
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="px-4 px-xl-5">couleur</th>
-                                                <td>
-                                                    <?php
-                                                    foreach ($couleurs as $color) :
-                                                        if ($color['id_couleur'] == $article[0]['couleur_id']) {
-                                                            echo ucfirst($color['code_couleur']);
-                                                        }
-                                                    endforeach;
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="px-4 px-xl-5">Garantie</th>
-                                                <td> <?php echo $article[0]['garantie']; ?> mois</td>
-                                            </tr>
+                                            <?php if ($article[0]['poids']) {
+                                            ?>
+                                                <tr>
+                                                    <th class="px-4 px-xl-5 border-top-0">Poids</th>
+                                                    <td class="border-top-0"> <?php echo $article[0]['poids']; ?> kg</td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if ($article[0]['dimension']) { ?>
+                                                <tr>
+                                                    <th class="px-4 px-xl-5">Dimensions</th>
+                                                    <td> <?php echo $article[0]['dimension']; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if ($article[0]['marque_id']) { ?>
+                                                <tr>
+                                                    <th class="px-4 px-xl-5">Marque</th>
+                                                    <td>
+                                                        <?php
+                                                        foreach ($marques as $marq) :
+                                                            if ($marq['article_marque_id'] == $article[0]['marque_id']) {
+                                                                echo ucfirst($marq['name']);
+                                                            }
+                                                        endforeach;
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if ($article[0]['couleur_id']) {
+                                            ?>
+                                                <tr>
+                                                    <th class="px-4 px-xl-5">Couleur</th>
+                                                    <td>
+                                                        <?php
+                                                        foreach ($couleurs as $color) :
+                                                            if ($color['id_couleur'] == $article[0]['couleur_id']) {
+                                                                echo ucfirst($color['code_couleur']);
+                                                            }
+                                                        endforeach;
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if ($article[0]['garantie ']) { ?>
+                                                <tr>
+                                                    <th class="px-4 px-xl-5">Garantie</th>
+                                                    <td> <?php echo $article[0]['garantie']; ?> mois</td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
