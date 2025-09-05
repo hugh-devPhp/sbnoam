@@ -26,8 +26,8 @@
 <!--====== COUNTER UP END ======-->
 
 <!--====== LATEST NEWS START ======-->
-<!-- <?php //$this->load->view('template/sections/news_home') 
-        ?> -->
+<?php $this->load->view('template/sections/news_home') 
+        ?>
 <!--====== LATEST NEWS END ======-->
 
 
