@@ -13,8 +13,6 @@ class Admin_corporate extends MX_Controller
         $this->load->model('tplconfig_model');
         $this->load->model('article_model');
         $this->load->model('information_model');
-
-
     }
 
     public function index($adtab = NULL)
@@ -31,8 +29,8 @@ class Admin_corporate extends MX_Controller
     function get_infos_gen()
     {
         $data['onglet_title'] = "Information générale";
-        $infos=$this->information_model->get_information();
-        $data['infos']=(array)$infos[0];
+        $infos = $this->information_model->get_information();
+        $data['infos'] = (array)$infos[0];
         $this->load->view('admin_corporate/infos_gen_view', $data);
     }
 
@@ -89,8 +87,9 @@ class Admin_corporate extends MX_Controller
         echo json_encode($response);
     }
 
-    function add_information(){
-        if($_POST){
+    function add_information()
+    {
+        if ($_POST) {
             $contact1 = $this->input->post('contact1');
             $contact2 = $this->input->post('contact2');
             $email = $this->input->post('email');
@@ -105,13 +104,13 @@ class Admin_corporate extends MX_Controller
 
             $config['upload_path'] = './uploads/logo';
             $config['allowed_types'] = 'jpeg|jpg|png';
-            $config['file_name'] = date("Y_m_d_H_i_s_").rand();
+            $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
 
             $img = array();
 
             $this->upload->initialize($config);
 
-            if($this->upload->do_upload('logo')){
+            if ($this->upload->do_upload('logo')) {
                 $image = $this->upload->data('file_name');
 
                 $data = array(
@@ -127,11 +126,7 @@ class Admin_corporate extends MX_Controller
                     "logo_info" => $image,
                     "court_description" => $description
                 );
-
-
-
-
-            }else{
+            } else {
                 $data = array(
                     "contact1_info" => $contact1,
                     "contact2_info" => $contact2,
@@ -148,10 +143,7 @@ class Admin_corporate extends MX_Controller
             $this->information_model->add_information($data, $id);
 
             echo json_encode(true);
-
-
-        }
-        else{
+        } else {
 
             redirect("admin_corporate/get_infos_gen");
         }
@@ -167,26 +159,26 @@ class Admin_corporate extends MX_Controller
     function add_slider()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                //Upload Image
-                $config['upload_path'] = './uploads/site';
-                $config['allowed_types'] = 'jpeg|jpg|png|webp';
-                $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
+            //Upload Image
+            $config['upload_path'] = './uploads/site';
+            $config['allowed_types'] = 'jpeg|jpg|png|webp';
+            $config['file_name'] = date("Y_m_d_H_i_s_") . rand();
 
-                // Charger la bibliothèque de téléchargement une seule fois
-                $this->upload->initialize($config);
-                if ($this->upload->do_upload('image')) {
-                    $image = $this->upload->data('file_name');
-                    $slider = array(
-                        'date_add' => date("Y-m-d H:i:s"),
-                        "slider_image" => $image
-                    );
-                    $rep = $this->article_model->add_method('app_sliders', $slider);
+            // Charger la bibliothèque de téléchargement une seule fois
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload('image')) {
+                $image = $this->upload->data('file_name');
+                $slider = array(
+                    'date_add' => date("Y-m-d H:i:s"),
+                    "slider_image" => $image
+                );
+                $rep = $this->article_model->add_method('app_sliders', $slider);
 
-                    echo json_encode(true);
-                } else {
-                    $error = array('error' => $this->upload->display_errors());
-                    echo json_encode($error);
-                }
+                echo json_encode(true);
+            } else {
+                $error = array('error' => $this->upload->display_errors());
+                echo json_encode($error);
+            }
         } else {
             echo json_encode('Validation failed');
         }
@@ -195,7 +187,7 @@ class Admin_corporate extends MX_Controller
     function get_slider_for_edit()
     {
         $slider_id = $this->input->post("slider_id");
-        $slider = $this->article_model->get_method_where('app_sliders', array( 'slider_id'=>$slider_id ));
+        $slider = $this->article_model->get_method_where('app_sliders', array('slider_id' => $slider_id));
         echo json_encode($slider[0]);
     }
 
@@ -246,29 +238,58 @@ class Admin_corporate extends MX_Controller
     function get_special_offer_edit()
     {
         $offer_id = $this->input->post("offre_id");
-        $offer = $this->article_model->get_method_where('app_offer', array( 'offer_id'=>$offer_id ));
-        echo json_encode($offer[0]);
+        if (empty($offer_id)) {
+            echo json_encode(array('error' => 'ID offre manquant'));
+            return;
+        }
+        $offer = $this->article_model->get_method_where('app_offer', array('offer_id' => $offer_id));
+        if (!empty($offer) && isset($offer[0])) {
+            echo json_encode($offer[0]);
+        } else {
+            echo json_encode(array('error' => 'Offre non trouvée'));
+        }
     }
 
     function edit_special_offer()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->form_validation->set_rules('offre_id', 'id offre', 'required');
+            $this->form_validation->set_rules('edit_date_fin', 'date fin', 'required');
 
             if ($this->form_validation->run()) {
                 $offer_id = $this->input->post("offre_id");
                 $date_fin = $this->input->post("edit_date_fin");
                 $statut = $this->input->post("statut");
+
+                // Vérifier que l'offre existe
+                $offer_check = $this->article_model->get_method_where('app_offer', array('offer_id' => $offer_id));
+                if (empty($offer_check)) {
+                    echo json_encode(array('error' => 'Offre non trouvée'));
+                    return;
+                }
+
                 $offers = array(
                     'date_update' => date("Y-m-d H:i:s"),
                     'date_fin' => $date_fin,
-                    'statut' => $statut,
                 );
+
+                // Ne mettre à jour le statut que s'il est fourni (pas vide)
+                if ($statut !== '' && $statut !== null) {
+                    $offers['statut'] = $statut;
+                }
+
                 $rep = $this->article_model->update_method('app_offer', $offers, array('offer_id' => $offer_id));
-                echo json_encode(true);
+
+                if ($rep) {
+                    echo json_encode(true);
+                } else {
+                    echo json_encode(array('error' => 'Erreur lors de la mise à jour'));
+                }
             } else {
-                echo json_encode('Validation failed');
+                echo json_encode(array('error' => strip_tags(validation_errors())));
             }
+        } else {
+            echo json_encode(array('error' => 'Méthode non autorisée'));
         }
     }
 
@@ -283,5 +304,4 @@ class Admin_corporate extends MX_Controller
             echo json_encode(false);
         }
     }
-
 }
