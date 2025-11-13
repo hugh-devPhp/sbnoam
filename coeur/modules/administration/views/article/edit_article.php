@@ -261,7 +261,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="mb-3">
                                         <label for="materiel">materiel</label>
-                                        <select id="materiel" class="form-select" name="materiel_id">
+                                        <select id="materiel" class="form-select" name="materiel">
                                             <?php
                                             foreach ($materiels as $materiel) :
                                                 if ($materiel['materiel_id'] ==  $article[0]['materiel_id']) {

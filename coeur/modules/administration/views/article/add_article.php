@@ -57,11 +57,11 @@
         width: 100%;
         margin: 0;
         color: #fff;
-        background:  #f69900;
+        background: #f69900;
         border: none;
         padding: 10px;
         border-radius: 4px;
-        border-bottom: 4px solid  #f69900;
+        border-bottom: 4px solid #f69900;
         transition: all .2s ease;
         outline: none;
         text-transform: uppercase;
@@ -69,7 +69,7 @@
     }
 
     .file-upload-btn:hover {
-        background:  #f69900;
+        background: #f69900;
         color: #ffffff;
         transition: all .2s ease;
         cursor: pointer;
@@ -98,13 +98,13 @@
 
     .image-upload-wrap {
         margin-top: 20px;
-        border: 4px dashed  #f69900;
+        border: 4px dashed #f69900;
         position: relative;
     }
 
     .image-dropping,
     .image-upload-wrap:hover {
-        background-color:  #f69900;
+        background-color: #f69900;
         border: 4px dashed #ffffff;
     }
 
@@ -168,7 +168,6 @@
                 <div id="vertical-example" class="vertical-wizard">
                     <h3>Information generale</h3>
                     <form id="add_product" enctype="multipart/form-data">
-                        <input type="hidden" name="type" value=" type.id ">
                         <section>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-4">
@@ -177,48 +176,63 @@
                                         <input type="text" class="form-control" id="firstname" name="name" placeholder="Nom du produit" required>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-3 col-md-3 col-sm-4">
                                     <div class="mb-3">
                                         <label for="price">Prix</label>
-                                        <input type="number" class="form-control" required id="price" name="price">
+                                        <input type="number" class="form-control" required id="price" name="price" min="0" step="0.01">
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-3 col-md-3 col-sm-4">
                                     <div class="mb-3">
                                         <label for="prix_promo">Prix promo</label>
-                                        <input type="number" class="form-control" id="prix_promo" name="prix_promo">
+                                        <input type="number" class="form-control" id="prix_promo" name="prix_promo" min="0" step="0.01">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="mb-3">
                                         <label for="qte" class="form-label">Quantité</label>
-                                        <input type="number" class="form-control" id="qte" required name="qte">
+                                        <input type="number" class="form-control" id="qte" required name="qte" min="0">
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="mb-3">
                                         <label for="garantie" class="form-label">Garantie (en mois)</label>
-                                        <input type="number" class="form-control" id="garantie" required name="garantie">
+                                        <input type="number" class="form-control" id="garantie" required name="garantie" min="0">
                                     </div>
                                 </div>
-<!--                                <div class="col-lg-3 col-md-3 col-sm-3">-->
-<!--                                    <div class="mb-3">-->
-<!--                                        <label for="brand">Marque</label>-->
-<!--                                        <select id="brand" class="form-select" name="brand" required>-->
-<!--                                            <option value="">Choisir...</option>-->
-<!--                                            --><?php
-//                                            foreach ($marques as $marq) :
-//                                            ?>
-<!--                                                <option value="--><?php //echo $marq['article_marque_id']; ?><!--">--><?php //echo $marq['name']; ?><!--</option>-->
-<!--                                            --><?php
-//                                            endforeach;
-//                                            ?>
-<!--                                        </select>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                                <div class="col-lg-6 col-md-6 col-sm-4">
+                                <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="mb-3">
+                                        <label for="brand">Marque</label>
+                                        <select id="brand" class="form-select" name="brand" required>
+                                            <option value="">Choisir...</option>
+                                            <?php
+                                            foreach ($marques as $marq) :
+                                            ?>
+                                                <option value="<?php echo $marq['article_marque_id']; ?>"><?php echo $marq['name']; ?></option>
+                                            <?php
+                                            endforeach;
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="mb-3">
+                                        <label for="color">Couleur</label>
+                                        <select id="color" class="form-select" name="color" required>
+                                            <option value="">Choisir...</option>
+                                            <?php
+                                            foreach ($couleurs as $color) :
+                                            ?>
+                                                <option value="<?php echo $color['id_couleur']; ?>"><?php echo $color['code_couleur']; ?></option>
+                                            <?php
+                                            endforeach;
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="mb-3">
                                         <label for="cat">Collection</label>
                                         <select id="cat" class="form-select" name="collection" required>
@@ -306,7 +320,7 @@
                                                         <input type="file" class="uploadFile img" multiple name="images[]" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
                                                     </label>
                                                 </div>
-<!--                                                <i class="fa fa-plus imgAdd"></i>-->
+                                                <!--                                                <i class="fa fa-plus imgAdd"></i>-->
                                             </div><!-- row -->
                                         </div>
                                     </div>

@@ -369,7 +369,7 @@ class Article_config extends MX_Controller
                 $article_couleur = array(
                     "code_couleur" => strtolower($name)
                 );
-                $query = $this->article_model->update_method('app_couleur ', $article_couleur, array('id_couleur' => $id_couleur));
+                $query = $this->article_model->update_method('app_couleur', $article_couleur, array('id_couleur' => $id_couleur));
 
                 $response = array('reponse' => $query);
             } else {

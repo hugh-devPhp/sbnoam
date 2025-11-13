@@ -20,9 +20,8 @@ class Boutique extends MX_Controller
     function index($page = null)
     {
         $config = array();
-        $keyword = $this->input->get('keyword');
         $config["base_url"] = base_url() . "boutique/index";
-        $config["total_rows"] = $donnees['total'] = $this->article_model->get_count('app_article', $keyword);
+        $config["total_rows"] = $donnees['total'] = $this->article_model->get_count('app_article');
         $config["per_page"] = 12;
         $config["uri_segment"] = 3;
         $config['use_page_numbers'] = true;
@@ -48,7 +47,7 @@ class Boutique extends MX_Controller
 
         $donnees['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $donnees["link"] = $this->pagination->create_links();
-        $donnees['articles_page'] = $this->article_model->get_articles($config["per_page"], $this->uri->segment(3), 'app_article', $keyword);
+        $donnees['articles_page'] = $this->article_model->get_articles($config["per_page"], $this->uri->segment(3), 'app_article');
         $donnees['nb_article_per_page'] = count($donnees['articles_page']);
         $donnees['marques'] = $this->article_model->get_method('app_article_marque');
         $donnees['collections'] = $this->article_model->get_method('app_collection');
@@ -57,7 +56,6 @@ class Boutique extends MX_Controller
         $donnees['infos'] = (array)$infoss[0];
         $donnees['menu_actif'] = "Boutique";
         $donnees['title'] = "Boutique";
-        $donnees['keyword'] = $keyword;
         $this->load->view('boutique_view', $donnees);
     }
 

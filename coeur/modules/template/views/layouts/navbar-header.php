@@ -1,13 +1,8 @@
 <?php
-$this->load->model('administration/information_model');
-
 //print_r($this->session->all_userdata());
-$id_user = (string)$this->session->userdata('id_utilisateur');
+$id_user=(String)$this->session->userdata('id_utilisateur');
 $sexe = $this->session->userdata('user_sexe');
-$pseudo = $this->session->userdata('user_login');
-$infos_ = $this->information_model->get_information();
-$infos = (array)$infos_[0];
-
+$pseudo= $this->session->userdata('user_login');
 
 ?>
 <header id="page-topbar">
@@ -17,19 +12,19 @@ $infos = (array)$infos_[0];
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="" height="100">
+                        <img src="<?php echo base_url() ?>assets/front-end/img/logo.png" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="" height="100">
+                        <img src="<?php echo base_url() ?>assets/front-end/img/logo.png" alt="" height="50">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="" height="100">
+                        <img src="<?php echo base_url() ?>assets/front-end/img/logo.png" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="<?php echo base_url() ?>uploads/logo/<?php echo $infos['logo_info'] ?>" alt="" height="100">
+                        <img src="<?php echo base_url() ?>assets/front-end/img/logo.png" alt="" height="50">
                     </span>
                 </a>
             </div>
@@ -208,27 +203,27 @@ $infos = (array)$infos_[0];
                 </button>
                 <div class="dropdown-menu dropdown-menu-end"> -->
 
-                <!-- item-->
-                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
+                    <!-- item-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
                         <img src="<?php echo base_url(); ?>assets/admin/images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
                     </a> -->
-                <!-- item-->
-                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
+                    <!-- item-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
                         <img src="<?php echo base_url(); ?>assets/admin/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                     </a> -->
 
-                <!-- item-->
-                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
+                    <!-- item-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
                         <img src="<?php echo base_url(); ?>assets/admin/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
                     </a> -->
 
-                <!-- item-->
-                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
+                    <!-- item-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
                         <img src="<?php echo base_url(); ?>assets/admin/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                     </a> -->
 
-                <!-- item-->
-                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
+                    <!-- item-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
                         <img src="<?php echo base_url(); ?>assets/admin/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                     </a>
                 </div> -->
@@ -299,7 +294,7 @@ $infos = (array)$infos_[0];
                     <span class="badge bg-danger rounded-pill">3</span>
                 </button> -->
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                    aria-labelledby="page-header-notifications-dropdown">
+                     aria-labelledby="page-header-notifications-dropdown">
                     <div class="p-3">
                         <div class="row align-items-center">
                             <div class="col">
@@ -314,9 +309,9 @@ $infos = (array)$infos_[0];
                         <a href="javascript: void(0);" class="text-reset notification-item">
                             <div class="d-flex">
                                 <div class="avatar-xs me-3">
-                                    <span class="avatar-title bg-primary rounded-circle font-size-16">
-                                        <i class="bx bx-cart"></i>
-                                    </span>
+                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="bx bx-cart"></i>
+                                                </span>
                                 </div>
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
@@ -330,7 +325,7 @@ $infos = (array)$infos_[0];
                         <a href="javascript: void(0);" class="text-reset notification-item">
                             <div class="d-flex">
                                 <img src="<?php echo base_url(); ?>assets/admin/images/users/avatar-3.jpg"
-                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">James Lemire</h6>
                                     <div class="font-size-12 text-muted">
@@ -343,9 +338,9 @@ $infos = (array)$infos_[0];
                         <a href="javascript: void(0);" class="text-reset notification-item">
                             <div class="d-flex">
                                 <div class="avatar-xs me-3">
-                                    <span class="avatar-title bg-success rounded-circle font-size-16">
-                                        <i class="bx bx-badge-check"></i>
-                                    </span>
+                                                <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="bx bx-badge-check"></i>
+                                                </span>
                                 </div>
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
@@ -360,7 +355,7 @@ $infos = (array)$infos_[0];
                         <a href="javascript: void(0);" class="text-reset notification-item">
                             <div class="d-flex">
                                 <img src="<?php echo base_url(); ?>assets/admin/images/users/avatar-4.jpg"
-                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">Salena Layfield</h6>
                                     <div class="font-size-12 text-muted">
@@ -381,16 +376,16 @@ $infos = (array)$infos_[0];
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="<?php echo base_url(); ?>assets/admin/images/users/avatar.png"
-                        alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?php echo $pseudo; ?></span>
+                         alt="Header Avatar">
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?php echo $pseudo;?></span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
                     <a class="dropdown-item" href="<?php echo base_url(); ?>administration/infoperso"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Mon profil</span></a>
-
+                    
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger ologoff" href="javascript:void(0);"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Deconnexion</span></a>
                 </div>
