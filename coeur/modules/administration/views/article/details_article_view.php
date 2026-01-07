@@ -332,7 +332,7 @@ if (!empty($marques) && $articleMarqueId !== null) {
                                                     <table class="table mb-0 details-table">
                                                         <tbody>
                                                             <tr>
-                                                                <th scope="row" style="width: 400px;">Marque</th>
+                                                                <th scope="row" style="width: 200px;">Marque</th>
                                                                 <td>
                                                                     <?php if (!empty($brandName)) : ?>
                                                                         <span class="info-badge"><?php echo $brandName; ?></span>
@@ -342,7 +342,7 @@ if (!empty($marques) && $articleMarqueId !== null) {
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th scope="row" style="width: 400px;">Couleur</th>
+                                                                <th scope="row" style="width: 200px;">Couleur</th>
                                                                 <td>
                                                                     <?php if (!empty($colorName)) : ?>
                                                                         <span class="info-badge"><?php echo $colorName; ?></span>
@@ -352,7 +352,7 @@ if (!empty($marques) && $articleMarqueId !== null) {
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th scope="row" style="width: 400px;">Garantie</th>
+                                                                <th scope="row" style="width: 200px;">Garantie</th>
                                                                 <td>
                                                                     <?php if ($articleGarantie) : ?>
                                                                         <span class="info-badge"><?php echo $articleGarantie . ' mois'; ?></span>
@@ -362,7 +362,7 @@ if (!empty($marques) && $articleMarqueId !== null) {
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th scope="row" style="width: 400px;">Dimension</th>
+                                                                <th scope="row" style="width: 200px;">Dimension</th>
                                                                 <td>
                                                                     <?php if (!empty($articleDimension)) : ?>
                                                                         <span class="info-badge"><?php echo $articleDimension; ?></span>
@@ -372,7 +372,7 @@ if (!empty($marques) && $articleMarqueId !== null) {
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <th scope="row" style="width: 400px;">SKU</th>
+                                                                <th scope="row" style="width: 200px;">SKU</th>
                                                                 <td>
                                                                     <?php if (!empty($articleSku)) : ?>
                                                                         <span class="info-badge"><?php echo $articleSku; ?></span>

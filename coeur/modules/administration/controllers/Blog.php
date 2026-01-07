@@ -13,9 +13,9 @@ class Blog extends MX_Controller
     public function index($adtab = NULL)
     {
         if (is_null($adtab)) $adtab = "1";
-        $nom_module = 'article';
-        $blocmenu = "articles";
-        $pages_title = "Gestion article";
+        $nom_module = 'blog';
+        $blocmenu = "blogs";
+        $pages_title = "Gestion article de blog";
         $data = $this->tplconfig_model->configmenu($nom_module, $blocmenu, $pages_title, $adtab);
         //var_dump($data);
         $this->load->view('intro_view', $data);
