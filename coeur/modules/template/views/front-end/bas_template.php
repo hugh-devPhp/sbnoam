@@ -157,14 +157,14 @@
 <!-- Quick View Modal End -->
 <!--====== Modal Popup Start ======-->
 <!-- The Modal -->
-<div class="modal fade on-load-modal" id="myModal">
+<!-- <div class="modal fade on-load-modal" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="background-image: url(assets/front-end/img/popup.jpg)">
-            <!-- Modal Header -->
+            Modal Header 
             <div class="modal-header">
                 <button type="button" class="close popup-trigger" data-dismiss="modal">&times;</button>
             </div>
-            <!-- Modal body -->
+           Modal body
             <div class="modal-body">
                 <div class="modal-inner">
                     <h3 class="title">Newsletter</h3>
@@ -179,7 +179,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!--====== Modal Popup End ======-->
 <?php $this->load->view('template/front-end/base_js')?>
 </body>

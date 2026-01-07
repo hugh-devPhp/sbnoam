@@ -61,13 +61,13 @@
         
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Login</label>
-                                            <input type="text" class="form-control" id="username" name="login" placeholder="Enter le login">
+                                            <input type="text" class="form-control" id="username" name="login" placeholder="Entrer le login">
                                         </div>
                 
                                         <div class="mb-3">
                                             <label class="form-label">Mot de passe</label>
                                             <div class="input-group auth-pass-inputgroup">
-                                                <input type="password" class="form-control" placeholder="Enter le mot de passe" aria-label="Password" aria-describedby="password-addon" name="pass">
+                                                <input type="password" class="form-control" placeholder="Entrer le mot de passe" aria-label="Password" aria-describedby="password-addon" name="pass">
                                                 <button class="btn btn-light" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                             </div>
                                         </div>
@@ -117,7 +117,7 @@
                             
                             <div>
                                 <!-- <p>Don't have an account ? <a href="auth-register.html" class="fw-medium text-primary"> Signup now </a> </p> -->
-                                <p>© <script>document.write(new Date().getFullYear())</script> <i class="mdi mdi-heart text-danger"></i> Design & Develop by Leaders Tech</p>
+                                <p>© <script>document.write(new Date().getFullYear())</script> <i class="mdi mdi-heart text-danger"></i> Design & Develop by <a href="https://www.shinebynoam.store/a_propos">shinebynoam</a>  </p>
                             </div>
                         </div>
 
