@@ -15,7 +15,7 @@
                 <a href="#">
                     <i class="flaticon-ring"></i>
                     <i class="hover-icon flaticon-ring"></i>
-                    <span class="title">Diamond Ring</span>
+                    <span class="title">bagues</span>
                 </a>
             </li>
             <li class="wow fadeInUp" data-wow-delay=".4s">
@@ -29,21 +29,21 @@
                 <a href="#">
                     <i class="flaticon-necklace"></i>
                     <i class="hover-icon flaticon-necklace"></i>
-                    <span class="title">Necklaces</span>
+                    <span class="title">Colliers</span>
                 </a>
             </li>
             <li class="wow fadeInUp" data-wow-delay=".6s">
                 <a href="#">
                     <i class="flaticon-bracelet-2"></i>
                     <i class="hover-icon flaticon-bracelet-2"></i>
-                    <span class="title">Pendants</span>
+                    <span class="title">Pendentifs</span>
                 </a>
             </li>
             <li class="wow fadeInUp" data-wow-delay=".7s">
                 <a href="#">
                     <i class="flaticon-earrings"></i>
                     <i class="hover-icon flaticon-earrings"></i>
-                    <span class="title">Earrings</span>
+                    <span class="title">Boucles d'oreilles</span>
                 </a>
             </li>
         </ul>
